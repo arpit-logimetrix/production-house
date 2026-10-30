@@ -1,0 +1,601 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { siteData } from '../data/content';
+import Marquee from '../components/Marquee';
+import BTSGallery from '../components/BTSGallery';
+import KineticTicker from '../components/KineticTicker';
+import DirectorSpotlight from '../components/DirectorSpotlight';
+import LucknowMap from '../components/LucknowMap';
+
+export default function Home({ onOpenVideo }) {
+  const { hero, story, featuredWorks, brand } = siteData;
+  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const heroSlides = hero.slides || [
+    {
+      id: 1,
+      tag: hero.tag,
+      headlinePrefix: hero.headlinePrefix,
+      headlineMain: hero.headlineMain,
+      headlineAccent: hero.headlineAccent,
+      manifesto: hero.manifesto,
+      bgImage: hero.bgImage,
+      ctaText: 'Get in touch',
+      ctaLink: '/contact',
+      secondaryText: 'View Selected Works →',
+      secondaryLink: '/work',
+      videoUrl: hero.defaultShowreelVideo
+    }
+  ];
+
+  // Hero carousel auto-play timer
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 7000);
+    return () => clearInterval(timer);
+  }, [heroSlides.length]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolledDown(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handlePrevSlide = (e) => {
+    e.stopPropagation();
+    setActiveSlide((prev) => (prev > 0 ? prev - 1 : heroSlides.length - 1));
+  };
+
+  const handleNextSlide = (e) => {
+    e.stopPropagation();
+    setActiveSlide((prev) => (prev < heroSlides.length - 1 ? prev + 1 : 0));
+  };
+
+  const currentSlideData = heroSlides[activeSlide];
+
+  return (
+    <div style={{ width: '100%' }}>
+      {/* 1. Hero Section: Cinematic Multi-Slide Carousel with Scroll Reveal */}
+      <section style={{
+        position: 'relative',
+        minHeight: '100vh',
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        background: 'var(--bg-surface)',
+        borderBottom: '1px solid var(--border-subtle)',
+        overflow: 'hidden'
+      }}>
+        {/* Background Visual Carousel: Stacked Crossfading Images */}
+        {heroSlides.map((slide, idx) => (
+          <img
+            key={slide.id}
+            src={slide.bgImage}
+            alt={`Chitralok Studios Visual ${slide.id}`}
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              objectPosition: 'center top',
+              filter: isScrolledDown ? 'brightness(0.68)' : 'brightness(0.92)',
+              opacity: activeSlide === idx ? 1 : 0,
+              transform: activeSlide === idx ? 'scale(1)' : 'scale(1.05)',
+              transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out, filter 0.8s ease',
+              pointerEvents: 'none'
+            }}
+          />
+        ))}
+
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          background: isScrolledDown
+            ? 'linear-gradient(180deg, rgba(7,7,7,0.35) 0%, rgba(7,7,7,0.88) 100%)'
+            : 'linear-gradient(180deg, rgba(7,7,7,0.08) 0%, rgba(7,7,7,0.45) 100%)',
+          transition: 'background 0.8s ease',
+          pointerEvents: 'none'
+        }} />
+
+        {/* Carousel Navigation Arrow Buttons (Floating on sides) */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: 0,
+          right: 0,
+          transform: 'translateY(-50%)',
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: '0 clamp(16px, 2.5vw, 40px)',
+          zIndex: 4,
+          pointerEvents: 'none'
+        }}>
+          <button
+            onClick={handlePrevSlide}
+            aria-label="Previous Hero Slide"
+            title="Previous Slide"
+            style={{
+              pointerEvents: 'auto',
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              border: '1px solid rgba(212, 166, 42, 0.4)',
+              background: 'rgba(10, 10, 9, 0.65)',
+              color: 'var(--gold-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              backdropFilter: 'blur(8px)',
+              transition: 'all 0.25s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--gold-primary)';
+              e.currentTarget.style.color = '#070707';
+              e.currentTarget.style.borderColor = 'var(--gold-primary)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(10, 10, 9, 0.65)';
+              e.currentTarget.style.color = 'var(--gold-primary)';
+              e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+
+          <button
+            onClick={handleNextSlide}
+            aria-label="Next Hero Slide"
+            title="Next Slide"
+            style={{
+              pointerEvents: 'auto',
+              width: '44px',
+              height: '44px',
+              borderRadius: '50%',
+              border: '1px solid rgba(212, 166, 42, 0.4)',
+              background: 'rgba(10, 10, 9, 0.65)',
+              color: 'var(--gold-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              backdropFilter: 'blur(8px)',
+              transition: 'all 0.25s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = 'var(--gold-primary)';
+              e.currentTarget.style.color = '#070707';
+              e.currentTarget.style.borderColor = 'var(--gold-primary)';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'rgba(10, 10, 9, 0.65)';
+              e.currentTarget.style.color = 'var(--gold-primary)';
+              e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
+            }}
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div style={{ flex: 1 }} />
+
+        {/* Floating Scroll Indicator on Initial Clean Screen */}
+        <div style={{
+          position: 'absolute',
+          bottom: '36px',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          zIndex: 3,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '12px',
+          opacity: isScrolledDown ? 0 : 1,
+          visibility: isScrolledDown ? 'hidden' : 'visible',
+          transition: 'opacity 0.5s ease, visibility 0.5s ease',
+          pointerEvents: 'none'
+        }}>
+          <span style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '11px',
+            letterSpacing: '0.28em',
+            textTransform: 'uppercase',
+            color: 'var(--gold-primary)',
+            textShadow: '0 2px 10px rgba(0,0,0,0.8)'
+          }}>
+            Scroll to Enter ↓
+          </span>
+          <div style={{
+            width: '1.5px',
+            height: '32px',
+            background: 'linear-gradient(180deg, var(--gold-primary), transparent)',
+            borderRadius: '1px'
+          }} />
+        </div>
+
+        {/* Hero Bottom Content: Smooth Scroll Reveal Effect */}
+        <div style={{
+          position: 'relative',
+          zIndex: 2,
+          padding: '0 var(--container-pad) clamp(28px, 5vh, 64px)',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 'clamp(20px, 3vw, 36px)',
+          opacity: isScrolledDown ? 1 : 0,
+          transform: isScrolledDown ? 'translateY(0)' : 'translateY(40px)',
+          transition: 'opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
+          pointerEvents: isScrolledDown ? 'auto' : 'none'
+        }}>
+          <div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '10px' }}>
+              <span style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '11px',
+                letterSpacing: '0.22em',
+                textTransform: 'uppercase',
+                color: 'var(--gold-primary)',
+                fontWeight: 500
+              }}>
+                {hero.tag}
+              </span>
+              <span style={{
+                fontSize: '10px',
+                fontFamily: 'var(--font-mono)',
+                color: 'var(--text-secondary)',
+                letterSpacing: '0.12em'
+              }}>
+                · {String(activeSlide + 1).padStart(2, '0')} / {String(heroSlides.length).padStart(2, '0')}
+              </span>
+            </div>
+
+            <h1 style={{
+              margin: 0,
+              fontFamily: 'var(--font-heading)',
+              fontWeight: 700,
+              fontSize: 'clamp(32px, 8.5vw, 156px)',
+              lineHeight: 0.94,
+              letterSpacing: '-0.035em'
+            }}>
+              <span style={{ display: 'block' }}>{hero.headlinePrefix}</span>
+              <span style={{ display: 'block' }}>
+                {hero.headlineMain} <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>{hero.headlineAccent}</span>
+              </span>
+            </h1>
+
+            <p style={{
+              margin: '20px 0 0',
+              maxWidth: '680px',
+              fontSize: 'clamp(14px, 2vw, 18px)',
+              lineHeight: 1.6,
+              color: 'var(--text-light-sub)',
+              letterSpacing: '0.01em'
+            }}>
+              {hero.manifesto}
+            </p>
+          </div>
+
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '24px',
+            borderTop: '1px solid var(--border-medium)',
+            paddingTop: '28px'
+          }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
+              <Link
+                to="/contact"
+                className="ul"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  minHeight: '44px',
+                  fontSize: '12px',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  fontWeight: 600,
+                  color: 'var(--gold-primary)'
+                }}
+              >
+                Get in touch ↓
+              </Link>
+              <Link
+                to="/work"
+                className="ul"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  minHeight: '44px',
+                  fontSize: '12px',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  fontWeight: 600
+                }}
+              >
+                View Selected Works →
+              </Link>
+            </div>
+
+            {/* Slide Pagination Indicator Pills */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              {heroSlides.map((slide, idx) => (
+                <button
+                  key={slide.id}
+                  onClick={() => setActiveSlide(idx)}
+                  aria-label={`Switch to slide ${idx + 1}`}
+                  title={`Slide ${idx + 1}`}
+                  style={{
+                    height: '4px',
+                    width: activeSlide === idx ? '32px' : '14px',
+                    borderRadius: '2px',
+                    background: activeSlide === idx ? 'var(--gold-primary)' : 'rgba(255, 255, 255, 0.22)',
+                    border: 'none',
+                    padding: 0,
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease'
+                  }}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 2. Section: Our Story & Manifesto (Luxury Ambient Gradient) */}
+      <section className="our-story-section">
+        <div className="our-story-ambient-glow" />
+        <div style={{ flex: '1 1 200px', minWidth: 0, position: 'relative', zIndex: 1 }}>
+          <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
+            {story.badge}
+          </span>
+        </div>
+        <div style={{ flex: '4 1 560px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '32px', position: 'relative', zIndex: 1 }}>
+          <p style={{
+            margin: 0,
+            fontFamily: 'var(--font-heading)',
+            fontWeight: 600,
+            fontSize: 'clamp(20px, 3.4vw, 54px)',
+            lineHeight: 1.3,
+            letterSpacing: '-0.02em',
+            color: 'var(--text-primary)'
+          }}>
+            {story.statement}
+          </p>
+          <Link
+            to="/about"
+            className="ul"
+            style={{
+              alignSelf: 'flex-start',
+              display: 'inline-flex',
+              alignItems: 'center',
+              minHeight: '44px',
+              fontSize: '12px',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              fontWeight: 600,
+              color: 'var(--gold-primary)',
+              borderBottom: '1px solid var(--gold-primary)'
+            }}
+          >
+            {story.linkText} →
+          </Link>
+        </div>
+      </section>
+
+      {/* 3. Section: Directors & Visionaries Kinetic Scrolling & Carousel */}
+      <section style={{ padding: '0 0 136px', overflow: 'hidden' }}>
+        <div style={{ padding: '0 var(--container-pad)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', marginBottom: '20px' }}>
+          <div>
+            <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
+              CREATIVE ROSTER · AUTEURS &amp; SCREENWRITERS
+            </span>
+          </div>
+          <Link
+            to="/director"
+            className="ul"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              minHeight: '44px',
+              fontSize: '12px',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'var(--gold-primary)',
+              fontWeight: 600
+            }}
+          >
+            Explore Director Profiles →
+          </Link>
+        </div>
+
+        {/* Single Line Kinetic Scrolling Heading: Directors · Visionaries · Luminaries · Storyteller · Creators */}
+        <KineticTicker
+          singleLine={true}
+          track1={[
+            'Directors||· Visionaries · Luminaries · Storyteller · Creators',
+            'Directors||· Visionaries · Luminaries · Storyteller · Creators'
+          ]}
+        />
+
+        {/* Sole Lead Director Showcase: Pushpenddra Singh (All extra cards removed) */}
+        <div style={{ padding: '0 var(--container-pad)' }}>
+          <DirectorSpotlight onOpenVideo={onOpenVideo} />
+        </div>
+      </section>
+
+      {/* 4. Section: Featured Works with Magnetic Cursor Interaction */}
+      <section style={{ padding: '0 var(--container-pad) 136px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '16px', marginBottom: '48px' }}>
+          <div>
+            <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>
+              SELECTED WORKS
+            </span>
+            <h2 style={{
+              margin: 0,
+              fontFamily: 'var(--font-heading)',
+              fontSize: 'clamp(26px, 5vw, 72px)',
+              fontWeight: 700,
+              lineHeight: 1.05,
+              letterSpacing: '-0.025em'
+            }}>
+              Films That Define <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>Brands.</span>
+            </h2>
+          </div>
+          <Link
+            to="/work"
+            className="ul"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              minHeight: '44px',
+              fontSize: '12px',
+              letterSpacing: '0.2em',
+              textTransform: 'uppercase',
+              color: 'var(--gold-primary)',
+              fontWeight: 600
+            }}
+          >
+            Explore Complete Archive →
+          </Link>
+        </div>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
+          gap: '64px 40px'
+        }}>
+          {featuredWorks.map((work) => (
+            <div
+              key={work.id}
+              className="th"
+            >
+              <div style={{
+                position: 'relative',
+                aspectRatio: '16/9',
+                background: 'var(--bg-card)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                overflow: 'hidden',
+                border: '1px solid var(--border-subtle)'
+              }}>
+                <img
+                  src={work.img}
+                  alt={work.title}
+                  style={{
+                    position: 'absolute',
+                    inset: 0,
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                  }}
+                />
+                <span style={{
+                  position: 'absolute',
+                  right: '16px',
+                  top: '14px',
+                  padding: '5px 12px',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px',
+                  letterSpacing: '0.15em',
+                  textTransform: 'uppercase',
+                  color: 'var(--text-primary)',
+                  background: 'rgba(7, 7, 7, 0.85)',
+                  border: '1px solid var(--border-gold)',
+                  borderRadius: '2px'
+                }}>
+                  {work.cat}
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '8px 24px', marginTop: '16px' }}>
+                <span className="tt" style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', lineHeight: 1.15 }}>
+                  {work.title}
+                </span>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
+                  {work.credit}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 5. Behind The Scenes (BTS) Showcase Section */}
+      <BTSGallery onOpenImage={(imgUrl) => onOpenVideo('https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1')} />
+
+      {/* 6. Golden Call To Action — Let’s Connect */}
+      <section style={{
+        background: 'var(--gold-primary)',
+        color: 'var(--bg-primary)',
+        padding: 'clamp(64px, 9vw, 136px) var(--container-pad) clamp(48px, 7vw, 104px)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'clamp(36px, 5vw, 64px)'
+      }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+          <span style={{
+            fontSize: '12px',
+            fontFamily: 'var(--font-mono)',
+            letterSpacing: '0.25em',
+            textTransform: 'uppercase',
+            fontWeight: 700,
+            color: 'rgba(7, 7, 7, 0.75)'
+          }}>
+            LET’S CONNECT
+          </span>
+          <h2 style={{
+            margin: 0,
+            fontFamily: 'var(--font-heading)',
+            fontWeight: 700,
+            fontSize: 'clamp(32px, 8vw, 148px)',
+            lineHeight: 0.95,
+            letterSpacing: '-0.03em'
+          }}>
+            Let’s make something <span style={{ fontStyle: 'italic' }}>worth watching.</span>
+          </h2>
+        </div>
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: '32px 64px',
+          borderTop: '1px solid var(--bg-primary)',
+          paddingTop: '32px'
+        }}>
+          <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>New projects</span>
+            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 4.5vw, 30px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all' }}>
+              {brand.emails.projects}
+            </Link>
+          </div>
+          <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>General enquiries</span>
+            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 4.5vw, 30px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all' }}>
+              {brand.emails.general}
+            </Link>
+          </div>
+          <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>Careers</span>
+            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 4.5vw, 30px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all' }}>
+              {brand.emails.careers}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* 7. Interactive Studio Location Map (Placed Below Let’s Connect Section) */}
+      <LucknowMap />
+    </div>
+  );
+}
