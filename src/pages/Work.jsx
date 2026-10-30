@@ -14,25 +14,29 @@ export default function Work({ onOpenVideo }) {
 
   return (
     <div style={{ width: '100%' }}>
-      {/* Title & Filters */}
-      <section style={{ padding: '104px var(--container-pad) 48px', display: 'flex', flexDirection: 'column', gap: '40px' }}>
+      {/* Projects Title Heading — Matching Contact Page Theme */}
+      <section style={{ padding: '104px var(--container-pad) 64px', display: 'flex', flexDirection: 'column', gap: '32px' }}>
         <h1 style={{
           margin: 0,
           fontFamily: 'var(--font-serif)',
           fontWeight: 500,
-          fontSize: 'clamp(64px, 13vw, 220px)',
-          lineHeight: 0.9,
+          fontSize: 'clamp(56px, 11vw, 184px)',
+          lineHeight: 0.92,
           letterSpacing: '-0.035em'
         }}>
-          Work<span style={{ color: 'var(--gold-primary)' }}>.</span>
+          Our <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>projects.</span>
         </h1>
+        <p style={{ margin: 0, maxWidth: '640px', fontSize: '19px', lineHeight: 1.65, color: 'var(--text-light-sub)' }}>
+          A curated archive of landmark feature films, television classics, commercial advertisements, and original musical compositions.
+        </p>
 
-        <div role="group" aria-label="Filter work by category" style={{
+        <div role="group" aria-label="Filter projects by category" style={{
           display: 'flex',
           flexWrap: 'wrap',
           gap: '8px 28px',
           borderTop: '1px solid var(--border-subtle)',
-          paddingTop: '16px'
+          paddingTop: '20px',
+          marginTop: '8px'
         }}>
           {categories.map((cat, idx) => {
             const isActive = activeFilter === cat;

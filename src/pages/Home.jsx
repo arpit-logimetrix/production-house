@@ -322,7 +322,7 @@ export default function Home({ onOpenVideo }) {
                   fontWeight: 600
                 }}
               >
-                View Selected Works →
+                View Selected Projects →
               </Link>
             </div>
 
@@ -418,12 +418,12 @@ export default function Home({ onOpenVideo }) {
           </Link>
         </div>
 
-        {/* Single Line Kinetic Scrolling Heading: Directors · Visionaries · Luminaries · Storyteller · Creators */}
+        {/* Single Line Kinetic Scrolling Heading: Alternating White & Gold words */}
         <KineticTicker
           singleLine={true}
           track1={[
-            'Directors||· Visionaries · Luminaries · Storyteller · Creators',
-            'Directors||· Visionaries · Luminaries · Storyteller · Creators'
+            'DIRECTORS ||· VISIONARIES ||· LUMINARIES ||· STORYTELLERS ||· CREATORS',
+            'DIRECTORS ||· VISIONARIES ||· LUMINARIES ||· STORYTELLERS ||· CREATORS'
           ]}
         />
 
@@ -438,7 +438,7 @@ export default function Home({ onOpenVideo }) {
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '16px', marginBottom: '48px' }}>
           <div>
             <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>
-              SELECTED WORKS
+              SELECTED PROJECTS
             </span>
             <h2 style={{
               margin: 0,

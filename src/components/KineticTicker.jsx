@@ -20,11 +20,17 @@ export default function KineticTicker({
 
   const renderPhrase = (item, trackClass) => {
     if (typeof item === 'string' && item.includes('||')) {
-      const [outlinePart, solidPart] = item.split('||');
+      const parts = item.split('||');
       return (
         <span className={`kinetic-phrase ${trackClass}`}>
-          <span className="kinetic-word-outline">{outlinePart}</span>
-          <span className="kinetic-word-solid">{solidPart}</span>
+          {parts.map((p, pIdx) => (
+            <span
+              key={pIdx}
+              className={pIdx % 2 === 0 ? 'kinetic-word-outline' : 'kinetic-word-solid'}
+            >
+              {p}
+            </span>
+          ))}
         </span>
       );
     }

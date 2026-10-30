@@ -76,7 +76,7 @@ export default function Footer() {
               <Link className="nl" to="/">Home</Link>
               <Link className="nl" to="/about">About Us</Link>
               <Link className="nl" to="/director">Director</Link>
-              <Link className="nl" to="/work">Work</Link>
+              <Link className="nl" to="/work">Projects</Link>
               <Link className="nl" to="/contact">Contact Us</Link>
             </div>
           </div>

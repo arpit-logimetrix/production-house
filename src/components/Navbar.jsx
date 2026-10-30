@@ -58,7 +58,7 @@ export default function Navbar() {
             Director
           </Link>
           <Link to="/work" className={`nl ${isActive('/work') ? 'active' : ''}`}>
-            Work
+            Projects
           </Link>
           <Link to="/contact" className={`nl ${isActive('/contact') ? 'active' : ''}`}>
             Contact Us
@@ -83,7 +83,7 @@ export default function Navbar() {
         <Link to="/" className={isActive('/') ? 'active' : ''}>Home</Link>
         <Link to="/about" className={isActive('/about') ? 'active' : ''}>About Us</Link>
         <Link to="/director" className={isActive('/director') ? 'active' : ''}>Director</Link>
-        <Link to="/work" className={isActive('/work') ? 'active' : ''}>Work</Link>
+        <Link to="/work" className={isActive('/work') ? 'active' : ''}>Projects</Link>
         <Link to="/contact" className={isActive('/contact') ? 'active' : ''}>Contact Us</Link>
       </div>
     </>
