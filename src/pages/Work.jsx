@@ -118,6 +118,32 @@ export default function Work({ onOpenVideo }) {
                   }}
                 />
                 
+                {/* Status Pill Tag (e.g. In Filming / Post Production) */}
+                {work.status && (
+                  <span style={{
+                    position: 'absolute',
+                    left: '16px',
+                    top: '14px',
+                    padding: '5px 12px',
+                    fontSize: '11px',
+                    letterSpacing: '0.16em',
+                    textTransform: 'uppercase',
+                    fontWeight: 600,
+                    color: 'var(--gold-primary)',
+                    background: 'rgba(10, 10, 9, 0.88)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(212, 166, 42, 0.45)',
+                    borderRadius: '2px',
+                    zIndex: 2,
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}>
+                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+                    {work.status}
+                  </span>
+                )}
+
                 {/* Category Pill Tag */}
                 <span style={{
                   position: 'absolute',

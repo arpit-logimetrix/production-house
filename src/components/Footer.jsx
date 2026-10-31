@@ -95,31 +95,34 @@ export default function Footer() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 textAlign: 'center',
-                gap: '4px'
+                gap: '4px',
+                width: '100%'
               }}
             >
-              <span
+              <div
                 className="footer-company-name"
                 style={{
                   display: 'block',
+                  width: '100%',
                   fontFamily: 'var(--font-serif)',
                   fontSize: '21px',
                   fontWeight: 600,
                   color: 'var(--gold-primary)',
-                  marginBottom: '4px'
+                  marginBottom: '4px',
+                  lineHeight: 1.3
                 }}
               >
                 S &amp; P Chitralok Studios
-              </span>
-              <span className="footer-address-line" style={{ display: 'block', fontSize: '15px', color: 'var(--text-light-sub)' }}>
+              </div>
+              <div className="footer-address-line" style={{ display: 'block', width: '100%', fontSize: '15px', color: 'var(--text-light-sub)', lineHeight: 1.5 }}>
                 2/248, Vikash Khand Rd,
-              </span>
-              <span className="footer-address-line" style={{ display: 'block', fontSize: '15px', color: 'var(--text-light-sub)' }}>
+              </div>
+              <div className="footer-address-line" style={{ display: 'block', width: '100%', fontSize: '15px', color: 'var(--text-light-sub)', lineHeight: 1.5 }}>
                 Gomti Nagar, Lucknow,
-              </span>
-              <span className="footer-address-line" style={{ display: 'block', fontSize: '15px', color: 'var(--text-light-sub)' }}>
+              </div>
+              <div className="footer-address-line" style={{ display: 'block', width: '100%', fontSize: '15px', color: 'var(--text-light-sub)', lineHeight: 1.5 }}>
                 Uttar Pradesh -226010
-              </span>
+              </div>
               <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
                 <a
                   href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, '')}`}

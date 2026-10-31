@@ -60,7 +60,7 @@ export default function Home({ onOpenVideo }) {
   return (
     <div style={{ width: '100%' }}>
       {/* 1. Hero Section: Cinematic Multi-Slide Carousel with Scroll Reveal */}
-      <section style={{
+      <section className="hero-carousel-section" style={{
         position: 'relative',
         minHeight: '100vh',
         height: '100vh',
@@ -70,150 +70,168 @@ export default function Home({ onOpenVideo }) {
         borderBottom: '1px solid var(--border-subtle)',
         overflow: 'hidden'
       }}>
-        {/* Background Visual Carousel: Stacked Crossfading Images */}
-        {heroSlides.map((slide, idx) => (
-          <React.Fragment key={slide.id}>
-            {/* Ambient Blurred Background (Mobile Only to fill portrait height seamlessly) */}
-            <img
-              src={slide.bgImage}
-              alt=""
-              aria-hidden="true"
-              className="hero-slide-ambient"
-              style={{
-                position: 'absolute',
-                inset: '-20px',
-                width: 'calc(100% + 40px)',
-                height: 'calc(100% + 40px)',
-                objectFit: 'cover',
-                objectPosition: 'center',
-                filter: 'blur(36px) brightness(0.35)',
-                opacity: activeSlide === idx ? 1 : 0,
-                transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
-                pointerEvents: 'none',
-                display: 'none'
-              }}
-            />
-
-            {/* Crisp Main Visual (Cinematic Cover on Desktop, Complete 100% Contain on Mobile) */}
-            <img
-              src={slide.bgImage}
-              alt={`Chitralok Studios Visual ${slide.id}`}
-              className="hero-slide-main"
-              style={{
-                position: 'absolute',
-                inset: 0,
-                width: '100%',
-                height: '100%',
-                objectFit: 'cover',
-                objectPosition: 'center top',
-                filter: isScrolledDown ? 'brightness(0.68)' : 'brightness(0.92)',
-                opacity: activeSlide === idx ? 1 : 0,
-                transform: activeSlide === idx ? 'scale(1)' : 'scale(1.05)',
-                transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out, filter 0.8s ease',
-                pointerEvents: 'none'
-              }}
-            />
-          </React.Fragment>
-        ))}
-
-        <div style={{
+        {/* Visual Frame: Contains Carousel Images & Navigation Controls */}
+        <div className="hero-visual-frame" style={{
           position: 'absolute',
           inset: 0,
-          background: isScrolledDown
-            ? 'linear-gradient(180deg, rgba(7,7,7,0.35) 0%, rgba(7,7,7,0.88) 100%)'
-            : 'linear-gradient(180deg, rgba(7,7,7,0.08) 0%, rgba(7,7,7,0.45) 100%)',
-          transition: 'background 0.8s ease',
-          pointerEvents: 'none'
-        }} />
-
-        {/* Carousel Navigation Arrow Buttons (Floating on sides) */}
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: 0,
-          right: 0,
-          transform: 'translateY(-50%)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: '0 clamp(16px, 2.5vw, 40px)',
-          zIndex: 4,
-          pointerEvents: 'none'
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden'
         }}>
-          <button
-            onClick={handlePrevSlide}
-            aria-label="Previous Hero Slide"
-            title="Previous Slide"
-            style={{
-              pointerEvents: 'auto',
-              width: '44px',
-              height: '44px',
-              borderRadius: '50%',
-              border: '1px solid rgba(212, 166, 42, 0.4)',
-              background: 'rgba(10, 10, 9, 0.65)',
-              color: 'var(--gold-primary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.25s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--gold-primary)';
-              e.currentTarget.style.color = '#070707';
-              e.currentTarget.style.borderColor = 'var(--gold-primary)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(10, 10, 9, 0.65)';
-              e.currentTarget.style.color = 'var(--gold-primary)';
-              e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
-            </svg>
-          </button>
+          {/* Background Visual Carousel: Stacked Crossfading Images */}
+          {heroSlides.map((slide, idx) => (
+            <React.Fragment key={slide.id}>
+              {/* Ambient Blurred Background (Desktop Glow) */}
+              <img
+                src={slide.bgImage}
+                alt=""
+                aria-hidden="true"
+                className="hero-slide-ambient"
+                style={{
+                  position: 'absolute',
+                  inset: '-20px',
+                  width: 'calc(100% + 40px)',
+                  height: 'calc(100% + 40px)',
+                  objectFit: 'cover',
+                  objectPosition: 'center',
+                  filter: 'blur(36px) brightness(0.35)',
+                  opacity: activeSlide === idx ? 1 : 0,
+                  transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                  pointerEvents: 'none',
+                  display: 'none'
+                }}
+              />
 
-          <button
-            onClick={handleNextSlide}
-            aria-label="Next Hero Slide"
-            title="Next Slide"
-            style={{
-              pointerEvents: 'auto',
-              width: '44px',
-              height: '44px',
-              borderRadius: '50%',
-              border: '1px solid rgba(212, 166, 42, 0.4)',
-              background: 'rgba(10, 10, 9, 0.65)',
-              color: 'var(--gold-primary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              backdropFilter: 'blur(8px)',
-              transition: 'all 0.25s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'var(--gold-primary)';
-              e.currentTarget.style.color = '#070707';
-              e.currentTarget.style.borderColor = 'var(--gold-primary)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'rgba(10, 10, 9, 0.65)';
-              e.currentTarget.style.color = 'var(--gold-primary)';
-              e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
-            }}
-          >
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-          </button>
+              {/* Crisp Main Visual (Cinematic Cover on Desktop, Complete 100% Contain on Mobile) */}
+              <img
+                src={slide.bgImage}
+                alt={`Chitralok Studios Visual ${slide.id}`}
+                className="hero-slide-main"
+                style={{
+                  position: 'absolute',
+                  inset: 0,
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                  objectPosition: 'center top',
+                  filter: isScrolledDown ? 'brightness(0.68)' : 'brightness(0.92)',
+                  opacity: activeSlide === idx ? 1 : 0,
+                  transform: activeSlide === idx ? 'scale(1)' : 'scale(1.05)',
+                  transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out, filter 0.8s ease',
+                  pointerEvents: 'none'
+                }}
+              />
+            </React.Fragment>
+          ))}
+
+          <div className="hero-visual-gradient" style={{
+            position: 'absolute',
+            inset: 0,
+            background: isScrolledDown
+              ? 'linear-gradient(180deg, rgba(7,7,7,0.35) 0%, rgba(7,7,7,0.88) 100%)'
+              : 'linear-gradient(180deg, rgba(7,7,7,0.08) 0%, rgba(7,7,7,0.45) 100%)',
+            transition: 'background 0.8s ease',
+            pointerEvents: 'none'
+          }} />
+
+          {/* Left & Right Cinematic Edge Fade Vignettes (Like Hero 2) */}
+          <div className="hero-side-vignettes" style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(90deg, rgba(7,7,7,0.88) 0%, rgba(7,7,7,0) 20%, rgba(7,7,7,0) 80%, rgba(7,7,7,0.88) 100%)',
+            pointerEvents: 'none',
+            zIndex: 3
+          }} />
+
+          {/* Carousel Navigation Arrow Buttons (Floating on sides) */}
+          <div className="hero-arrow-nav" style={{
+            position: 'absolute',
+            top: '50%',
+            left: 0,
+            right: 0,
+            transform: 'translateY(-50%)',
+            display: 'flex',
+            justifyContent: 'space-between',
+            padding: '0 clamp(16px, 2.5vw, 40px)',
+            zIndex: 4,
+            pointerEvents: 'none'
+          }}>
+            <button
+              onClick={handlePrevSlide}
+              aria-label="Previous Hero Slide"
+              title="Previous Slide"
+              style={{
+                pointerEvents: 'auto',
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                border: '1px solid rgba(212, 166, 42, 0.4)',
+                background: 'rgba(10, 10, 9, 0.65)',
+                color: 'var(--gold-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                backdropFilter: 'blur(8px)',
+                transition: 'all 0.25s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--gold-primary)';
+                e.currentTarget.style.color = '#070707';
+                e.currentTarget.style.borderColor = 'var(--gold-primary)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(10, 10, 9, 0.65)';
+                e.currentTarget.style.color = 'var(--gold-primary)';
+                e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+
+            <button
+              onClick={handleNextSlide}
+              aria-label="Next Hero Slide"
+              title="Next Slide"
+              style={{
+                pointerEvents: 'auto',
+                width: '44px',
+                height: '44px',
+                borderRadius: '50%',
+                border: '1px solid rgba(212, 166, 42, 0.4)',
+                background: 'rgba(10, 10, 9, 0.65)',
+                color: 'var(--gold-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                backdropFilter: 'blur(8px)',
+                transition: 'all 0.25s ease'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--gold-primary)';
+                e.currentTarget.style.color = '#070707';
+                e.currentTarget.style.borderColor = 'var(--gold-primary)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'rgba(10, 10, 9, 0.65)';
+                e.currentTarget.style.color = 'var(--gold-primary)';
+                e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
         </div>
 
-        <div style={{ flex: 1 }} />
+        <div className="hero-spacer" style={{ flex: 1 }} />
 
         {/* Floating Scroll Indicator on Initial Clean Screen */}
-        <div style={{
+        <div className="hero-scroll-indicator" style={{
           position: 'absolute',
           bottom: '36px',
           left: '50%',
@@ -247,7 +265,7 @@ export default function Home({ onOpenVideo }) {
         </div>
 
         {/* Hero Bottom Content: Smooth Scroll Reveal Effect */}
-        <div style={{
+        <div className="hero-bottom-content" style={{
           position: 'relative',
           zIndex: 2,
           padding: '0 var(--container-pad) clamp(28px, 5vh, 64px)',
@@ -269,7 +287,7 @@ export default function Home({ onOpenVideo }) {
                 color: 'var(--gold-primary)',
                 fontWeight: 500
               }}>
-                {hero.tag}
+                {heroSlides[activeSlide]?.tag || hero.tag}
               </span>
               <span style={{
                 fontSize: '10px',
@@ -289,9 +307,9 @@ export default function Home({ onOpenVideo }) {
               lineHeight: 0.94,
               letterSpacing: '-0.035em'
             }}>
-              <span style={{ display: 'block' }}>{hero.headlinePrefix}</span>
+              <span style={{ display: 'block' }}>{heroSlides[activeSlide]?.headlinePrefix || hero.headlinePrefix}</span>
               <span style={{ display: 'block' }}>
-                {hero.headlineMain} <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>{hero.headlineAccent}</span>
+                {heroSlides[activeSlide]?.headlineMain || hero.headlineMain} <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>{heroSlides[activeSlide]?.headlineAccent || hero.headlineAccent}</span>
               </span>
             </h1>
 
@@ -303,7 +321,7 @@ export default function Home({ onOpenVideo }) {
               color: 'var(--text-light-sub)',
               letterSpacing: '0.01em'
             }}>
-              {hero.manifesto}
+              {heroSlides[activeSlide]?.manifesto || hero.manifesto}
             </p>
           </div>
 
@@ -318,7 +336,7 @@ export default function Home({ onOpenVideo }) {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
               <Link
-                to="/contact"
+                to={heroSlides[activeSlide]?.ctaLink || '/work'}
                 className="ul"
                 style={{
                   display: 'inline-flex',
@@ -331,10 +349,10 @@ export default function Home({ onOpenVideo }) {
                   color: 'var(--gold-primary)'
                 }}
               >
-                Get in touch ↓
+                {heroSlides[activeSlide]?.ctaText || 'Explore Film Details →'}
               </Link>
               <Link
-                to="/work"
+                to={heroSlides[activeSlide]?.secondaryLink || '/work'}
                 className="ul"
                 style={{
                   display: 'inline-flex',
@@ -346,7 +364,7 @@ export default function Home({ onOpenVideo }) {
                   fontWeight: 600
                 }}
               >
-                View Selected Projects →
+                {heroSlides[activeSlide]?.secondaryText || 'View Selected Projects →'}
               </Link>
             </div>
 
@@ -525,6 +543,29 @@ export default function Home({ onOpenVideo }) {
                     transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
                   }}
                 />
+                {work.status && (
+                  <span style={{
+                    position: 'absolute',
+                    left: '16px',
+                    top: '14px',
+                    padding: '5px 12px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gold-primary)',
+                    background: 'rgba(7, 7, 7, 0.9)',
+                    border: '1px solid var(--border-gold)',
+                    borderRadius: '2px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px'
+                  }}>
+                    <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+                    {work.status}
+                  </span>
+                )}
+
                 <span style={{
                   position: 'absolute',
                   right: '16px',

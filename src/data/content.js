@@ -8,7 +8,7 @@ export const siteData = {
     name: 'Chitralok Studios',
     monogram: 'CS',
     fullName: 'Chitralok Studios',
-    logo: '/assets/images/logo.png',
+    logo: '/assets/images/logo.webp',
     tagline: 'We ideate, produce, collaborate, engage and deliver best-in-class audiovisuals.',
     subTagline: 'We make films people remember.',
     address: '2/248, Vikash Khand Rd, Gomti Nagar, Lucknow, Uttar Pradesh -226010',
@@ -34,42 +34,43 @@ export const siteData = {
   },
 
   hero: {
-    tag: '',
-    headlinePrefix: 'We make films',
-    headlineMain: 'people',
-    headlineAccent: 'remember.',
-    manifesto: 'We ideate, produce, collaborate, engage and deliver best-in-class audiovisuals for cinema, OTT and global brands.',
-    bgImage: '/assets/images/HeroImage1.png',
+    tag: 'FEATURE FILM · IN FILMING',
+    headlinePrefix: 'S&P Chitralok Studios presents',
+    headlineMain: 'Paid',
+    headlineAccent: 'Palki.',
+    manifesto: 'A film by Pushpendra Singh · Screenplay by Pushpendrra Singh & Prragati Chauhaan. A poignant journey of love, transformation, and social courage.',
+    bgImage: '/assets/images/HeroImage1.webp',
     slides: [
       {
         id: 1,
-        tag: 'PRODUCTION HOUSE · LUCKNOW',
-        headlinePrefix: 'We make films',
-        headlineMain: 'people',
-        headlineAccent: 'remember.',
-        manifesto: 'We ideate, produce, collaborate, engage and deliver best-in-class audiovisuals for cinema, OTT and global brands.',
-        bgImage: '/assets/images/HeroImage1.png',
-        subTag: 'Showreel · 2026',
-        videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1',
-        ctaText: 'Get in touch ↓',
-        ctaLink: '/contact',
-        secondaryText: 'View Selected Works →',
+        tag: 'FEATURE FILM · IN FILMING',
+        headlinePrefix: 'S&P Chitralok Studios presents',
+        headlineMain: 'Paid',
+        headlineAccent: 'Palki.',
+        manifesto: 'A film by Pushpendra Singh · Screenplay by Pushpendrra Singh & Prragati Chauhaan. A poignant journey of love, transformation, and social courage.',
+        bgImage: '/assets/images/HeroImage1.webp',
+        posterImg: '/assets/images/paid_palki_poster.webp',
+        subTag: 'Feature Film · In Filming',
+        videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
+        ctaText: 'Explore Feature Film →',
+        ctaLink: '/work',
+        secondaryText: 'Watch Teaser Trailer →',
         secondaryLink: '/work'
       },
       {
         id: 2,
-        tag: 'DIRECTORIAL FEATURE FILM · UPCOMING',
+        tag: 'FEATURE FILM · POST PRODUCTION',
         headlinePrefix: 'Pushpendra Singh\'s',
         headlineMain: 'Aaoge Jab',
         headlineAccent: 'Tum.',
-        manifesto: 'A deeply poignant cinematic journey directed by Pushpendra Singh. Coming soon to silver screens across India.',
-        bgImage: '/assets/images/HeroImage2.jpg',
-        posterImg: '/assets/images/aaoge_jab_tum_poster.jpg',
-        subTag: 'Theatrical Release · 2026',
-        videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1',
+        manifesto: 'A deeply poignant cinematic journey directed by Pushpendra Singh. In post-production, coming soon to silver screens across India.',
+        bgImage: '/assets/images/HeroImage2.webp',
+        posterImg: '/assets/images/aaoge_jab_tum_poster.webp',
+        subTag: 'Theatrical Release · Post Production',
+        videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
         ctaText: 'Explore Feature Film →',
         ctaLink: '/director',
-        secondaryText: 'Watch Showreel →',
+        secondaryText: 'Explore Archive →',
         secondaryLink: '/work'
       }
     ],
@@ -91,18 +92,19 @@ export const siteData = {
       name: 'Pushpendra Singh',
       tag: 'Indian Television & Film Director',
       role: 'Television & Film Director',
-      badge: 'Director · Ajmer 92 & Iconic Indian TV Classics',
-      img: '/assets/images/pushpenddra_singh.jpg',
+      badge: 'Writer & Director · Paid Palki & Iconic Indian TV Classics',
+      img: '/assets/images/pushpenddra_singh.webp',
       path: '/director',
       dob: '15 September 1981',
-      specialty: 'High-Impact Television Drama, Investigative Realism & Epic Narratives',
-      summary: 'Pushpendra Singh (born 15 September 1981) is an Indian Television and Film Director. He began his career as an associate director on Kyaa Hoga Nimmo Kaa and worked as second director on Ram Gopal Varma\'s landmark Bollywood film Sarkar (2005), before directing some of the most historic television series in Indian broadcasting history and acclaimed feature films like Ajmer 92.',
-      featureFilm: 'Ajmer 92 (2023) & Aaoge Jab Tum',
-      trailerVideo: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1',
+      specialty: 'High-Impact Television Drama, Social Realism & Epic Narratives',
+      summary: 'Pushpendra Singh (born 15 September 1981) is an Indian Television and Film Director. He began his career as an associate director on Kyaa Hoga Nimmo Kaa and worked as second director on Ram Gopal Varma\'s landmark Bollywood film Sarkar (2005), before directing some of the most historic television series in Indian broadcasting history and acclaimed feature films like Paid Palki and Aaoge Jab Tum.',
+      featureFilm: 'Paid Palki & Aaoge Jab Tum',
+      trailerVideo: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
       imdbUrl: 'https://www.imdb.com/name/nm9362954/',
       notableWorks: [
         'Sarkar (2005 Movie — Second Director)',
-        'Ajmer 92 (2023 Feature Film)',
+        'Paid Palki (Feature Film)',
+        'Aaoge Jab Tum (2026)',
         'Kahaani Ghar Ghar Kii (2008)',
         'Kyunki Saas Bhi Kabhi Bahu Thi (2006)',
         'Kis Desh Mein Hai Meraa Dil',
@@ -119,13 +121,14 @@ export const siteData = {
   featuredWorks: [
     {
       id: 1,
-      title: 'Ajmer 92 — Official Feature Film',
-      client: 'Reliance Entertainment / Chitralok Studios',
-      credit: 'Dir. Pushpendra Singh',
+      title: 'Paid Palki — Feature Film',
+      client: 'S&P Chitralok Studios',
+      credit: 'Writer & Dir. Pushpenddra Singh',
       cat: 'Film',
-      year: '2023',
-      img: '/assets/images/ajmer92_trailer_still.jpg',
-      videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
+      year: 'In Filming',
+      status: 'In Filming',
+      img: '/assets/images/HeroImage1.webp',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
       id: 2,
@@ -133,8 +136,9 @@ export const siteData = {
       client: 'Pushpendra Singh Productions',
       credit: 'Dir. Pushpendra Singh',
       cat: 'Film',
-      year: '2026',
-      img: '/assets/images/HeroImage2.jpg',
+      year: 'Post Production',
+      status: 'Post Production',
+      img: '/assets/images/HeroImage2.webp',
       videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
     },
     {
@@ -144,17 +148,17 @@ export const siteData = {
       credit: 'Second Director: Pushpendra Singh',
       cat: 'Film',
       year: '2005',
-      img: '/assets/images/sarkar_movie_hd.jpg',
+      img: '/assets/images/sarkar_movie_hd.webp',
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
       id: 4,
-      title: 'Ishq Toh Ishq Jaisa Hai — Official Song (Ajmer 92)',
-      client: 'Zee Music / Reliance Entertainment',
+      title: 'Ishq Toh Ishq Jaisa Hai — Official Music Video',
+      client: 'Zee Music / S&P Chitralok Studios',
       credit: 'Sung by Javed Ali · Dir. Pushpendra Singh',
       cat: 'Music',
       year: '2023',
-      img: '/assets/images/ishq_toh_ishq_jaisa_hai.jpg',
+      img: '/assets/images/ishq_toh_ishq_jaisa_hai.webp',
       videoUrl: 'https://www.youtube-nocookie.com/embed/NVeenPm69OE?autoplay=1'
     }
   ],
@@ -163,34 +167,40 @@ export const siteData = {
     {
       id: 1,
       cat: 'Film',
-      title: 'Ajmer 92 — Official Feature Film',
-      client: 'Reliance Entertainment / Chitralok Studios',
-      credit: 'Dir. Pushpendra Singh',
-      year: '2023',
-      genre: 'Investigative Crime Thriller',
-      director: 'Pushpendra Singh',
-      studio: 'Reliance Entertainment & Chitralok Studios',
-      milestone: 'Acclaimed National Theatrical Release',
-      img: '/assets/images/ajmer92_trailer_still.jpg',
-      bannerImg: '/assets/images/ajmer92_trailer_still.jpg',
-      synopsis: 'Based on the harrowing 1992 Ajmer blackmail and gang rape case, an uncompromising crime drama following an intrepid journalist and police officers uncovering an insidious web of power and exploitation targeting young collegiate women.',
+      title: 'Paid Palki — Feature Film',
+      client: 'S&P Chitralok Studios',
+      credit: 'Writer & Dir. Pushpenddra Singh',
+      year: 'In Filming',
+      status: 'In Filming',
+      milestone: 'In Filming',
+      genre: 'Social Drama / Rural Romance',
+      director: 'Pushpenddra Singh',
+      studio: 'S&P Chitralok Studios',
+      producers: 'Alok Ji, Pawan Ji, Amod Ji, Krishna Kant Ji, Santanu Ji, Vipul Ji',
+      screenplay: 'Pushpendrra Singh & Prragati Chauhaan',
+      dialogues: 'Shashank Singh',
+      dop: 'Shashank Sahu',
+      img: '/assets/images/HeroImage1.webp',
+      bannerImg: '/assets/images/HeroImage1.webp',
+      synopsis: 'Set in the heart of rural Madhya Pradesh, Santu, an unmarried young man facing societal pressure, is persuaded to buy a bride from a remote tribal settlement. Captivated by Kemli, a sheltered tribal girl, he brings her home where genuine affection blossoms between them. But when Kemli’s family forcibly takes her back, Santu embarks on an emotional struggle to reunite with the woman he loves—a powerful story of love emerging from exploitation and the courage to challenge human trafficking.',
       stills: [
-        { img: '/assets/images/ajmer92_trailer_still.jpg', title: 'Courtroom & Media Confrontation', tag: 'Principal Photography' },
-        { img: '/assets/images/ajmer92_poster.jpg', title: 'Theatrical Release Artwork', tag: 'Official Poster' },
-        { img: '/assets/images/bts_film_set.jpg', title: 'Pushpendra Singh Directing on 35mm Arri Rig', tag: 'Behind the Scenes' },
-        { img: '/assets/images/bts_rehearsal.jpg', title: 'Cast Scene Blocking & High-Stakes Rehearsal', tag: 'Production Still' }
+        { img: '/assets/images/paid_palki_poster.webp', title: 'Official Theatrical 1-Sheet Poster', tag: 'Theatrical Art' },
+        { img: '/assets/images/paid_palki_banner.webp', title: 'Official Paid Palki Key Art', tag: 'Master Artwork' },
+        { img: '/assets/images/paid_palki_still.webp', title: 'Rural MP Settlement & Village Landscape', tag: 'Cinematic Frame' },
+        { img: '/assets/images/bts_film_set.webp', title: 'Pushpenddra Singh Directing on 35mm Cinema Rig', tag: 'Behind the Scenes' },
+        { img: '/assets/images/bts_rehearsal.webp', title: 'Cast Scene Blocking & Character Reading', tag: 'Production Still' }
       ],
       cast: [
-        { actor: 'Karan Verma', character: 'Madhav Verma', role: 'Investigative Journalist / Protagonist' },
-        { actor: 'Sumit Singh', character: 'Geeta Singh', role: 'Lead Female Protagonist' },
-        { actor: 'Rajesh Sharma', character: 'SP Ranjit Singh', role: 'Superintendent of Police', img: '/assets/images/cast/rajesh_sharma.jpg' },
-        { actor: 'Brijendra Kala', character: 'Jagdish Verma', role: 'Senior Journalist & Father', img: '/assets/images/cast/brijendra_kala.jpg' },
-        { actor: 'Zarina Wahab', character: 'Urmila Verma', role: "Madhav's Mother", img: '/assets/images/cast/zarina_wahab.jpg' },
-        { actor: 'Sayaji Shinde', character: 'DIG Shekhawat', role: 'Deputy Inspector General', img: '/assets/images/cast/sayaji_shinde.jpg' },
-        { actor: 'Manoj Joshi', character: 'Chief Minister', role: 'State Minister', img: '/assets/images/cast/manoj_joshi.jpg' },
-        { actor: 'Shalini Kapoor', character: 'Surya Kumari', role: 'College Principal' }
+        { actor: 'Chandan Roy', character: 'Santh Kumar (Santu)', role: 'Lead Protagonist', img: '/assets/images/cast/chandan_roy.webp' },
+        { actor: 'Prragati Chauhaan', character: 'Kemli', role: 'Lead Protagonist', img: '/assets/images/cast/prragati_chauhaan.webp' },
+        { actor: 'Durgesh Kumar', character: 'Chaturbhuj (Phupha Ji)', role: 'Key Supporting', img: '/assets/images/cast/durgesh_kumar.webp' },
+        { actor: 'Sunita Rajwar', character: "Santu's Mother", role: 'Key Supporting', img: '/assets/images/cast/sunita_rajwar.webp' },
+        { actor: 'Omkar Das Manikpuri', character: "Kodulal (Kemli's Father)", role: 'Supporting Cast', img: '/assets/images/cast/omkar_das_manikpuri.webp' },
+        { actor: 'Sapna Sand', character: "Sukhiya (Kemli's Mother)", role: 'Supporting Cast', img: '/assets/images/cast/sapna_sand.webp' },
+        { actor: 'Kumar Saurav', character: 'Jamai', role: 'Middleman', img: '/assets/images/cast/kumar_saurav.webp' },
+        { actor: 'Bhaskar Jha', character: 'Naresh', role: 'Antagonist', img: '/assets/images/cast/bhaskar_jha.webp' }
       ],
-      videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
+      videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
       id: 2,
@@ -198,19 +208,20 @@ export const siteData = {
       title: 'Aaoge Jab Tum — Theatrical Feature',
       client: 'Pushpendra Singh Productions',
       credit: 'Dir. Pushpendra Singh',
-      year: '2026',
+      year: 'Post Production',
+      status: 'Post Production',
+      milestone: 'Post Production',
       genre: 'Romantic Drama / Musical Odyssey',
       director: 'Pushpendra Singh',
       studio: 'Pushpendra Singh Productions',
-      milestone: 'Upcoming Directorial Feature Film',
-      img: '/assets/images/HeroImage2.jpg',
-      bannerImg: '/assets/images/HeroImage2.jpg',
+      img: '/assets/images/HeroImage2.webp',
+      bannerImg: '/assets/images/HeroImage2.webp',
       synopsis: 'An evocative upcoming directorial feature by Pushpendra Singh exploring themes of profound longing, destiny, and timeless romance across evocative cultural landscapes, set against an unforgettable classical music score.',
       stills: [
-        { img: '/assets/images/HeroImage2.jpg', title: 'Theatrical Landscape Visual Experience', tag: 'Master Key Art' },
-        { img: '/assets/images/aaoge_jab_tum_poster.jpg', title: 'Official Theatrical Teaser Poster', tag: 'Poster' },
-        { img: '/assets/images/bts_sound_mixing.jpg', title: 'Dolby Atmos Master Scoring Stage', tag: 'Soundstage' },
-        { img: '/assets/images/about_studio_soundstage.jpg', title: 'Chitralok Studio Production Floor', tag: 'Studio Set' }
+        { img: '/assets/images/HeroImage2.webp', title: 'Theatrical Landscape Visual Experience', tag: 'Master Key Art' },
+        { img: '/assets/images/aaoge_jab_tum_poster.webp', title: 'Official Theatrical Teaser Poster', tag: 'Poster' },
+        { img: '/assets/images/bts_sound_mixing.webp', title: 'Dolby Atmos Master Scoring Stage', tag: 'Soundstage' },
+        { img: '/assets/images/about_studio_soundstage.webp', title: 'Chitralok Studio Production Floor', tag: 'Studio Set' }
       ],
       cast: [
         { actor: 'Ensemble Cast', character: 'Narrative Ensemble', role: 'Principal Cast' },
@@ -229,21 +240,21 @@ export const siteData = {
       director: 'Ram Gopal Varma · Second Dir. Pushpendra Singh',
       studio: 'K Sera Sera & RGV Film Company',
       milestone: 'Iconic Indian Cinematic Masterpiece',
-      img: '/assets/images/sarkar_movie_hd.jpg',
-      bannerImg: '/assets/images/sarkar_movie_hd.jpg',
+      img: '/assets/images/sarkar_movie_hd.webp',
+      bannerImg: '/assets/images/sarkar_movie_hd.webp',
       synopsis: 'The landmark Indian political crime epic inspired by The Godfather, chronicling the reign of patriarch Subhash Nagre, an extra-governmental justice figure in Mumbai, and his younger son Shankar who steps into the crucible to defend the dynasty.',
       stills: [
-        { img: '/assets/images/sarkar_movie_hd.jpg', title: 'Subhash & Shankar Nagre Council Confrontation', tag: 'Iconic Still' },
-        { img: '/assets/images/sarkar_prime_hd.jpg', title: 'Subhash Nagre Public Address to Mumbai', tag: 'Prime Video HD' },
-        { img: '/assets/images/sarkar_movie_poster.jpg', title: 'Original Theatrical Release One-Sheet', tag: 'Theatrical Art' },
-        { img: '/assets/images/cd04039d-35ae-4094-88d2-d39d430fe44c.jpg', title: 'Anamorphic 35mm Master Cinematography Frame', tag: 'Master Film Frame' }
+        { img: '/assets/images/sarkar_movie_hd.webp', title: 'Subhash & Shankar Nagre Council Confrontation', tag: 'Iconic Still' },
+        { img: '/assets/images/sarkar_prime_hd.webp', title: 'Subhash Nagre Public Address to Mumbai', tag: 'Prime Video HD' },
+        { img: '/assets/images/sarkar_movie_poster.webp', title: 'Original Theatrical Release One-Sheet', tag: 'Theatrical Art' },
+        { img: '/assets/images/cd04039d-35ae-4094-88d2-d39d430fe44c.webp', title: 'Anamorphic 35mm Master Cinematography Frame', tag: 'Master Film Frame' }
       ],
       cast: [
-        { actor: 'Amitabh Bachchan', character: "Subhash Nagre 'Sarkar'", role: 'Patriarch & Titular Lead', img: '/assets/images/cast/amitabh_bachchan.jpg' },
-        { actor: 'Abhishek Bachchan', character: 'Shankar Nagre', role: 'Son & Successor', img: '/assets/images/cast/abhishek_bachchan.jpg' },
-        { actor: 'Kay Kay Menon', character: 'Vishnu Nagre', role: 'Elder Son', img: '/assets/images/cast/kay_kay_menon.jpg' },
-        { actor: 'Katrina Kaif', character: 'Pooja', role: "Shankar's Fiancée", img: '/assets/images/cast/katrina_kaif.jpg' },
-        { actor: 'Anupam Kher', character: 'Motilal Khurana', role: 'Opposition Politician', img: '/assets/images/cast/anupam_kher.jpg' },
+        { actor: 'Amitabh Bachchan', character: "Subhash Nagre 'Sarkar'", role: 'Patriarch & Titular Lead', img: '/assets/images/cast/amitabh_bachchan.webp' },
+        { actor: 'Abhishek Bachchan', character: 'Shankar Nagre', role: 'Son & Successor', img: '/assets/images/cast/abhishek_bachchan.webp' },
+        { actor: 'Kay Kay Menon', character: 'Vishnu Nagre', role: 'Elder Son', img: '/assets/images/cast/kay_kay_menon.webp' },
+        { actor: 'Katrina Kaif', character: 'Pooja', role: "Shankar's Fiancée", img: '/assets/images/cast/katrina_kaif.webp' },
+        { actor: 'Anupam Kher', character: 'Motilal Khurana', role: 'Opposition Politician', img: '/assets/images/cast/anupam_kher.webp' },
         { actor: 'Supriya Pathak', character: 'Pushpa Nagre', role: 'Wife of Sarkar' },
         { actor: 'Kota Srinivasa Rao', character: 'Silver Mani', role: 'Key Antagonist' },
         { actor: 'Tanishaa Mukerji', character: 'Avantika', role: 'Family Confidante' }
@@ -261,16 +272,16 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Zee Music Company & Reliance Entertainment',
       milestone: 'Multi-Million Streaming Romantic Anthem',
-      img: '/assets/images/ishq_toh_ishq_jaisa_hai.jpg',
-      bannerImg: '/assets/images/ishq_toh_ishq_jaisa_hai.jpg',
-      synopsis: 'The official romantic and introspective ballad from the feature film Ajmer 92, composed with traditional instrumentation and performed with soulful vulnerability by National Award-winning vocalist Javed Ali.',
+      img: '/assets/images/ishq_toh_ishq_jaisa_hai.webp',
+      bannerImg: '/assets/images/ishq_toh_ishq_jaisa_hai.webp',
+      synopsis: 'The official romantic and introspective ballad composed with traditional instrumentation and performed with soulful vulnerability by National Award-winning vocalist Javed Ali, directed by Pushpendra Singh.',
       stills: [
-        { img: '/assets/images/ishq_toh_ishq_jaisa_hai.jpg', title: 'Javed Ali Soulful Vocal Performance', tag: 'Official Music Video' },
-        { img: '/assets/images/ajmer92_trailer_still.jpg', title: 'Cinematic Narrative Couple Frame', tag: 'Featured Scene' },
-        { img: '/assets/images/bts_sound_mixing.jpg', title: 'Live Symphony & Vocal Tracking Session', tag: 'Acoustic Studio' }
+        { img: '/assets/images/ishq_toh_ishq_jaisa_hai.webp', title: 'Javed Ali Soulful Vocal Performance', tag: 'Official Music Video' },
+        { img: '/assets/images/paid_palki_banner.webp', title: 'Cinematic Narrative Master Visual', tag: 'Featured Scene' },
+        { img: '/assets/images/bts_sound_mixing.webp', title: 'Live Symphony & Vocal Tracking Session', tag: 'Acoustic Studio' }
       ],
       cast: [
-        { actor: 'Javed Ali', character: 'Lead Playback Vocalist', role: 'National Award Winner', img: '/assets/images/cast/javed_ali.jpg' },
+        { actor: 'Javed Ali', character: 'Lead Playback Vocalist', role: 'National Award Winner', img: '/assets/images/cast/javed_ali.webp' },
         { actor: 'Karan Verma', character: 'Madhav Verma', role: 'Featured Actor' },
         { actor: 'Sumit Singh', character: 'Geeta Singh', role: 'Featured Actor' },
         { actor: 'Parth Sakalley', character: 'Music Direction & Composition', role: 'Composer' }
@@ -288,13 +299,13 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Aurum Brand Studios & Chitralok Films',
       milestone: 'High-Fashion Royal Brand Campaign',
-      img: '/assets/images/aurum_jewels_hd.jpg',
-      bannerImg: '/assets/images/aurum_jewels_hd.jpg',
+      img: '/assets/images/aurum_jewels_hd.webp',
+      bannerImg: '/assets/images/aurum_jewels_hd.webp',
       synopsis: 'A high-concept commercial campaign capturing timeless royal heritage and immaculate gold craftsmanship. Directed by Pushpendra Singh, utilizing anamorphic lenses and soft golden-hour natural illumination.',
       stills: [
-        { img: '/assets/images/aurum_jewels_hd.jpg', title: 'The Golden Hour 16:9 Widescreen Frame', tag: 'Commercial Master' },
-        { img: '/assets/images/aurum_jewels.jpg', title: 'Royal Heritage Jewelry Editorial Frame', tag: 'Print Campaign' },
-        { img: '/assets/images/bts_camera_rig.jpg', title: 'Lighting Masterclass & Anamorphic Camera Rig', tag: 'Behind the Scenes' }
+        { img: '/assets/images/aurum_jewels_hd.webp', title: 'The Golden Hour 16:9 Widescreen Frame', tag: 'Commercial Master' },
+        { img: '/assets/images/aurum_jewels.webp', title: 'Royal Heritage Jewelry Editorial Frame', tag: 'Print Campaign' },
+        { img: '/assets/images/bts_camera_rig.webp', title: 'Lighting Masterclass & Anamorphic Camera Rig', tag: 'Behind the Scenes' }
       ],
       cast: [
         { actor: 'Maya Sen', character: 'Royal Protagonist', role: 'Brand Ambassador / Model' },
@@ -314,13 +325,13 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Zee TV & Parin Multimedia',
       milestone: '500+ Prime Time Episodes on Zee TV',
-      img: '/assets/images/zindagi_ki_mehek.jpg',
-      bannerImg: '/assets/images/zindagi_ki_mehek.jpg',
+      img: '/assets/images/zindagi_ki_mehek.webp',
+      bannerImg: '/assets/images/zindagi_ki_mehek.webp',
       synopsis: 'A groundbreaking prime-time romance drama set against Delhi culinary culture, tracking the clash and electric chemistry between passionate home-cook Mehek and ruthless restaurateur Shaurya Khanna.',
       stills: [
-        { img: '/assets/images/zindagi_ki_mehek.jpg', title: 'Mehek & Shaurya Dramatic Kitchen Confrontation', tag: 'ZEE5 Master Frame' },
-        { img: '/assets/images/bts_film_set.jpg', title: 'Multi-Camera Studio Production Set', tag: 'Behind the Scenes' },
-        { img: '/assets/images/bts_rehearsal.jpg', title: 'Scene Dialogue Walkthrough & Script Session', tag: 'Rehearsal' }
+        { img: '/assets/images/zindagi_ki_mehek.webp', title: 'Mehek & Shaurya Dramatic Kitchen Confrontation', tag: 'ZEE5 Master Frame' },
+        { img: '/assets/images/bts_film_set.webp', title: 'Multi-Camera Studio Production Set', tag: 'Behind the Scenes' },
+        { img: '/assets/images/bts_rehearsal.webp', title: 'Scene Dialogue Walkthrough & Script Session', tag: 'Rehearsal' }
       ],
       cast: [
         { actor: 'Samiksha Jaiswal', character: 'Mehek Sharma / Vandana', role: 'Lead Female Protagonist' },
@@ -342,17 +353,17 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Star Plus & Balaji Telefilms',
       milestone: 'Historic 1600+ Episodes TV Legend',
-      img: '/assets/images/kahaani_ghar_ghar_kii.jpg',
-      bannerImg: '/assets/images/kahaani_ghar_ghar_kii.jpg',
+      img: '/assets/images/kahaani_ghar_ghar_kii.webp',
+      bannerImg: '/assets/images/kahaani_ghar_ghar_kii.webp',
       synopsis: 'One of Indian television most celebrated and influential family sagas, chronicling the trials, moral values, and unbreakable bonds of the Agarwal household under the quiet strength of its ideal daughter-in-law, Parvati.',
       stills: [
-        { img: '/assets/images/kahaani_ghar_ghar_kii.jpg', title: 'Parvati & Om Agarwal Iconic Moment', tag: 'JioHotstar 1080p Master' },
-        { img: '/assets/images/bts_film_set.jpg', title: 'Balaji Telefilms Golden Era Production Floor', tag: 'Behind the Scenes' },
-        { img: '/assets/images/bts_sound_mixing.jpg', title: 'Iconic Title Song Studio Recording', tag: 'Theme Score' }
+        { img: '/assets/images/kahaani_ghar_ghar_kii.webp', title: 'Parvati & Om Agarwal Iconic Moment', tag: 'JioHotstar 1080p Master' },
+        { img: '/assets/images/bts_film_set.webp', title: 'Balaji Telefilms Golden Era Production Floor', tag: 'Behind the Scenes' },
+        { img: '/assets/images/bts_sound_mixing.webp', title: 'Iconic Title Song Studio Recording', tag: 'Theme Score' }
       ],
       cast: [
-        { actor: 'Sakshi Tanwar', character: 'Parvati Agarwal', role: 'Iconic Lead Protagonist', img: '/assets/images/cast/sakshi_tanwar.jpg' },
-        { actor: 'Ali Asgar', character: 'Kamal Agarwal', role: 'Brother', img: '/assets/images/cast/ali_asgar.jpg' },
+        { actor: 'Sakshi Tanwar', character: 'Parvati Agarwal', role: 'Iconic Lead Protagonist', img: '/assets/images/cast/sakshi_tanwar.webp' },
+        { actor: 'Ali Asgar', character: 'Kamal Agarwal', role: 'Brother', img: '/assets/images/cast/ali_asgar.webp' },
         { actor: 'Kiran Karmarkar', character: 'Om Agarwal', role: 'Lead Male Protagonist' },
         { actor: 'Deepak Qazir', character: 'Vishwanath Agarwal (Babuji)', role: 'Family Patriarch' },
         { actor: 'Chetan Hansraj', character: 'Saasha', role: 'Antagonist' },
@@ -371,17 +382,17 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Star Plus & Balaji Telefilms',
       milestone: 'Record-Breaking 1833 Episodes Culture Shaper',
-      img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.jpg',
-      bannerImg: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.jpg',
+      img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.webp',
+      bannerImg: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.webp',
       synopsis: 'The cultural milestone that redefined South Asian entertainment across the globe, chronicling three generations of the grand Virani joint family in Gujarat guided by the moral compass and fortitude of Tulsi Virani.',
       stills: [
-        { img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.jpg', title: 'Tulsi Virani Shanti Niketan Grand Arrival', tag: '1280x720 HD Broadcast' },
-        { img: '/assets/images/bts_film_set.jpg', title: 'Virani Haveli Architectural Studio Floor', tag: 'Production Set' },
-        { img: '/assets/images/bts_rehearsal.jpg', title: 'Grand Ensemble Cast Script Coordination', tag: 'Cast Rehearsal' }
+        { img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.webp', title: 'Tulsi Virani Shanti Niketan Grand Arrival', tag: '1280x720 HD Broadcast' },
+        { img: '/assets/images/bts_film_set.webp', title: 'Virani Haveli Architectural Studio Floor', tag: 'Production Set' },
+        { img: '/assets/images/bts_rehearsal.webp', title: 'Grand Ensemble Cast Script Coordination', tag: 'Cast Rehearsal' }
       ],
       cast: [
-        { actor: 'Smriti Irani', character: 'Tulsi Virani', role: 'Legendary Lead Protagonist', img: '/assets/images/cast/smriti_irani.jpg' },
-        { actor: 'Ronit Roy', character: 'Mihir Virani (Subsequent)', role: 'Lead Male Role', img: '/assets/images/cast/ronit_roy.jpg' },
+        { actor: 'Smriti Irani', character: 'Tulsi Virani', role: 'Legendary Lead Protagonist', img: '/assets/images/cast/smriti_irani.webp' },
+        { actor: 'Ronit Roy', character: 'Mihir Virani (Subsequent)', role: 'Lead Male Role', img: '/assets/images/cast/ronit_roy.webp' },
         { actor: 'Amar Upadhyay', character: 'Mihir Virani', role: 'Husband & Scion' },
         { actor: 'Sudha Shivpuri', character: 'Baa (Amba Govardhan Virani)', role: 'Matriarch' },
         { actor: 'Hiten Tejwani', character: 'Karan Virani', role: 'Son & Moral Successor' },
@@ -400,13 +411,13 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Colors TV & Sagar Pictures',
       milestone: 'Top-Rated Colors TV Mythological Flagship',
-      img: '/assets/images/jai_shri_krishna.jpg',
-      bannerImg: '/assets/images/jai_shri_krishna.jpg',
+      img: '/assets/images/jai_shri_krishna.webp',
+      bannerImg: '/assets/images/jai_shri_krishna.webp',
       synopsis: 'An exquisite mythological production chronicling the divine bal-leela (childhood miracles), pastoral charms of Vrindavan, and ultimate victory of Lord Krishna over the tyrant Kansa.',
       stills: [
-        { img: '/assets/images/jai_shri_krishna.jpg', title: 'Little Makhan-Chor Bal Krishna in Vrindavan', tag: '1280x720 HD Master' },
-        { img: '/assets/images/bts_camera_rig.jpg', title: 'Sagar Arts Divine Visual Effects & Lighting Rig', tag: 'Camera Setup' },
-        { img: '/assets/images/about_studio_soundstage.jpg', title: 'Gokul & Mathura Palace Set Architecture', tag: 'Studio Set' }
+        { img: '/assets/images/jai_shri_krishna.webp', title: 'Little Makhan-Chor Bal Krishna in Vrindavan', tag: '1280x720 HD Master' },
+        { img: '/assets/images/bts_camera_rig.webp', title: 'Sagar Arts Divine Visual Effects & Lighting Rig', tag: 'Camera Setup' },
+        { img: '/assets/images/about_studio_soundstage.webp', title: 'Gokul & Mathura Palace Set Architecture', tag: 'Studio Set' }
       ],
       cast: [
         { actor: 'Dhriti Bhatia', character: 'Bal Krishna (Child)', role: 'Titular Divine Lead' },
@@ -429,12 +440,12 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'STAR One & Sagar Arts',
       milestone: 'Opulent Kalidasa Sanskrit Classic Adaptation',
-      img: '/assets/images/shakuntala.jpg',
-      bannerImg: '/assets/images/shakuntala.jpg',
+      img: '/assets/images/shakuntala.webp',
+      bannerImg: '/assets/images/shakuntala.webp',
       synopsis: 'A grand visual adaptation of Kalidasa classical Sanskrit masterpiece Abhijnanasakuntalam, narrating the fated love, curse-driven separation, and royal reunion of King Dushyanta and forest maiden Shakuntala.',
       stills: [
-        { img: '/assets/images/shakuntala.jpg', title: 'Princess Shakuntala in Ancient Forest Sanctuary', tag: '1280x720 HD Master' },
-        { img: '/assets/images/bts_camera_rig.jpg', title: 'Sagar Arts Mythological Exterior Lighting Rig', tag: 'Camera Rig' }
+        { img: '/assets/images/shakuntala.webp', title: 'Princess Shakuntala in Ancient Forest Sanctuary', tag: '1280x720 HD Master' },
+        { img: '/assets/images/bts_camera_rig.webp', title: 'Sagar Arts Mythological Exterior Lighting Rig', tag: 'Camera Rig' }
       ],
       cast: [
         { actor: 'Neha Mehta', character: 'Shakuntala', role: 'Title Role / Forest Princess' },
@@ -456,12 +467,12 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'NDTV Imagine & Sagar Arts',
       milestone: 'Critically Acclaimed Biographical Television Drama',
-      img: '/assets/images/meera.jpg',
-      bannerImg: '/assets/images/meera.jpg',
+      img: '/assets/images/meera.webp',
+      bannerImg: '/assets/images/meera.webp',
       synopsis: 'The inspiring biographical chronicle celebrating 16th-century Rajput princess-poet Meera Bai, whose sublime devotion to Lord Krishna challenged regal tyranny, orthodox society, and mortal threats.',
       stills: [
-        { img: '/assets/images/meera.jpg', title: 'Young Meera Bai Divine Bhajan Recital', tag: '1280x720 HD Master' },
-        { img: '/assets/images/bts_sound_mixing.jpg', title: 'Classical Devotional Scoring Orchestration', tag: 'Music Stage' }
+        { img: '/assets/images/meera.webp', title: 'Young Meera Bai Divine Bhajan Recital', tag: '1280x720 HD Master' },
+        { img: '/assets/images/bts_sound_mixing.webp', title: 'Classical Devotional Scoring Orchestration', tag: 'Music Stage' }
       ],
       cast: [
         { actor: 'Aashika Bhatia', character: 'Young Meera Bai', role: 'Child Prodigy Lead' },
@@ -483,16 +494,16 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Star Plus & Balaji Telefilms',
       milestone: '444 Episodes & Sushant Singh Rajput Historic Screen Debut',
-      img: '/assets/images/kis_desh_mein_hai_meraa_dil.jpg',
-      bannerImg: '/assets/images/kis_desh_mein_hai_meraa_dil.jpg',
+      img: '/assets/images/kis_desh_mein_hai_meraa_dil.webp',
+      bannerImg: '/assets/images/kis_desh_mein_hai_meraa_dil.webp',
       synopsis: 'A sweeping cross-border romance depicting unconditional devotion and personal sacrifice. It notably introduced Sushant Singh Rajput in his television acting debut as the beloved younger brother Preet Juneja.',
       stills: [
-        { img: '/assets/images/kis_desh_mein_hai_meraa_dil.jpg', title: 'Sushant Singh Rajput Debut Scene as Preet Juneja', tag: '1280x720 HD Debut Frame' },
-        { img: '/assets/images/bts_film_set.jpg', title: 'Balaji Telefilms North India Outdoor Unit', tag: 'Location Shoot' }
+        { img: '/assets/images/kis_desh_mein_hai_meraa_dil.webp', title: 'Sushant Singh Rajput Debut Scene as Preet Juneja', tag: '1280x720 HD Debut Frame' },
+        { img: '/assets/images/bts_film_set.webp', title: 'Balaji Telefilms North India Outdoor Unit', tag: 'Location Shoot' }
       ],
       cast: [
-        { actor: 'Sushant Singh Rajput', character: 'Preet Juneja', role: 'Beloved Brother (Screen Debut)', img: '/assets/images/cast/sushant_singh_rajput.jpg' },
-        { actor: 'Harshad Chopda', character: 'Prem Juneja', role: 'Lead Male Protagonist', img: '/assets/images/cast/harshad_chopda.jpg' },
+        { actor: 'Sushant Singh Rajput', character: 'Preet Juneja', role: 'Beloved Brother (Screen Debut)', img: '/assets/images/cast/sushant_singh_rajput.webp' },
+        { actor: 'Harshad Chopda', character: 'Prem Juneja', role: 'Lead Male Protagonist', img: '/assets/images/cast/harshad_chopda.webp' },
         { actor: 'Additi Gupta', character: 'Heer Maan', role: 'Lead Female Protagonist' },
         { actor: 'Meher Vij', character: 'Meher Maan', role: 'Sister' },
         { actor: 'Mahesh Shetty', character: 'Nihaal Balwant Mann', role: 'Key Antagonist' }
@@ -510,15 +521,15 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Sony TV & Balaji Telefilms',
       milestone: 'Prime Time Sony TV Romantic Comedy',
-      img: '/assets/images/kuchh_is_tara.jpg',
-      bannerImg: '/assets/images/kuchh_is_tara.jpg',
+      img: '/assets/images/kuchh_is_tara.webp',
+      bannerImg: '/assets/images/kuchh_is_tara.webp',
       synopsis: 'A witty, lighthearted romantic comedy chronicling Kanya Godbole, an optimistic girl living with a split identity condition who finds herself in a whirlwind contract marriage within the elite Nanda business empire.',
       stills: [
-        { img: '/assets/images/kuchh_is_tara.jpg', title: 'Kanya Godbole & Ranbir Nanda Wedding Sequence', tag: '1280x720 HD Broadcast' },
-        { img: '/assets/images/bts_rehearsal.jpg', title: 'Studio Rehearsal & Comic Timing Session', tag: 'Rehearsal' }
+        { img: '/assets/images/kuchh_is_tara.webp', title: 'Kanya Godbole & Ranbir Nanda Wedding Sequence', tag: '1280x720 HD Broadcast' },
+        { img: '/assets/images/bts_rehearsal.webp', title: 'Studio Rehearsal & Comic Timing Session', tag: 'Rehearsal' }
       ],
       cast: [
-        { actor: 'Dimple Jhangiani', character: 'Kanya Godbole / Natasha', role: 'Dual Identity Protagonist', img: '/assets/images/cast/dimple_jhangiani.jpg' },
+        { actor: 'Dimple Jhangiani', character: 'Kanya Godbole / Natasha', role: 'Dual Identity Protagonist', img: '/assets/images/cast/dimple_jhangiani.webp' },
         { actor: 'Akashdeep Saigal', character: 'Ranbir Nanda', role: 'Lead Male Protagonist' },
         { actor: 'Vishal Singh', character: 'Ayan Nanda', role: 'Corporate Scion' },
         { actor: 'Sudha Chandran', character: 'Mallika Nanda', role: 'Business Matriarch' }
@@ -536,18 +547,18 @@ export const siteData = {
       director: 'Pushpendra Singh',
       studio: 'Zee TV & Siddhant Cinevision',
       milestone: 'Critically Acclaimed Shobhaa De Political Drama',
-      img: '/assets/images/sarkar.jpg',
-      bannerImg: '/assets/images/sarkar.jpg',
+      img: '/assets/images/sarkar.webp',
+      bannerImg: '/assets/images/sarkar.webp',
       synopsis: 'A gripping political drama serial penned by Shobhaa De exploring power dynamics, electoral stratagems, and backroom political betrayals within a prominent political dynasty headed by matriarch Priyamvada.',
       stills: [
-        { img: '/assets/images/sarkar.jpg', title: 'Political Matriarch Priyamvada in Heated Debate', tag: '1280x720 HD Broadcast' },
-        { img: '/assets/images/bts_camera_rig.jpg', title: 'Siddhant Cinevision Political Chamber Lighting', tag: 'Studio Rig' }
+        { img: '/assets/images/sarkar.webp', title: 'Political Matriarch Priyamvada in Heated Debate', tag: '1280x720 HD Broadcast' },
+        { img: '/assets/images/bts_camera_rig.webp', title: 'Siddhant Cinevision Political Chamber Lighting', tag: 'Studio Rig' }
       ],
       cast: [
-        { actor: 'Rajat Kapoor', character: 'Kumar', role: 'Political Strategist', img: '/assets/images/cast/rajat_kapoor.jpg' },
-        { actor: 'Ronit Roy', character: 'Kunal', role: 'Dynastic Scion', img: '/assets/images/cast/ronit_roy.jpg' },
-        { actor: 'Rohit Roy', character: 'Karan', role: 'Ambitious Younger Brother', img: '/assets/images/cast/rohit_roy.jpg' },
-        { actor: 'Tisca Chopra', character: 'Shweta', role: 'Political Confidante', img: '/assets/images/cast/tisca_chopra.jpg' },
+        { actor: 'Rajat Kapoor', character: 'Kumar', role: 'Political Strategist', img: '/assets/images/cast/rajat_kapoor.webp' },
+        { actor: 'Ronit Roy', character: 'Kunal', role: 'Dynastic Scion', img: '/assets/images/cast/ronit_roy.webp' },
+        { actor: 'Rohit Roy', character: 'Karan', role: 'Ambitious Younger Brother', img: '/assets/images/cast/rohit_roy.webp' },
+        { actor: 'Tisca Chopra', character: 'Shweta', role: 'Political Confidante', img: '/assets/images/cast/tisca_chopra.webp' },
         { actor: 'Divya Seth', character: 'Priyamvada', role: 'Political Matriarch & Kingmaker' }
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
@@ -563,17 +574,16 @@ export const siteData = {
       director: 'Associate Dir. Pushpendra Singh',
       studio: 'STAR One & Balaji Telefilms',
       milestone: 'Beloved 200+ Episode Romantic Comedy',
-      img: '/assets/images/kyaa_hoga_nimmo_kaa.jpg',
-      bannerImg: '/assets/images/kyaa_hoga_nimmo_kaa.jpg',
+      img: '/assets/images/kyaa_hoga_nimmo_kaa.webp',
+      bannerImg: '/assets/images/kyaa_hoga_nimmo_kaa.webp',
       synopsis: 'A cheerful romantic comedy tracing the life of Nimmo, a charming middle-class girl with perpetual bad luck, whose unexpected arrangement with high-flying billionaire Kunal Sehgal evolves into genuine tenderness.',
       stills: [
-        { img: '/assets/images/kyaa_hoga_nimmo_kaa.jpg', title: 'Nimmo & Kunal Sehgal Humorous Moment', tag: '1280x720 HD Broadcast' },
-        { img: '/assets/images/bts_film_set.jpg', title: 'Balaji Telefilms Star One Comedy Stage', tag: 'Behind the Scenes' }
+        { img: '/assets/images/kyaa_hoga_nimmo_kaa.webp', title: 'Nimmo & Kunal Sehgal Humorous Moment', tag: '1280x720 HD Broadcast' },
+        { img: '/assets/images/bts_film_set.webp', title: 'Balaji Telefilms Star One Comedy Stage', tag: 'Behind the Scenes' }
       ],
       cast: [
-        { actor: 'Sanjeeda Sheikh', character: 'Namrata "Nimmo" Mathuria', role: 'Titular Lead Protagonist', img: '/assets/images/cast/sanjeeda_sheikh.jpg' },
-        { actor: 'Eijaz Khan', character: 'Kunal Sehgal', role: 'Billionaire Protagonist', img: '/assets/images/cast/eijaz_khan.jpg' },
-        { actor: 'Sanjit Bedi', character: 'Vikrant', role: 'Supporting Lead' },
+        { actor: 'Sanjeeda Sheikh', character: 'Namrata "Nimmo" Mathuria', role: 'Titular Lead Protagonist', img: '/assets/images/cast/sanjeeda_sheikh.webp' },
+        { actor: 'Eijaz Khan', character: 'Kunal Sehgal', role: 'Billionaire Protagonist', img: '/assets/images/cast/eijaz_khan.webp' },
         { actor: 'Garima Kapoor', character: 'Natasha', role: 'Key Antagonist' },
         { actor: 'Navneet Nishan', character: 'Parminder', role: 'Mother' }
       ],
@@ -583,29 +593,29 @@ export const siteData = {
 
   btsGallery: [
     {
-      title: 'Ajmer 92 — Principal Photography Location',
-      meta: 'Pushpendra Singh directing high-stakes dramatic scene · 35mm Arri Alexa',
-      img: '/assets/images/bts_film_set.jpg'
+      title: 'Paid Palki — Principal Photography Location',
+      meta: 'Pushpendra Singh directing high-stakes dramatic scene · 35mm Cinema Rig',
+      img: '/assets/images/bts_film_set.webp'
     },
     {
       title: 'Aurum Jewels — Lighting Masterclass',
       meta: 'Chitralok Cinematography Unit · Anamorphic Prime Lenses & Monitor Rig',
-      img: '/assets/images/bts_camera_rig.jpg'
+      img: '/assets/images/bts_camera_rig.webp'
     },
     {
       title: 'Velocity Motors — High-Speed Pursuit Car Rig',
       meta: 'Chitralok Action Unit · Pursuit Arm Rig & Precision Stabilizer',
-      img: '/assets/images/bts_pursuit_rig.jpg'
+      img: '/assets/images/bts_pursuit_rig.webp'
     },
     {
       title: 'Directorial Rehearsal & Screenplay Polish',
       meta: 'Pushpendra Singh conducting intensive character reading with ensemble',
-      img: '/assets/images/bts_rehearsal.jpg'
+      img: '/assets/images/bts_rehearsal.webp'
     },
     {
       title: 'Post-Production & Atmos Sound Mixing',
       meta: 'Chitralok Studio 4 · Dolby Atmos 7.1.4 Surround & Final Color DI',
-      img: '/assets/images/bts_sound_mixing.jpg'
+      img: '/assets/images/bts_sound_mixing.webp'
     }
   ],
 
@@ -628,7 +638,7 @@ export const siteData = {
     headingPart1: 'We see',
     headingAccent: 'cinema',
     headingPart2: 'as craft first: every frame planned, every story earned.',
-    bannerImg: '/assets/images/about_studio_soundstage.jpg',
+    bannerImg: '/assets/images/about_studio_soundstage.webp',
     p1: 'Chitralok Studios began with one camera, a tight-knit unit, and an uncompromising belief: stories from India deserve the discipline and artistic depth of world cinema. Today, we stand as a premier creative production hub headquartered in Lucknow.',
     p2: 'We are celebrated for commercial advertising that carries the soul and patience of auteur cinema, and independent productions executed with international commercial rigor. Our core directors, DoPs, sound engineers, and post-production artists collaborate like a synchronized orchestra.',
     steps: [
@@ -636,18 +646,59 @@ export const siteData = {
       { n: '02', title: 'Produce', text: 'World-class camera gear, precision lighting, casting, location scouting, and a seasoned unit executing under tight timelines.' },
       { n: '03', title: 'Finish', text: 'High-end DI color grading, Dolby Atmos sound design, editorial rhythm and VFX delivered to master standards.' }
     ],
-    stats: [
-      { v: '120+', l: 'Productions Delivered' },
-      { v: '18+', l: 'Years in Industry' },
-      { v: '10+', l: 'Iconic Prime-Time Shows' },
-      { v: '60+', l: 'Partner Brands & Studios' }
+    leadership: [
+      {
+        name: 'Pushpendra Singh',
+        role: 'Director, Writer and Producer',
+        vision: '“Stories on screen become part of the collective consciousness when told with truth, human vulnerability, and unwavering cinematic craft.”',
+        img: '/assets/images/pushpenddra_singh.webp',
+        path: '/director'
+      },
+      {
+        name: 'Pragati Chauhan',
+        role: 'Actor, writer and Producer',
+        vision: '“Cinema is the ultimate conduit of empathy. Breathing life into complex characters and shaping narratives from page to screen is our true calling.”',
+        img: '/assets/images/cast/prragati_chauhaan.webp',
+        path: '/work'
+      }
     ],
-    crew: [
-      { name: 'Pushpendra Singh', role: 'Director & Screenwriter' },
-      { name: 'Chitralok Cinematography Unit', role: 'Direction of Photography' },
-      { name: 'Chitralok Sound & Atmos Lab', role: 'Dolby Atmos Sound & Music' },
-      { name: 'Chitralok Post & Color DI', role: 'Lead Editorial & Color Grading' },
-      { name: 'Chitralok Production Operations', role: 'Line & Executive Production' }
+    producers: [
+      {
+        name: 'Alok Sir',
+        role: 'Producer',
+        monogram: 'AS',
+        vision: 'Championing high-impact narratives and world-class production execution that resonate across global audiences.'
+      },
+      {
+        name: 'Amod Sir',
+        role: 'Producer',
+        monogram: 'AS',
+        vision: 'Pioneering cutting-edge cinematic storytelling with unwavering dedication to craft and creative integrity.'
+      },
+      {
+        name: 'Pawan Sir',
+        role: 'Producer',
+        monogram: 'PS',
+        vision: 'Fostering cultural authenticity and cinematic scale that leaves an enduring legacy in Indian cinema.'
+      },
+      {
+        name: 'Krishnkant Sir',
+        role: 'Producer',
+        monogram: 'KS',
+        vision: 'Driving visionary collaborations and technical excellence from script development to theatrical release.'
+      },
+      {
+        name: 'Shantanu Sir',
+        role: 'Producer',
+        monogram: 'SS',
+        vision: 'Empowering fearless storytelling and groundbreaking audiovisual experiences for modern cinema lovers.'
+      },
+      {
+        name: 'Vipul Sir',
+        role: 'Producer',
+        monogram: 'VS',
+        vision: 'Committed to bringing transformative, socially resonant narratives to life with unmatched production value.'
+      }
     ]
   },
 
@@ -656,30 +707,30 @@ export const siteData = {
     nameLast: 'Singh',
     born: '15 September 1981',
     role: 'Television & Film Director',
-    portraitImg: '/assets/images/pushpenddra_singh.jpg',
-    reelImg: '/assets/images/ajmer92_trailer_still.jpg',
-    reelVideo: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1',
+    portraitImg: '/assets/images/pushpenddra_singh.webp',
+    reelImg: '/assets/images/paid_palki_banner.webp',
+    reelVideo: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
     imdbUrl: 'https://www.imdb.com/name/nm9362954/',
     quote: '“Stories on screen become part of the collective consciousness when told with truth and unwavering craft.”',
     bio1: 'Pushpendra Singh (born 15 September 1981) is a prominent Indian Television and Film Director. He started his career in the Indian entertainment industry as an associate director on Kyaa Hoga Nimmo Kaa and served as second director on the classic Bollywood political drama Sarkar (2005) starring Amitabh Bachchan.',
     bio2: 'Following this breakthrough, Pushpendra took the directorial helm for several of the highest-rated daily series and mythological epics in Indian television history, including Kahaani Ghar Ghar Kii (2008), Kyunki Saas Bhi Kabhi Bahu Thi (2006), Kis Desh Mein Hai Meraa Dil, Kuchh Is Tara (2011), Jai Shri Krishna, Meera, Shakuntala (2008–2009), Zindagi Ki Mehek (2017), and Sarkar (TV Series).',
-    bio3: 'Expanding his cinematic horizon, Pushpendra directed the landmark investigative feature film Ajmer 92 (2023), backed by Reliance Entertainment, earning acclaim for its unflinching realism and emotional impact. He is currently helming the upcoming theatrical feature film Aaoge Jab Tum (2026).',
+    bio3: 'Expanding his cinematic horizon, Pushpendra has written and directed the landmark social feature film Paid Palki, presented by S&P Chitralok Studios, alongside helming the upcoming theatrical feature film Aaoge Jab Tum (2026).',
     films: [
       {
-        year: '2026',
+        year: 'Post Production',
         title: 'Aaoge Jab Tum',
         kind: 'Feature Film (Director)',
         network: 'Theatrical Release',
         role: 'Director',
-        img: '/assets/images/aaoge_jab_tum_poster.jpg'
+        img: '/assets/images/aaoge_jab_tum_poster.webp'
       },
       {
-        year: '2023',
-        title: 'Ajmer 92',
-        kind: 'Feature Film (Director & Screenplay)',
-        network: 'Reliance Entertainment',
-        role: 'Director & Screenwriter',
-        img: '/assets/images/ajmer92_poster.jpg'
+        year: 'In Filming',
+        title: 'Paid Palki',
+        kind: 'Feature Film (Writer & Director)',
+        network: 'S&P Chitralok Studios',
+        role: 'Writer & Director',
+        img: '/assets/images/paid_palki_poster.webp'
       },
       {
         year: '2005',
@@ -687,7 +738,7 @@ export const siteData = {
         kind: 'Feature Film (Second Director)',
         network: 'RGV Film Company / Theatrical',
         role: 'Second Director',
-        img: '/assets/images/sarkar_movie_poster.jpg'
+        img: '/assets/images/sarkar_movie_poster.webp'
       },
       {
         year: '2017',
@@ -695,7 +746,7 @@ export const siteData = {
         kind: 'Television Series',
         network: 'Zee TV',
         role: 'Director',
-        img: '/assets/images/zindagi_ki_mehek.jpg'
+        img: '/assets/images/zindagi_ki_mehek.webp'
       },
       {
         year: '2011',
@@ -703,7 +754,7 @@ export const siteData = {
         kind: 'Television Series',
         network: 'Sony Entertainment TV / Balaji',
         role: 'Director',
-        img: '/assets/images/kuchh_is_tara.jpg'
+        img: '/assets/images/kuchh_is_tara.webp'
       },
       {
         year: '2009',
@@ -711,7 +762,7 @@ export const siteData = {
         kind: 'Mythological Series',
         network: 'NDTV Imagine / Sagar Arts',
         role: 'Director',
-        img: '/assets/images/meera.jpg'
+        img: '/assets/images/meera.webp'
       },
       {
         year: '2008–2009',
@@ -719,7 +770,7 @@ export const siteData = {
         kind: 'Mythological Romance',
         network: 'STAR One / Sagar Arts',
         role: 'Director',
-        img: '/assets/images/shakuntala.jpg'
+        img: '/assets/images/shakuntala.webp'
       },
       {
         year: '2008–2009',
@@ -727,7 +778,7 @@ export const siteData = {
         kind: 'Mythological Drama',
         network: 'Colors TV / Sagar Pictures',
         role: 'Director',
-        img: '/assets/images/jai_shri_krishna.jpg'
+        img: '/assets/images/jai_shri_krishna.webp'
       },
       {
         year: '2008',
@@ -735,7 +786,7 @@ export const siteData = {
         kind: 'Flagship Daily Series',
         network: 'Star Plus / Balaji Telefilms',
         role: 'Director',
-        img: '/assets/images/kahaani_ghar_ghar_kii.jpg'
+        img: '/assets/images/kahaani_ghar_ghar_kii.webp'
       },
       {
         year: '2008',
@@ -743,7 +794,7 @@ export const siteData = {
         kind: 'Drama Series',
         network: 'Star Plus / Balaji Telefilms',
         role: 'Director',
-        img: '/assets/images/kis_desh_mein_hai_meraa_dil.jpg'
+        img: '/assets/images/kis_desh_mein_hai_meraa_dil.webp'
       },
       {
         year: '2006',
@@ -751,7 +802,7 @@ export const siteData = {
         kind: 'Iconic Daily Drama',
         network: 'Star Plus / Balaji Telefilms',
         role: 'Director',
-        img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.jpg'
+        img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.webp'
       },
       {
         year: '2006',
@@ -759,7 +810,7 @@ export const siteData = {
         kind: 'Political Family Drama',
         network: 'Zee TV / Siddhant Cinevision',
         role: 'Director',
-        img: '/assets/images/sarkar.jpg'
+        img: '/assets/images/sarkar.webp'
       },
       {
         year: '2006',
@@ -767,7 +818,7 @@ export const siteData = {
         kind: 'Comedy Drama Series',
         network: 'STAR One / Balaji Telefilms',
         role: 'Associate Director',
-        img: '/assets/images/kyaa_hoga_nimmo_kaa.jpg'
+        img: '/assets/images/kyaa_hoga_nimmo_kaa.webp'
       }
     ],
     awards: [
@@ -776,8 +827,8 @@ export const siteData = {
         meta: 'Kyunki Saas Bhi Kabhi Bahu Thi & Kahaani Ghar Ghar Kii'
       },
       {
-        title: 'Director & Screenwriter, Ajmer 92 (2023)',
-        meta: 'Critically Acclaimed Feature Film'
+        title: 'Writer & Director, Paid Palki',
+        meta: 'S&P Chitralok Studios Feature Film'
       },
       {
         title: 'Director, Zindagi Ki Mehek (2017)',

@@ -23,7 +23,7 @@ export default function DirectorSpotlight({ onOpenVideo }) {
               loading="lazy"
             />
             <span className="director-spotlight-badge">
-              Ajmer 92 · Director &amp; Screenplay
+              Paid Palki · Writer &amp; Director
             </span>
           </div>
         </div>
@@ -45,14 +45,15 @@ export default function DirectorSpotlight({ onOpenVideo }) {
           </p>
 
           <p className="director-spotlight-desc">
-            Pushpendra Singh started his directorial career as an associate director on <em>Kyaa Hoga Nimmo Kaa</em> and worked as <strong>Second Director on the iconic film Sarkar (2005)</strong>, going on to direct some of Indian television’s biggest daily blockbusters and critically acclaimed feature films like <em>Ajmer 92</em>.
+            Pushpendra Singh started his directorial career as an associate director on <em>Kyaa Hoga Nimmo Kaa</em> and worked as <strong>Second Director on the iconic film Sarkar (2005)</strong>, going on to direct some of Indian television’s biggest daily blockbusters and landmark feature films like <em>Paid Palki</em>.
           </p>
 
           {/* Television & Film Directorial Portfolio Badges */}
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', margin: '4px 0' }}>
             {[
               'Sarkar (2005 Movie — Second Director)',
-              'Ajmer 92 (2023 Film)',
+              'Paid Palki (Feature Film)',
+              'Aaoge Jab Tum (2026)',
               'Kyunki Saas Bhi Kabhi Bahu Thi (2006)',
               'Kahaani Ghar Ghar Kii (2008)',
               'Kis Desh Mein Hai Meraa Dil',
@@ -81,15 +82,15 @@ export default function DirectorSpotlight({ onOpenVideo }) {
             ))}
           </div>
 
-          {/* Feature Films Showcase: Sarkar, Ajmer 92 & Aaoge Jab Tum */}
+          {/* Feature Films Showcase: Sarkar, Paid Palki & Aaoge Jab Tum */}
           <div className="director-spotlight-feature-box">
             <div className="feature-box-header">
               <span className="feature-label">DIRECTORIAL FEATURE CINEMA</span>
               <span className="feature-year">THEATRICAL RELEASES</span>
             </div>
-            <h4 className="feature-title">Sarkar (2005) · Ajmer 92 (2023) · Aaoge Jab Tum (2026)</h4>
+            <h4 className="feature-title">Sarkar (2005) · Paid Palki · Aaoge Jab Tum (2026)</h4>
             <p className="feature-summary">
-              Served as <strong>Second Director on Sarkar (2005)</strong> starring Amitabh Bachchan, followed by directing the landmark investigative drama <em>Ajmer 92</em> and upcoming theatrical feature <em>Aaoge Jab Tum</em>.
+              Served as <strong>Second Director on Sarkar (2005)</strong> starring Amitabh Bachchan, followed by writing and directing the landmark social feature <em>Paid Palki</em> and upcoming theatrical feature <em>Aaoge Jab Tum</em>.
             </p>
           </div>
 

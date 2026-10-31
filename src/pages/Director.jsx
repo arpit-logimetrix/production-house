@@ -108,7 +108,7 @@ export default function Director({ onOpenVideo }) {
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
             }}>
-              Ajmer 92 · Director &amp; Screenplay
+              Paid Palki · Writer &amp; Director
             </span>
 
             {/* Exclusive Minimal IMDb pill — Only placed here on the director profile with authentic small icon */}
@@ -227,7 +227,7 @@ export default function Director({ onOpenVideo }) {
             border: '1px solid var(--border-subtle)',
             backdropFilter: 'blur(4px)'
           }}>
-            Director Reel · Ajmer 92 &amp; Works
+            Director Reel · Paid Palki &amp; Works
           </span>
         </div>
       </section>

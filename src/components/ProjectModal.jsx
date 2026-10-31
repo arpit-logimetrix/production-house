@@ -148,7 +148,7 @@ export default function ProjectModal({ project, onClose, onOpenVideo }) {
             gap: '8px',
             zIndex: 10
           }}>
-            {/* Category · Year · Genre */}
+            {/* Category · Year · Genre · Status */}
             <div style={{
               display: 'flex',
               flexWrap: 'wrap',
@@ -163,6 +163,25 @@ export default function ProjectModal({ project, onClose, onOpenVideo }) {
               <span>{project.cat}</span>
               <span style={{ opacity: 0.4 }}>•</span>
               <span>{project.year}</span>
+              {project.status && (
+                <>
+                  <span style={{ opacity: 0.4 }}>•</span>
+                  <span style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '5px',
+                    padding: '2px 8px',
+                    background: 'rgba(212, 166, 42, 0.15)',
+                    border: '1px solid var(--gold-primary)',
+                    borderRadius: '2px',
+                    color: 'var(--gold-primary)',
+                    letterSpacing: '0.14em'
+                  }}>
+                    <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+                    {project.status}
+                  </span>
+                </>
+              )}
               {project.genre && (
                 <>
                   <span style={{ opacity: 0.4 }}>•</span>
@@ -325,6 +344,60 @@ export default function ProjectModal({ project, onClose, onOpenVideo }) {
               </span>
             </div>
           </div>
+
+          {/* Key Creative Credits (Producers, Screenplay, DOP) */}
+          {(project.producers || project.screenplay || project.dialogues || project.dop) && (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))',
+              gap: '16px',
+              padding: '16px 20px',
+              background: 'rgba(15, 15, 14, 0.45)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '2px'
+            }}>
+              {project.producers && (
+                <div>
+                  <span style={{ display: 'block', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
+                    Producers
+                  </span>
+                  <span style={{ fontSize: '13px', color: 'var(--text-primary)', marginTop: '4px', display: 'block', lineHeight: 1.5 }}>
+                    {project.producers}
+                  </span>
+                </div>
+              )}
+              {project.screenplay && (
+                <div>
+                  <span style={{ display: 'block', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
+                    Screenplay
+                  </span>
+                  <span style={{ fontSize: '13px', color: 'var(--text-primary)', marginTop: '4px', display: 'block', lineHeight: 1.5 }}>
+                    {project.screenplay}
+                  </span>
+                </div>
+              )}
+              {project.dialogues && (
+                <div>
+                  <span style={{ display: 'block', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
+                    Dialogues
+                  </span>
+                  <span style={{ fontSize: '13px', color: 'var(--text-primary)', marginTop: '4px', display: 'block', lineHeight: 1.5 }}>
+                    {project.dialogues}
+                  </span>
+                </div>
+              )}
+              {project.dop && (
+                <div>
+                  <span style={{ display: 'block', fontSize: '10px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
+                    DOP (Cinematography)
+                  </span>
+                  <span style={{ fontSize: '13px', color: 'var(--text-primary)', marginTop: '4px', display: 'block', lineHeight: 1.5 }}>
+                    {project.dop}
+                  </span>
+                </div>
+              )}
+            </div>
+          )}
 
           {/* 5. Cast & Characters Showcase */}
           {project.cast && project.cast.length > 0 && (
