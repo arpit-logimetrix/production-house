@@ -1161,20 +1161,30 @@ button {
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.9);
 }
 
-.video-modal-close {
+.video-modal-close,
+.trailer-modal-close-btn {
   position: absolute;
-  top: -48px;
-  right: 0;
-  color: var(--text-primary);
-  font-size: 32px;
-  background: none;
-  border: none;
+  top: 14px;
+  right: 14px;
+  z-index: 50;
+  color: #FFFFFF;
+  background: rgba(18, 18, 17, 0.85);
+  border: 1px solid rgba(212, 166, 42, 0.45);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  transition: color var(--transition-fast);
+  transition: all var(--transition-fast);
 }
 
-.video-modal-close:hover {
+.video-modal-close:hover,
+.trailer-modal-close-btn:hover {
+  border-color: var(--gold-primary);
   color: var(--gold-primary);
+  transform: scale(1.08);
 }
 
 .video-modal iframe,
@@ -1182,6 +1192,117 @@ button {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+/* ==========================================================================
+   9b. Interactive Project Details Modal
+   ========================================================================== */
+@keyframes projectModalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes projectModalScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.96) translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.project-modal-dialog::-webkit-scrollbar {
+  width: 6px;
+}
+
+.project-modal-dialog::-webkit-scrollbar-track {
+  background: #0B0B0A;
+}
+
+.project-modal-dialog::-webkit-scrollbar-thumb {
+  background: rgba(212, 166, 42, 0.3);
+  border-radius: 3px;
+}
+
+.project-modal-dialog::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-primary);
+}
+
+.project-modal-close:hover {
+  background: var(--gold-primary) !important;
+  color: #070707 !important;
+  transform: rotate(90deg);
+  box-shadow: 0 0 16px rgba(212, 166, 42, 0.5);
+}
+
+@keyframes projectModalImgFade {
+  from {
+    opacity: 0.7;
+    transform: scale(1.02);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 640px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.gallery-nav-btn:hover {
+  background: var(--gold-primary) !important;
+  color: #070707 !important;
+  box-shadow: 0 0 12px rgba(212, 166, 42, 0.5);
+}
+
+.project-modal-play-btn:hover {
+  background: var(--gold-primary) !important;
+  color: #070707 !important;
+  box-shadow: 0 0 16px rgba(212, 166, 42, 0.5);
+  transform: translateY(-1px);
+}
+
+.cast-card-item:hover {
+  border-color: rgba(212, 166, 42, 0.55) !important;
+  background: rgba(26, 26, 24, 0.95) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.gallery-grid-card:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-grid-card:hover {
+  border-color: var(--gold-primary) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7), 0 0 15px rgba(212, 166, 42, 0.25);
+}
+
+.project-card-interactive {
+  cursor: pointer;
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.project-card-interactive:hover .project-card-img {
+  transform: scale(1.05);
+}
+
+.project-card-interactive:hover .project-card-view-badge {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.project-card-interactive:hover .tt {
+  color: var(--gold-primary) !important;
 }
 
 /* ==========================================================================

@@ -574,21 +574,21 @@ export default function Home({ onOpenVideo }) {
           paddingTop: '32px'
         }}>
           <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>New projects</span>
-            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 4.5vw, 30px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all' }}>
-              {brand.emails.projects}
-            </Link>
+            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>Direct Email</span>
+            <a href={`mailto:${brand.email}`} className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 3.2vw, 28px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all', color: 'inherit' }}>
+              {brand.email}
+            </a>
           </div>
           <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>General enquiries</span>
-            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 4.5vw, 30px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all' }}>
-              {brand.emails.general}
-            </Link>
+            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>Office Phone</span>
+            <a href={`tel:${brand.phone.replace(/[^0-9+]/g, '')}`} className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 3.2vw, 28px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all', color: 'inherit' }}>
+              {brand.phone}
+            </a>
           </div>
           <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>Careers</span>
-            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 4.5vw, 30px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all' }}>
-              {brand.emails.careers}
+            <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>Studio Location</span>
+            <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 3.2vw, 28px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all', color: 'inherit' }}>
+              Gomti Nagar, Lucknow
             </Link>
           </div>
         </div>

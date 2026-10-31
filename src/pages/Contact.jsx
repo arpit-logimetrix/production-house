@@ -72,47 +72,58 @@ export default function Contact() {
         <div style={{ flex: '1 1 380px', minWidth: 0, display: 'flex', flexDirection: 'column' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)' }}>
             <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-              New projects
+              Official Email
             </span>
-            <a className="em" href={`mailto:${brand.emails.projects}`} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 2.6vw, 36px)', lineHeight: 1.2, textDecoration: 'none' }}>
-              {brand.emails.projects}
+            <a className="em" href={`mailto:${brand.email}`} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(20px, 2.3vw, 32px)', lineHeight: 1.2, textDecoration: 'none', wordBreak: 'break-all' }}>
+              {brand.email}
             </a>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)' }}>
             <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-              General enquiries
+              Office Phone
             </span>
-            <a className="em" href={`mailto:${brand.emails.general}`} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 2.6vw, 36px)', lineHeight: 1.2, textDecoration: 'none' }}>
-              {brand.emails.general}
-            </a>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)' }}>
-            <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-              Careers
-            </span>
-            <a className="em" href={`mailto:${brand.emails.careers}`} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 2.6vw, 36px)', lineHeight: 1.2, textDecoration: 'none' }}>
-              {brand.emails.careers}
-            </a>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)' }}>
-            <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-              Phone
-            </span>
-            <a className="em" href={`tel:${brand.phone.replace(/\s+/g, '')}`} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 2.6vw, 36px)', lineHeight: 1.2, textDecoration: 'none' }}>
+            <a className="em" href={`tel:${brand.phone.replace(/[^0-9+]/g, '')}`} style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 2.6vw, 36px)', lineHeight: 1.2, textDecoration: 'none' }}>
               {brand.phone}
             </a>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)' }}>
             <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-              Our Address
+              Studio Address
             </span>
             <span style={{ fontSize: '18px', lineHeight: 1.6, color: 'var(--text-primary)' }}>
               {brand.address}
             </span>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
+            <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
+              Social Channels
+            </span>
+            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px 20px' }}>
+              {brand.socials.map((s, idx) => (
+                <a
+                  key={idx}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nl"
+                  style={{
+                    fontSize: '13px',
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gold-primary)',
+                    textDecoration: 'none',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '4px'
+                  }}
+                >
+                  {s.name} ↗
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

@@ -17,20 +17,23 @@ import Contact from './pages/Contact';
 export default function App() {
   const [videoModal, setVideoModal] = useState({
     isOpen: false,
-    src: ''
+    src: '',
+    title: ''
   });
 
-  const handleOpenVideo = (src) => {
+  const handleOpenVideo = (src, title = '') => {
     setVideoModal({
       isOpen: true,
-      src: src || 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
+      src: src || 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
+      title: title || ''
     });
   };
 
   const handleCloseVideo = () => {
     setVideoModal({
       isOpen: false,
-      src: ''
+      src: '',
+      title: ''
     });
   };
 
@@ -62,6 +65,7 @@ export default function App() {
           isOpen={videoModal.isOpen}
           onClose={handleCloseVideo}
           videoSrc={videoModal.src}
+          title={videoModal.title}
         />
       </div>
     </Router>

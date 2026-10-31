@@ -55,12 +55,73 @@ export default function Footer() {
         {/* Column 1: Studio Name & Address (Centered in its box) */}
         <div className="footer-col footer-col-address">
           <div className="footer-col-inner">
-            <span className="footer-col-title">Our Address</span>
+            <Link
+              to="/"
+              className="footer-logo-link"
+              aria-label="Chitralok Studios Home"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                marginBottom: '14px',
+                lineHeight: 1
+              }}
+            >
+              <img
+                src={siteData.brand.logo}
+                alt="Chitralok Studios Logo"
+                style={{
+                  width: '38px',
+                  height: '38px',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 0 8px rgba(212, 166, 42, 0.45))',
+                  display: 'block',
+                  transition: 'transform var(--transition-fast), filter var(--transition-fast)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'scale(1.06)';
+                  e.currentTarget.style.filter = 'drop-shadow(0 0 12px rgba(212, 166, 42, 0.7))';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'scale(1)';
+                  e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(212, 166, 42, 0.45))';
+                }}
+              />
+            </Link>
             <div className="footer-address-text">
               <span className="footer-company-name">S &amp; P Chitralok Studios</span>
               <span className="footer-address-line">2/248, Vikash Khand Rd,</span>
               <span className="footer-address-line">Gomti Nagar, Lucknow,</span>
               <span className="footer-address-line">Uttar Pradesh (226010)</span>
+              <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                <a
+                  href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, '')}`}
+                  style={{
+                    fontSize: '14px',
+                    color: 'var(--gold-primary)',
+                    textDecoration: 'none',
+                    letterSpacing: '0.03em',
+                    transition: 'opacity var(--transition-fast)'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                >
+                  {siteData.brand.phone}
+                </a>
+                <a
+                  href={`mailto:${siteData.brand.email}`}
+                  style={{
+                    fontSize: '13px',
+                    color: 'var(--text-light-sub)',
+                    textDecoration: 'none',
+                    letterSpacing: '0.02em',
+                    transition: 'color var(--transition-fast)'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gold-primary)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-light-sub)'}
+                >
+                  {siteData.brand.email}
+                </a>
+              </div>
             </div>
           </div>
         </div>
