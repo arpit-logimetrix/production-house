@@ -157,10 +157,10 @@ export default function Footer() {
         {/* Vertical Divider 1 */}
         <div className="footer-v-divider" />
 
-        {/* Column 2: Navigation Links (Centered in its box) */}
-        <div className="footer-col footer-links">
+        {/* Column 2: Navigation Links (Quick Links) */}
+        <div className="footer-col footer-links footer-col-explore">
           <div className="footer-col-inner">
-            <span className="footer-col-title">Explore</span>
+            <span className="footer-col-title">Quick Links</span>
             <div className="footer-nav-list">
               <Link className="nl" to="/">Home</Link>
               <Link className="nl" to="/about">About Us</Link>
@@ -174,8 +174,8 @@ export default function Footer() {
         {/* Vertical Divider 2 */}
         <div className="footer-v-divider" />
 
-        {/* Column 3: Follow With Icons (Centered in its box) */}
-        <div className="footer-col footer-links">
+        {/* Column 3: Follow With Icons */}
+        <div className="footer-col footer-links footer-col-follow">
           <div className="footer-col-inner">
             <span className="footer-col-title">Follow</span>
             <div className="footer-social-list">

@@ -1027,14 +1027,6 @@ button {
 }
 
 @media (max-width: 900px) {
-  .footer-top {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-  .footer-col {
-    align-items: flex-start;
-    padding: 0;
-  }
   .footer-v-divider {
     display: none;
   }
@@ -2314,9 +2306,27 @@ button {
     padding: 56px var(--container-pad) 28px;
     gap: 40px;
   }
+  /* Footer Mobile: Remove Address & Show Quick Links + Follow Side by Side */
+  .footer-col-address {
+    display: none !important;
+  }
+  .footer-v-divider {
+    display: none !important;
+  }
   .footer-top {
-    flex-direction: column;
-    gap: 32px;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 24px !important;
+    width: 100% !important;
+  }
+  .footer-col {
+    padding: 0 !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+  }
+  .footer-col-inner {
+    align-items: flex-start !important;
+    width: 100% !important;
   }
   .footer-bottom {
     flex-direction: column;
