@@ -628,7 +628,7 @@ export default function Home({ onOpenVideo }) {
             lineHeight: 0.95,
             letterSpacing: '-0.03em'
           }}>
-            Let’s make something <span style={{ fontStyle: 'italic' }}>worth watching.</span>
+            Let’s make something <span style={{ fontStyle: 'italic' }}>worth watching .</span>
           </h2>
         </div>
         <div style={{
