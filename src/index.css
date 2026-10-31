@@ -979,31 +979,41 @@ button {
   align-items: center;
 }
 
-.footer-col-inner {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: fit-content;
-  max-width: 100%;
+.footer-col-address .footer-col-inner {
+  align-items: center;
+  text-align: center;
 }
 
 .footer-address-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  text-align: left;
+  gap: 4px;
+}
+
+.footer-col-address .footer-address-text {
+  align-items: center;
+  text-align: center;
+}
+
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
 }
 
 .footer-company-name {
+  display: block;
   font-family: var(--font-serif);
   font-size: 21px;
   font-weight: 600;
   color: var(--gold-primary);
   letter-spacing: -0.01em;
-  margin-bottom: 2px;
+  margin-bottom: 4px;
 }
 
 .footer-address-line {
+  display: block;
   font-size: 15px;
   line-height: 1.6;
   color: var(--text-light-sub);
@@ -2310,11 +2320,23 @@ button {
   }
   .footer-bottom {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center !important;
+    text-align: center !important;
     gap: 14px;
   }
   .footer-brand {
     font-size: 20px;
+  }
+
+  /* Mobile Hero: Complete 100% Uncropped Image with Ambient Glow for Both Slides */
+  .hero-slide-ambient {
+    display: block !important;
+  }
+  .hero-slide-main {
+    object-fit: contain !important;
+    object-position: center center !important;
+    transform: none !important;
+    filter: drop-shadow(0 12px 36px rgba(0, 0, 0, 0.95)) !important;
   }
 }
 

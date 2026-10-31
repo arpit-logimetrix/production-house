@@ -72,24 +72,48 @@ export default function Home({ onOpenVideo }) {
       }}>
         {/* Background Visual Carousel: Stacked Crossfading Images */}
         {heroSlides.map((slide, idx) => (
-          <img
-            key={slide.id}
-            src={slide.bgImage}
-            alt={`Chitralok Studios Visual ${slide.id}`}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              filter: isScrolledDown ? 'brightness(0.68)' : 'brightness(0.92)',
-              opacity: activeSlide === idx ? 1 : 0,
-              transform: activeSlide === idx ? 'scale(1)' : 'scale(1.05)',
-              transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out, filter 0.8s ease',
-              pointerEvents: 'none'
-            }}
-          />
+          <React.Fragment key={slide.id}>
+            {/* Ambient Blurred Background (Mobile Only to fill portrait height seamlessly) */}
+            <img
+              src={slide.bgImage}
+              alt=""
+              aria-hidden="true"
+              className="hero-slide-ambient"
+              style={{
+                position: 'absolute',
+                inset: '-20px',
+                width: 'calc(100% + 40px)',
+                height: 'calc(100% + 40px)',
+                objectFit: 'cover',
+                objectPosition: 'center',
+                filter: 'blur(36px) brightness(0.35)',
+                opacity: activeSlide === idx ? 1 : 0,
+                transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                pointerEvents: 'none',
+                display: 'none'
+              }}
+            />
+
+            {/* Crisp Main Visual (Cinematic Cover on Desktop, Complete 100% Contain on Mobile) */}
+            <img
+              src={slide.bgImage}
+              alt={`Chitralok Studios Visual ${slide.id}`}
+              className="hero-slide-main"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: 'center top',
+                filter: isScrolledDown ? 'brightness(0.68)' : 'brightness(0.92)',
+                opacity: activeSlide === idx ? 1 : 0,
+                transform: activeSlide === idx ? 'scale(1)' : 'scale(1.05)',
+                transition: 'opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 8s ease-out, filter 0.8s ease',
+                pointerEvents: 'none'
+              }}
+            />
+          </React.Fragment>
         ))}
 
         <div style={{

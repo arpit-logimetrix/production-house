@@ -92,9 +92,14 @@ export default function Contact() {
             <span style={{ fontSize: '12px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
               Studio Address
             </span>
-            <span style={{ fontSize: '18px', lineHeight: 1.6, color: 'var(--text-primary)' }}>
-              {brand.address}
-            </span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2px', fontSize: '18px', lineHeight: 1.55, color: 'var(--text-primary)' }}>
+              <span style={{ fontFamily: 'var(--font-serif)', fontSize: '20px', fontWeight: 600, color: 'var(--gold-primary)', marginBottom: '2px' }}>
+                S &amp; P Chitralok Studios
+              </span>
+              <span style={{ color: 'var(--text-light-sub)' }}>2/248, Vikash Khand Rd,</span>
+              <span style={{ color: 'var(--text-light-sub)' }}>Gomti Nagar, Lucknow,</span>
+              <span style={{ color: 'var(--text-light-sub)' }}>Uttar Pradesh -226010</span>
+            </div>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', padding: '28px 0', borderTop: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>

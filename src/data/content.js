@@ -11,7 +11,13 @@ export const siteData = {
     logo: '/assets/images/logo.png',
     tagline: 'We ideate, produce, collaborate, engage and deliver best-in-class audiovisuals.',
     subTagline: 'We make films people remember.',
-    address: '2/248, Vikash Khand Rd, Gomti Nagar, Lucknow, Uttar Pradesh 226010',
+    address: '2/248, Vikash Khand Rd, Gomti Nagar, Lucknow, Uttar Pradesh -226010',
+    addressLines: [
+      'S & P Chitralok Studios',
+      '2/248, Vikash Khand Rd,',
+      'Gomti Nagar, Lucknow,',
+      'Uttar Pradesh -226010'
+    ],
     phone: '+91 6394-177916',
     email: 'acc.spchitralok@gmail.com',
     emails: {

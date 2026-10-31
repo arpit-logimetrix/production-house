@@ -54,7 +54,7 @@ export default function Footer() {
       <div className="footer-top">
         {/* Column 1: Studio Name & Address (Centered in its box) */}
         <div className="footer-col footer-col-address">
-          <div className="footer-col-inner">
+          <div className="footer-col-inner" style={{ alignItems: 'center', textAlign: 'center' }}>
             <Link
               to="/"
               className="footer-logo-link"
@@ -62,7 +62,8 @@ export default function Footer() {
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
-                marginBottom: '14px',
+                justifyContent: 'center',
+                margin: '0 auto 16px',
                 lineHeight: 1
               }}
             >
@@ -70,29 +71,56 @@ export default function Footer() {
                 src={siteData.brand.logo}
                 alt="Chitralok Studios Logo"
                 style={{
-                  width: '38px',
-                  height: '38px',
+                  width: '42px',
+                  height: '42px',
                   objectFit: 'contain',
-                  filter: 'drop-shadow(0 0 8px rgba(212, 166, 42, 0.45))',
+                  filter: 'drop-shadow(0 0 10px rgba(212, 166, 42, 0.5))',
                   display: 'block',
                   transition: 'transform var(--transition-fast), filter var(--transition-fast)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.06)';
-                  e.currentTarget.style.filter = 'drop-shadow(0 0 12px rgba(212, 166, 42, 0.7))';
+                  e.currentTarget.style.transform = 'scale(1.08)';
+                  e.currentTarget.style.filter = 'drop-shadow(0 0 14px rgba(212, 166, 42, 0.75))';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'scale(1)';
-                  e.currentTarget.style.filter = 'drop-shadow(0 0 8px rgba(212, 166, 42, 0.45))';
+                  e.currentTarget.style.filter = 'drop-shadow(0 0 10px rgba(212, 166, 42, 0.5))';
                 }}
               />
             </Link>
-            <div className="footer-address-text">
-              <span className="footer-company-name">S &amp; P Chitralok Studios</span>
-              <span className="footer-address-line">2/248, Vikash Khand Rd,</span>
-              <span className="footer-address-line">Gomti Nagar, Lucknow,</span>
-              <span className="footer-address-line">Uttar Pradesh (226010)</span>
-              <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div
+              className="footer-address-text"
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'center',
+                textAlign: 'center',
+                gap: '4px'
+              }}
+            >
+              <span
+                className="footer-company-name"
+                style={{
+                  display: 'block',
+                  fontFamily: 'var(--font-serif)',
+                  fontSize: '21px',
+                  fontWeight: 600,
+                  color: 'var(--gold-primary)',
+                  marginBottom: '4px'
+                }}
+              >
+                S &amp; P Chitralok Studios
+              </span>
+              <span className="footer-address-line" style={{ display: 'block', fontSize: '15px', color: 'var(--text-light-sub)' }}>
+                2/248, Vikash Khand Rd,
+              </span>
+              <span className="footer-address-line" style={{ display: 'block', fontSize: '15px', color: 'var(--text-light-sub)' }}>
+                Gomti Nagar, Lucknow,
+              </span>
+              <span className="footer-address-line" style={{ display: 'block', fontSize: '15px', color: 'var(--text-light-sub)' }}>
+                Uttar Pradesh -226010
+              </span>
+              <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
                 <a
                   href={`tel:${siteData.brand.phone.replace(/[^0-9+]/g, '')}`}
                   style={{
