@@ -97,19 +97,19 @@ export default function About() {
         </div>
       </section>
 
-      {/* Studio Leadership & Producers */}
+      {/* Studio Leadership & Visionaries Behind Chitralok */}
       <section style={{
-        padding: '120px var(--container-pad)',
+        padding: '100px var(--container-pad) 130px',
         borderTop: '1px solid var(--border-subtle)',
         display: 'flex',
         flexDirection: 'column',
-        gap: '80px'
+        gap: '72px'
       }}>
         {/* Section Header */}
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '20px' }}>
           <div>
             <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'block', marginBottom: '12px' }}>
-              STUDIO LEADERSHIP &amp; PRODUCERS
+              STUDIO CREATIVE ROSTER &amp; LEADERSHIP
             </span>
             <h2 style={{
               margin: 0,
@@ -124,94 +124,329 @@ export default function About() {
             </h2>
           </div>
           <span style={{ fontSize: '14px', color: 'var(--text-secondary)', letterSpacing: '0.04em', maxWidth: '380px' }}>
-            Empowering fearless storytelling, cultural authenticity, and world-class cinematic execution.
+            Empowering fearless storytelling, cultural authenticity, and world-class cinematic execution across India.
           </span>
         </div>
 
-        {/* 1. Creative Leadership: Pushpendra Singh & Pragati Chauhan */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          <span style={{ fontSize: '11px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600 }}>
-            CREATIVE LEADERSHIP
-          </span>
+        {/* 1. FIRST: PRODUCERS */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '14px' }}>
+            <span style={{ fontSize: '12px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+              01 · PRODUCERS
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-secondary)', letterSpacing: '0.12em' }}>
+              {about.producers?.length || 6} Executive Producers
+            </span>
+          </div>
+
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
-            gap: '32px'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
+            gap: '28px'
           }}>
-            {about.leadership && about.leadership.map((leader, idx) => (
+            {about.producers && about.producers.map((producer, idx) => (
               <div
                 key={idx}
+                className="visionary-card"
                 style={{
-                  background: 'rgba(15, 15, 14, 0.65)',
+                  background: 'rgba(12, 12, 11, 0.65)',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: '2px',
-                  padding: 'clamp(24px, 4vw, 36px)',
+                  overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '24px',
-                  transition: 'border-color 0.3s ease, transform 0.3s ease'
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.5)';
-                  e.currentTarget.style.transform = 'translateY(-4px)';
+                  e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.6)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.65)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border-subtle)';
                   e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                {/* Visual Image Frame */}
+                <div style={{
+                  position: 'relative',
+                  aspectRatio: '4/5',
+                  overflow: 'hidden',
+                  background: 'var(--bg-card)'
+                }}>
+                  <img
+                    src={producer.img}
+                    alt={producer.name}
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.06)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  />
                   <div style={{
-                    width: '84px',
-                    height: '84px',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    border: '2px solid var(--gold-primary)',
-                    flexShrink: 0,
-                    background: '#070707'
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(7,7,7,0.1) 0%, rgba(7,7,7,0.3) 50%, rgba(7,7,7,0.92) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                  <span style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '10px',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gold-primary)',
+                    background: 'rgba(7, 7, 7, 0.88)',
+                    padding: '4px 10px',
+                    border: '1px solid var(--border-gold)',
+                    borderRadius: '2px'
                   }}>
-                    <img
-                      src={leader.img}
-                      alt={leader.name}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                    />
-                  </div>
-                  <div>
-                    <h3 style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px, 2.5vw, 32px)', fontWeight: 600, color: 'var(--text-primary)' }}>
-                      {leader.name}
-                    </h3>
-                    <span style={{
-                      display: 'inline-block',
-                      marginTop: '6px',
-                      fontSize: '12px',
-                      letterSpacing: '0.14em',
-                      textTransform: 'uppercase',
-                      fontWeight: 600,
-                      color: 'var(--gold-primary)'
-                    }}>
-                      {leader.role}
-                    </span>
-                  </div>
+                    {producer.role}
+                  </span>
                 </div>
 
-                <div style={{
-                  paddingTop: '16px',
-                  borderTop: '1px solid var(--border-subtle)',
+                {/* Card Details */}
+                <div style={{ padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+                  <h3 style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+                    {producer.name}
+                  </h3>
+                  <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-primary)' }}>
+                    {producer.subtitle || producer.role}
+                  </span>
+                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em', marginTop: '2px' }}>
+                    {producer.credit || producer.vision}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 2. SECOND: DIRECTORS */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '14px' }}>
+            <span style={{ fontSize: '12px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+              02 · DIRECTORS
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-secondary)', letterSpacing: '0.12em' }}>
+              Directorial Vision &amp; Craft
+            </span>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
+            gap: '28px'
+          }}>
+            {about.directors && about.directors.map((director, idx) => (
+              <div
+                key={idx}
+                className="visionary-card"
+                style={{
+                  background: 'rgba(12, 12, 11, 0.65)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '8px'
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.6)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.65)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <div style={{
+                  position: 'relative',
+                  aspectRatio: '4/5',
+                  overflow: 'hidden',
+                  background: 'var(--bg-card)'
                 }}>
-                  <span style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-                    Vision
-                  </span>
-                  <p style={{
-                    margin: 0,
-                    fontSize: '15px',
-                    lineHeight: 1.65,
-                    color: 'var(--text-light-sub)',
-                    fontStyle: 'italic'
+                  <img
+                    src={director.img}
+                    alt={director.name}
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center top',
+                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.06)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(7,7,7,0.1) 0%, rgba(7,7,7,0.3) 50%, rgba(7,7,7,0.92) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                  <span style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '10px',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gold-primary)',
+                    background: 'rgba(7, 7, 7, 0.88)',
+                    padding: '4px 10px',
+                    border: '1px solid var(--border-gold)',
+                    borderRadius: '2px'
                   }}>
-                    {leader.vision}
+                    {director.tag || director.role}
+                  </span>
+                </div>
+
+                <div style={{ padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+                  <h3 style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+                    {director.name}
+                  </h3>
+                  <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-primary)' }}>
+                    {director.subtitle || director.role}
+                  </span>
+                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em', marginTop: '2px' }}>
+                    {director.credit}
+                  </span>
+                  {director.path && (
+                    <Link
+                      to={director.path}
+                      className="ul"
+                      style={{
+                        marginTop: 'auto',
+                        paddingTop: '8px',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        fontSize: '11px',
+                        letterSpacing: '0.16em',
+                        textTransform: 'uppercase',
+                        color: 'var(--gold-primary)',
+                        fontWeight: 600
+                      }}
+                    >
+                      View Director Archive →
+                    </Link>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 3. THIRD: WRITERS */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '14px' }}>
+            <span style={{ fontSize: '12px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+              03 · WRITERS
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-secondary)', letterSpacing: '0.12em' }}>
+              Screenplay, Dialogue &amp; Narrative Architecture
+            </span>
+          </div>
+
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
+            gap: '28px'
+          }}>
+            {about.writers && about.writers.map((writer, idx) => (
+              <div
+                key={idx}
+                className="visionary-card"
+                style={{
+                  background: 'rgba(12, 12, 11, 0.65)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '2px',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.6)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.65)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'var(--border-subtle)';
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                <div style={{
+                  position: 'relative',
+                  aspectRatio: '4/5',
+                  overflow: 'hidden',
+                  background: 'var(--bg-card)'
+                }}>
+                  <img
+                    src={writer.img}
+                    alt={writer.name}
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center top',
+                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.06)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  />
+                  <div style={{
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(7,7,7,0.1) 0%, rgba(7,7,7,0.3) 50%, rgba(7,7,7,0.92) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                  <span style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '10px',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
+                    color: 'var(--gold-primary)',
+                    background: 'rgba(7, 7, 7, 0.88)',
+                    padding: '4px 10px',
+                    border: '1px solid var(--border-gold)',
+                    borderRadius: '2px'
+                  }}>
+                    {writer.tag || writer.role}
+                  </span>
+                </div>
+
+                <div style={{ padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+                  <h3 style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+                    {writer.name}
+                  </h3>
+                  <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-primary)' }}>
+                    {writer.subtitle || writer.role}
+                  </span>
+                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em' }}>
+                    {writer.credit}
+                  </span>
+                  <p style={{ margin: '4px 0 0', fontSize: '12px', lineHeight: 1.6, color: 'var(--text-light-sub)', fontStyle: 'italic' }}>
+                    {writer.vision}
                   </p>
                 </div>
               </div>
@@ -219,91 +454,123 @@ export default function About() {
           </div>
         </div>
 
-        {/* 2. Producers: Alok Sir, Amod Sir, Pawan Sir, Krishnkant Sir, Shantanu Sir, Vipul Sir */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-          <span style={{ fontSize: '11px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--text-secondary)', fontWeight: 600 }}>
-            PRODUCERS
-          </span>
+        {/* 4. FOURTH: ACTORS */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '14px' }}>
+            <span style={{ fontSize: '12px', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
+              04 · ACTORS
+            </span>
+            <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-secondary)', letterSpacing: '0.12em' }}>
+              Featured Ensemble &amp; Cast
+            </span>
+          </div>
+
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))',
-            gap: '24px'
+            gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 260px), 1fr))',
+            gap: '28px'
           }}>
-            {about.producers && about.producers.map((producer, idx) => (
+            {about.actors && about.actors.map((actor, idx) => (
               <div
                 key={idx}
+                className="visionary-card"
                 style={{
-                  background: 'rgba(12, 12, 11, 0.55)',
+                  background: 'rgba(12, 12, 11, 0.65)',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: '2px',
-                  padding: '28px 24px',
+                  overflow: 'hidden',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '20px',
-                  position: 'relative',
-                  overflow: 'hidden',
-                  transition: 'all 0.3s ease'
+                  transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.45)';
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                  e.currentTarget.style.background = 'rgba(18, 18, 16, 0.75)';
+                  e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.6)';
+                  e.currentTarget.style.transform = 'translateY(-6px)';
+                  e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.65)';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border-subtle)';
                   e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.background = 'rgba(12, 12, 11, 0.55)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
-                {/* Producer Header with Avatar / Monogram */}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <div style={{
+                  position: 'relative',
+                  aspectRatio: '4/5',
+                  overflow: 'hidden',
+                  background: 'var(--bg-card)'
+                }}>
+                  <img
+                    src={actor.img}
+                    alt={actor.name}
+                    loading="lazy"
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center top',
+                      transition: 'transform 0.6s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                    onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.06)'}
+                    onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
+                  />
                   <div style={{
-                    width: '54px',
-                    height: '54px',
-                    borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(212, 166, 42, 0.25) 0%, rgba(7, 7, 7, 0.95) 75%)',
-                    border: '1.5px solid var(--gold-primary)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    fontFamily: 'var(--font-serif)',
-                    fontSize: '18px',
-                    fontWeight: 700,
+                    position: 'absolute',
+                    inset: 0,
+                    background: 'linear-gradient(180deg, rgba(7,7,7,0.1) 0%, rgba(7,7,7,0.3) 50%, rgba(7,7,7,0.92) 100%)',
+                    pointerEvents: 'none'
+                  }} />
+                  <span style={{
+                    position: 'absolute',
+                    top: '12px',
+                    left: '12px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '10px',
+                    letterSpacing: '0.15em',
+                    textTransform: 'uppercase',
                     color: 'var(--gold-primary)',
-                    flexShrink: 0,
-                    boxShadow: '0 4px 16px rgba(0, 0, 0, 0.6)'
+                    background: 'rgba(7, 7, 7, 0.88)',
+                    padding: '4px 10px',
+                    border: '1px solid var(--border-gold)',
+                    borderRadius: '2px'
                   }}>
-                    {producer.monogram}
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
-                    <h3 style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)' }}>
-                      {producer.name}
-                    </h3>
-                    <span style={{ fontSize: '11px', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
-                      {producer.role}
+                    {actor.role}
+                  </span>
+                  {actor.character && (
+                    <span style={{
+                      position: 'absolute',
+                      bottom: '12px',
+                      left: '12px',
+                      right: '12px',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      letterSpacing: '0.1em',
+                      textTransform: 'uppercase',
+                      color: 'var(--gold-primary)',
+                      background: 'rgba(10, 10, 9, 0.85)',
+                      padding: '4px 8px',
+                      borderRadius: '2px',
+                      border: '1px solid rgba(212, 166, 42, 0.35)',
+                      whiteSpace: 'nowrap',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis'
+                    }}>
+                      as {actor.character}
                     </span>
-                  </div>
+                  )}
                 </div>
 
-                {/* Producer Vision */}
-                <div style={{
-                  paddingTop: '16px',
-                  borderTop: '1px solid var(--border-subtle)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '6px'
-                }}>
-                  <span style={{ fontSize: '10px', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-                    Vision
+                <div style={{ padding: '20px 18px', display: 'flex', flexDirection: 'column', gap: '8px', flex: 1 }}>
+                  <h3 style={{ margin: 0, fontFamily: 'var(--font-serif)', fontSize: '22px', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.2 }}>
+                    {actor.name}
+                  </h3>
+                  <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-primary)' }}>
+                    {actor.subtitle || actor.role}
                   </span>
-                  <p style={{
-                    margin: 0,
-                    fontSize: '14px',
-                    lineHeight: 1.6,
-                    color: 'var(--text-light-sub)'
-                  }}>
-                    {producer.vision}
-                  </p>
+                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em' }}>
+                    {actor.credit}
+                  </span>
                 </div>
               </div>
             ))}

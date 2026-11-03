@@ -46,3 +46,10 @@ Hero2_files/
 Hero2.html
 fetch_posters.py
 
+# Raw media and user documents
+/WImages/
+/Producers/
+*.pdf
+scratch/
+
+

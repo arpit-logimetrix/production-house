@@ -457,7 +457,7 @@ export default function Director({ onOpenVideo }) {
       </section>
 
       {/* Golden CTA */}
-      <GoldenCTA text="Collaborate on a project" link="/contact" />
+      <GoldenCTA text="Start a project" link="/contact" />
     </div>
   );
 }

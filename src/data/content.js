@@ -34,44 +34,26 @@ export const siteData = {
   },
 
   hero: {
-    tag: 'FEATURE FILM · IN FILMING',
-    headlinePrefix: 'S&P Chitralok Studios presents',
-    headlineMain: 'Paid',
-    headlineAccent: 'Palki.',
-    manifesto: 'A film by Pushpendra Singh · Screenplay by Pushpendrra Singh & Prragati Chauhaan. A poignant journey of love, transformation, and social courage.',
+    tag: 'PRODUCTION HOUSE · LUCKNOW',
+    headlinePrefix: 'We make films',
+    headlineMain: 'people',
+    headlineAccent: 'remember.',
+    manifesto: 'We ideate, produce, collaborate, engage and deliver best-in-class audiovisuals for cinema, OTT and global brands.',
     bgImage: '/assets/images/HeroImage1.webp',
     slides: [
       {
         id: 1,
-        tag: 'FEATURE FILM · IN FILMING',
-        headlinePrefix: 'S&P Chitralok Studios presents',
-        headlineMain: 'Paid',
-        headlineAccent: 'Palki.',
-        manifesto: 'A film by Pushpendra Singh · Screenplay by Pushpendrra Singh & Prragati Chauhaan. A poignant journey of love, transformation, and social courage.',
         bgImage: '/assets/images/HeroImage1.webp',
         posterImg: '/assets/images/paid_palki_poster.webp',
         subTag: 'Feature Film · In Filming',
-        videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
-        ctaText: 'Explore Feature Film →',
-        ctaLink: '/work',
-        secondaryText: 'Watch Teaser Trailer →',
-        secondaryLink: '/work'
+        videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
       },
       {
         id: 2,
-        tag: 'FEATURE FILM · POST PRODUCTION',
-        headlinePrefix: 'Pushpendra Singh\'s',
-        headlineMain: 'Aaoge Jab',
-        headlineAccent: 'Tum.',
-        manifesto: 'A deeply poignant cinematic journey directed by Pushpendra Singh. In post-production, coming soon to silver screens across India.',
         bgImage: '/assets/images/HeroImage2.webp',
         posterImg: '/assets/images/aaoge_jab_tum_poster.webp',
         subTag: 'Theatrical Release · Post Production',
-        videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1',
-        ctaText: 'Explore Feature Film →',
-        ctaLink: '/director',
-        secondaryText: 'Explore Archive →',
-        secondaryLink: '/work'
+        videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
       }
     ],
     videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1&mute=1&loop=1',
@@ -153,13 +135,33 @@ export const siteData = {
     },
     {
       id: 4,
-      title: 'Ishq Toh Ishq Jaisa Hai — Official Music Video',
-      client: 'Zee Music / S&P Chitralok Studios',
-      credit: 'Sung by Javed Ali · Dir. Pushpendra Singh',
-      cat: 'Music',
-      year: '2023',
-      img: '/assets/images/ishq_toh_ishq_jaisa_hai.webp',
-      videoUrl: 'https://www.youtube-nocookie.com/embed/NVeenPm69OE?autoplay=1'
+      title: 'Kyunki Saas Bhi Kabhi Bahu Thi',
+      client: 'Star Plus / Balaji Telefilms',
+      credit: 'Dir. Pushpendra Singh',
+      cat: 'Series',
+      year: '2000-2008',
+      img: '/assets/images/kyunki_saas_bhi_kabhi_bahu_thi.webp',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
+    },
+    {
+      id: 5,
+      title: 'Kahaani Ghar Ghar Kii',
+      client: 'Star Plus / Balaji Telefilms',
+      credit: 'Dir. Pushpendra Singh',
+      cat: 'Series',
+      year: '2000-2008',
+      img: '/assets/images/kahaani_ghar_ghar_kii.webp',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
+    },
+    {
+      id: 6,
+      title: 'Kis Desh Mein Hai Meraa Dil',
+      client: 'Star Plus / Balaji Telefilms',
+      credit: 'Dir. Pushpendra Singh',
+      cat: 'Series',
+      year: '2008-2010',
+      img: '/assets/images/kis_desh_mein_hai_meraa_dil.webp',
+      videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     }
   ],
 
@@ -263,33 +265,6 @@ export const siteData = {
     },
     {
       id: 4,
-      cat: 'Music',
-      title: 'Ishq Toh Ishq Jaisa Hai — Song',
-      client: 'Zee Music Company',
-      credit: 'Sung by Javed Ali · Dir. Pushpendra Singh',
-      year: '2023',
-      genre: 'Original Soundtrack / Soulful Ballad',
-      director: 'Pushpendra Singh',
-      studio: 'Zee Music Company & Reliance Entertainment',
-      milestone: 'Multi-Million Streaming Romantic Anthem',
-      img: '/assets/images/ishq_toh_ishq_jaisa_hai.webp',
-      bannerImg: '/assets/images/ishq_toh_ishq_jaisa_hai.webp',
-      synopsis: 'The official romantic and introspective ballad composed with traditional instrumentation and performed with soulful vulnerability by National Award-winning vocalist Javed Ali, directed by Pushpendra Singh.',
-      stills: [
-        { img: '/assets/images/ishq_toh_ishq_jaisa_hai.webp', title: 'Javed Ali Soulful Vocal Performance', tag: 'Official Music Video' },
-        { img: '/assets/images/paid_palki_banner.webp', title: 'Cinematic Narrative Master Visual', tag: 'Featured Scene' },
-        { img: '/assets/images/bts_sound_mixing.webp', title: 'Live Symphony & Vocal Tracking Session', tag: 'Acoustic Studio' }
-      ],
-      cast: [
-        { actor: 'Javed Ali', character: 'Lead Playback Vocalist', role: 'National Award Winner', img: '/assets/images/cast/javed_ali.webp' },
-        { actor: 'Karan Verma', character: 'Madhav Verma', role: 'Featured Actor' },
-        { actor: 'Sumit Singh', character: 'Geeta Singh', role: 'Featured Actor' },
-        { actor: 'Parth Sakalley', character: 'Music Direction & Composition', role: 'Composer' }
-      ],
-      videoUrl: 'https://www.youtube-nocookie.com/embed/NVeenPm69OE?autoplay=1'
-    },
-    {
-      id: 5,
       cat: 'Ad Film',
       title: 'Aurum Jewels — The Golden Hour',
       client: 'Aurum Jewels',
@@ -315,7 +290,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
     },
     {
-      id: 6,
+      id: 5,
       cat: 'Series',
       title: 'Zindagi Ki Mehek',
       client: 'Zee TV / Parin Multimedia',
@@ -343,7 +318,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 7,
+      id: 6,
       cat: 'Series',
       title: 'Kahaani Ghar Ghar Kii',
       client: 'Star Plus / Balaji Telefilms',
@@ -372,7 +347,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 8,
+      id: 7,
       cat: 'Series',
       title: 'Kyunki Saas Bhi Kabhi Bahu Thi',
       client: 'Star Plus / Balaji Telefilms',
@@ -401,7 +376,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 9,
+      id: 8,
       cat: 'Series',
       title: 'Jai Shri Krishna',
       client: 'Colors TV / Sagar Pictures',
@@ -430,7 +405,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 10,
+      id: 9,
       cat: 'Series',
       title: 'Shakuntala',
       client: 'STAR One / Sagar Arts',
@@ -457,7 +432,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 11,
+      id: 10,
       cat: 'Series',
       title: 'Meera',
       client: 'NDTV Imagine / Sagar Arts',
@@ -484,7 +459,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 12,
+      id: 11,
       cat: 'Series',
       title: 'Kis Desh Mein Hai Meraa Dil',
       client: 'Star Plus / Balaji Telefilms',
@@ -511,7 +486,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 13,
+      id: 12,
       cat: 'Series',
       title: 'Kuchh Is Tara',
       client: 'Sony Entertainment TV / Balaji Telefilms',
@@ -537,7 +512,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 14,
+      id: 13,
       cat: 'Series',
       title: 'Sarkar',
       client: 'Zee TV / Siddhant Cinevision',
@@ -564,7 +539,7 @@ export const siteData = {
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
     {
-      id: 15,
+      id: 14,
       cat: 'Series',
       title: 'Kyaa Hoga Nimmo Kaa',
       client: 'STAR One / Balaji Telefilms',
@@ -593,29 +568,120 @@ export const siteData = {
 
   btsGallery: [
     {
-      title: 'Paid Palki — Principal Photography Location',
-      meta: 'Pushpendra Singh directing high-stakes dramatic scene · 35mm Cinema Rig',
-      img: '/assets/images/bts_film_set.webp'
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_01_set_action.mp4',
+      poster: '/assets/images/bts/bts_clip_01_set_action_poster.webp',
+      title: 'Camera Crane & Dolly Track Setup',
+      meta: 'Live Action Take · Precision track motion on soundstage'
     },
     {
-      title: 'Aurum Jewels — Lighting Masterclass',
-      meta: 'Chitralok Cinematography Unit · Anamorphic Prime Lenses & Monitor Rig',
-      img: '/assets/images/bts_camera_rig.webp'
+      type: 'image',
+      img: '/assets/images/bts/bts_director_monitor_portrait.webp',
+      title: 'Pushpendra Singh at Director Monitor',
+      meta: 'Evaluating dynamic exposure & color tone on calibrated field monitor'
     },
     {
-      title: 'Velocity Motors — High-Speed Pursuit Car Rig',
-      meta: 'Chitralok Action Unit · Pursuit Arm Rig & Precision Stabilizer',
-      img: '/assets/images/bts_pursuit_rig.webp'
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_02_cinematography_roll.mp4',
+      poster: '/assets/images/bts/bts_clip_02_cinematography_roll_poster.webp',
+      title: '35mm Anamorphic Camera Roll',
+      meta: 'Live Cinema Take · High-contrast framing & actor blocking'
     },
     {
-      title: 'Directorial Rehearsal & Screenplay Polish',
-      meta: 'Pushpendra Singh conducting intensive character reading with ensemble',
-      img: '/assets/images/bts_rehearsal.webp'
+      type: 'image',
+      img: '/assets/images/bts/bts_cinematography_anamorphic_rig.webp',
+      title: 'Cinematography Unit & Anamorphic Rig',
+      meta: 'Custom cinema cage with matte box & wireless follow focus'
     },
     {
-      title: 'Post-Production & Atmos Sound Mixing',
-      meta: 'Chitralok Studio 4 · Dolby Atmos 7.1.4 Surround & Final Color DI',
-      img: '/assets/images/bts_sound_mixing.webp'
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_03_camera_jib_movement.mp4',
+      poster: '/assets/images/bts/bts_clip_03_camera_jib_movement_poster.webp',
+      title: 'Camera Jib & Fluid Head Sweep',
+      meta: 'Sweeping crane pass across dramatic location set'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_camera_crew_tracking.webp',
+      title: 'Camera Crew Tracking Shot',
+      meta: 'Dual-operator tracking rig capturing continuous dialogue sequence'
+    },
+    {
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_04_director_on_rig.mp4',
+      poster: '/assets/images/bts/bts_clip_04_director_on_rig_poster.webp',
+      title: 'Pushpendra Singh Directing on Rig',
+      meta: 'Directorial Guidance · Pacing emotional beats in high-stakes scene'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_outdoor_dramatic_filming.webp',
+      title: 'Outdoor Dramatic Location Filming',
+      meta: 'Large-scale location unit shooting with natural bounce reflectors'
+    },
+    {
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_05_actors_scene_take.mp4',
+      poster: '/assets/images/bts/bts_clip_05_actors_scene_take_poster.webp',
+      title: 'Principal Ensemble Scene Take',
+      meta: 'Live Performance · Fine-tuning dialogue timing and eye lines'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_location_unit_action.webp',
+      title: 'Location Unit & Set Staging',
+      meta: 'Production team orchestrating background action & daylight control'
+    },
+    {
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_06_quick_slate_action.mp4',
+      poster: '/assets/images/bts/bts_clip_06_quick_slate_action_poster.webp',
+      title: 'Production Slate & Scene Clap',
+      meta: 'Audio-visual timecode sync prior to director roll call'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_scene_dialogue_rehearsal.webp',
+      title: 'Dialogue Scene Rehearsal',
+      meta: 'Pushpendra Singh breaking down screenplay nuances on location'
+    },
+    {
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_07_lighting_pacing.mp4',
+      poster: '/assets/images/bts/bts_clip_07_lighting_pacing_poster.webp',
+      title: 'Atmospheric Lighting & Mood Setup',
+      meta: 'Balancing volumetric haze with cinematic warm key accents'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_director_actor_blocking.webp',
+      title: 'Director & Lead Talent Blocking',
+      meta: 'Aligning character positioning with prime anamorphic focal plane'
+    },
+    {
+      type: 'video',
+      videoSrc: '/assets/videos/bts/bts_clip_08_soundstage_take.mp4',
+      poster: '/assets/images/bts/bts_clip_08_soundstage_take_poster.webp',
+      title: 'Soundstage Master Take',
+      meta: 'Overhead studio grid illumination for master sequence'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_lighting_diffuser_soundstage.webp',
+      title: 'Overhead Soundstage Diffusers',
+      meta: 'Soft-box grid illumination setup for interior studio sequence'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_evening_golden_hour_setup.webp',
+      title: 'Golden Hour Master Composition',
+      meta: 'Harnessing sunset natural horizon light on cinema sensor'
+    },
+    {
+      type: 'image',
+      img: '/assets/images/bts/bts_night_exterior_production.webp',
+      title: 'Night Exterior High-Output Rig',
+      meta: 'HMI daylight-balanced luminaires simulating moonlight ambiance'
     }
   ],
 
@@ -664,40 +730,174 @@ export const siteData = {
     ],
     producers: [
       {
-        name: 'Alok Sir',
+        name: 'Alok Ji',
         role: 'Producer',
         monogram: 'AS',
+        img: '/assets/images/producers/producer_alok.webp',
+        subtitle: 'Executive Producer',
+        credit: 'S&P Chitralok Studios · Feature Film Division',
         vision: 'Championing high-impact narratives and world-class production execution that resonate across global audiences.'
       },
       {
-        name: 'Amod Sir',
-        role: 'Producer',
-        monogram: 'AS',
-        vision: 'Pioneering cutting-edge cinematic storytelling with unwavering dedication to craft and creative integrity.'
-      },
-      {
-        name: 'Pawan Sir',
+        name: 'Pawan Ji',
         role: 'Producer',
         monogram: 'PS',
+        img: '/assets/images/producers/producer_pawan.webp',
+        subtitle: 'Executive Producer',
+        credit: 'S&P Chitralok Studios · Production Operations',
         vision: 'Fostering cultural authenticity and cinematic scale that leaves an enduring legacy in Indian cinema.'
       },
       {
-        name: 'Krishnkant Sir',
+        name: 'Amod Ji',
+        role: 'Producer',
+        monogram: 'AS',
+        img: '/assets/images/producers/producer_amod.webp',
+        subtitle: 'Executive Producer',
+        credit: 'S&P Chitralok Studios · Creative Development',
+        vision: 'Pioneering cutting-edge cinematic storytelling with unwavering dedication to craft and creative integrity.'
+      },
+      {
+        name: 'Krishna Kant Ji',
         role: 'Producer',
         monogram: 'KS',
+        img: '/assets/images/producers/producer_krishnakant.webp',
+        subtitle: 'Executive Producer',
+        credit: 'S&P Chitralok Studios · Technical & Theatrical',
         vision: 'Driving visionary collaborations and technical excellence from script development to theatrical release.'
       },
       {
-        name: 'Shantanu Sir',
+        name: 'Santanu Ji',
         role: 'Producer',
         monogram: 'SS',
+        img: '/assets/images/producers/producer_shantanu.webp',
+        subtitle: 'Executive Producer',
+        credit: 'S&P Chitralok Studios · Audiovisual Productions',
         vision: 'Empowering fearless storytelling and groundbreaking audiovisual experiences for modern cinema lovers.'
       },
       {
-        name: 'Vipul Sir',
+        name: 'Vipul Ji',
         role: 'Producer',
         monogram: 'VS',
+        img: '/assets/images/producers/producer_vipul.webp',
+        subtitle: 'Executive Producer',
+        credit: 'S&P Chitralok Studios · Strategic Partnerships',
         vision: 'Committed to bringing transformative, socially resonant narratives to life with unmatched production value.'
+      }
+    ],
+    directors: [
+      {
+        name: 'Pushpendra Singh',
+        role: 'Director',
+        subtitle: 'Television & Film Director',
+        tag: 'Lead Director',
+        img: '/assets/images/pushpenddra_singh.webp',
+        credit: 'Paid Palki · Aaoge Jab Tum · Sarkar (2005) · Prime-Time Epics',
+        vision: 'Stories on screen become part of the collective consciousness when told with truth, human vulnerability, and unwavering cinematic craft.',
+        path: '/director'
+      }
+    ],
+    writers: [
+      {
+        name: 'Pushpendra Singh',
+        role: 'Writer',
+        subtitle: 'Writer & Director · Story & Screenplay',
+        tag: 'Narrative Architect',
+        img: '/assets/images/pushpenddra_singh.webp',
+        credit: 'Paid Palki · Aaoge Jab Tum',
+        vision: 'Architect of high-stakes social realism and emotional narratives that bridge classic Indian literature with commercial cinema.',
+        path: '/director'
+      },
+      {
+        name: 'Pragati Chauhan',
+        role: 'Writer',
+        subtitle: 'Screenplay & Narrative Lead',
+        tag: 'Character & Emotional Arcs',
+        img: '/assets/images/cast/prragati_chauhaan.webp',
+        credit: 'Paid Palki (Screenplay)',
+        vision: 'Cinema is the ultimate conduit of empathy. Breathing life into complex characters and shaping narratives from page to screen is our true calling.'
+      },
+      {
+        name: 'Shashank Singh',
+        role: 'Writer',
+        subtitle: 'Dialogue Writer',
+        tag: 'Vernacular Dialogue',
+        img: '/assets/images/producers/writer_shashank.webp',
+        credit: 'Paid Palki (Feature Film Dialogues)',
+        vision: 'Crafting culturally rooted, sharp, and evocative Hindi and regional dialogues that breathe life into on-screen characters.'
+      }
+    ],
+    actors: [
+      {
+        name: 'Chandan Roy',
+        character: 'Santh Kumar (Santu)',
+        role: 'Lead Actor',
+        subtitle: 'Lead Protagonist',
+        img: '/assets/images/cast/chandan_roy.webp',
+        credit: 'Paid Palki · Panchayat · Gulmohar',
+        notes: 'Sensitive villager caught between social expectations and moral courage in Paid Palki.'
+      },
+      {
+        name: 'Prragati Chauhaan',
+        character: 'Kemli',
+        role: 'Lead Actor',
+        subtitle: 'Lead Protagonist',
+        img: '/assets/images/cast/prragati_chauhaan.webp',
+        credit: 'Paid Palki (Feature Film Lead)',
+        notes: 'A sheltered tribal girl who transforms into a determined woman fighting for her dignity.'
+      },
+      {
+        name: 'Durgesh Kumar',
+        character: 'Chaturbhuj (Phupha Ji)',
+        role: 'Actor',
+        subtitle: 'Key Supporting Lead',
+        img: '/assets/images/cast/durgesh_kumar.webp',
+        credit: 'Paid Palki · Panchayat · Highway',
+        notes: 'Santu’s uncle by marriage, boasting about small contacts and family influence.'
+      },
+      {
+        name: 'Sunita Rajwar',
+        character: "Santu's Mother",
+        role: 'Actor',
+        subtitle: 'Key Supporting Lead',
+        img: '/assets/images/cast/sunita_rajwar.webp',
+        credit: 'Paid Palki · Panchayat · Gullak',
+        notes: 'A strong, resilient matriarch who single-handedly manages her household with pride.'
+      },
+      {
+        name: 'Omkar Das Manikpuri',
+        character: 'Kodulal (Kemli’s Father)',
+        role: 'Actor',
+        subtitle: 'Supporting Cast',
+        img: '/assets/images/cast/omkar_das_manikpuri.webp',
+        credit: 'Paid Palki · Peepli Live',
+        notes: 'Driven by greed and hardened by addiction, willing to trade relationships for profit.'
+      },
+      {
+        name: 'Kumar Saurav',
+        character: 'Jamai',
+        role: 'Actor',
+        subtitle: 'Middleman',
+        img: '/assets/images/cast/kumar_saurav.webp',
+        credit: 'Paid Palki (Feature Film)',
+        notes: 'Cunning middleman facilitating transactions between remote tribal hamlets.'
+      },
+      {
+        name: 'Bhaskar Jha',
+        character: 'Naresh',
+        role: 'Actor',
+        subtitle: 'Antagonist',
+        img: '/assets/images/cast/bhaskar_jha.webp',
+        credit: 'Paid Palki (Feature Film)',
+        notes: 'Local strongman with patriarchal entitlement whose bruised ego turns into obsession.'
+      },
+      {
+        name: 'Sapna Sand',
+        character: 'Sukhiya (Kemli’s Mother)',
+        role: 'Actor',
+        subtitle: 'Supporting Cast',
+        img: '/assets/images/cast/sapna_sand.webp',
+        credit: 'Paid Palki (Feature Film)',
+        notes: 'A fiercely loving mother embodying resilience and maternal protection.'
       }
     ]
   },

@@ -55,8 +55,6 @@ export default function Home({ onOpenVideo }) {
     setActiveSlide((prev) => (prev < heroSlides.length - 1 ? prev + 1 : 0));
   };
 
-  const currentSlideData = heroSlides[activeSlide];
-
   return (
     <div style={{ width: '100%' }}>
       {/* 1. Hero Section: Cinematic Multi-Slide Carousel with Scroll Reveal */}
@@ -278,19 +276,19 @@ export default function Home({ onOpenVideo }) {
           pointerEvents: isScrolledDown ? 'auto' : 'none'
         }}>
           <div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '10px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '14px' }}>
               <span style={{
                 fontFamily: 'var(--font-mono)',
                 fontSize: '11px',
                 letterSpacing: '0.22em',
                 textTransform: 'uppercase',
                 color: 'var(--gold-primary)',
-                fontWeight: 500
+                fontWeight: 600
               }}>
-                {heroSlides[activeSlide]?.tag || hero.tag}
+                {hero.tag}
               </span>
               <span style={{
-                fontSize: '10px',
+                fontSize: '11px',
                 fontFamily: 'var(--font-mono)',
                 color: 'var(--text-secondary)',
                 letterSpacing: '0.12em'
@@ -307,9 +305,9 @@ export default function Home({ onOpenVideo }) {
               lineHeight: 0.94,
               letterSpacing: '-0.035em'
             }}>
-              <span style={{ display: 'block' }}>{heroSlides[activeSlide]?.headlinePrefix || hero.headlinePrefix}</span>
+              <span style={{ display: 'block' }}>{hero.headlinePrefix}</span>
               <span style={{ display: 'block' }}>
-                {heroSlides[activeSlide]?.headlineMain || hero.headlineMain} <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>{heroSlides[activeSlide]?.headlineAccent || hero.headlineAccent}</span>
+                {hero.headlineMain} <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>{hero.headlineAccent}</span>
               </span>
             </h1>
 
@@ -321,7 +319,7 @@ export default function Home({ onOpenVideo }) {
               color: 'var(--text-light-sub)',
               letterSpacing: '0.01em'
             }}>
-              {heroSlides[activeSlide]?.manifesto || hero.manifesto}
+              {hero.manifesto}
             </p>
           </div>
 
@@ -336,7 +334,7 @@ export default function Home({ onOpenVideo }) {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
               <Link
-                to={heroSlides[activeSlide]?.ctaLink || '/work'}
+                to="/contact"
                 className="ul"
                 style={{
                   display: 'inline-flex',
@@ -349,10 +347,10 @@ export default function Home({ onOpenVideo }) {
                   color: 'var(--gold-primary)'
                 }}
               >
-                {heroSlides[activeSlide]?.ctaText || 'Explore Film Details →'}
+                Get in touch ↓
               </Link>
               <Link
-                to={heroSlides[activeSlide]?.secondaryLink || '/work'}
+                to="/work"
                 className="ul"
                 style={{
                   display: 'inline-flex',
@@ -364,7 +362,7 @@ export default function Home({ onOpenVideo }) {
                   fontWeight: 600
                 }}
               >
-                {heroSlides[activeSlide]?.secondaryText || 'View Selected Projects →'}
+                View Selected Projects →
               </Link>
             </div>
 
@@ -434,49 +432,10 @@ export default function Home({ onOpenVideo }) {
         </div>
       </section>
 
-      {/* 3. Section: Directors & Visionaries Kinetic Scrolling & Carousel */}
-      <section style={{ padding: '0 0 136px', overflow: 'hidden' }}>
-        <div style={{ padding: '0 var(--container-pad)', display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '16px', marginBottom: '20px' }}>
-          <div>
-            <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600 }}>
-              CREATIVE ROSTER · AUTEURS &amp; SCREENWRITERS
-            </span>
-          </div>
-          <Link
-            to="/director"
-            className="ul"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              minHeight: '44px',
-              fontSize: '12px',
-              letterSpacing: '0.2em',
-              textTransform: 'uppercase',
-              color: 'var(--gold-primary)',
-              fontWeight: 600
-            }}
-          >
-            Explore Director Profiles →
-          </Link>
-        </div>
-
-        {/* Single Line Kinetic Scrolling Heading: Alternating White & Gold words */}
-        <KineticTicker
-          singleLine={true}
-          track1={[
-            'DIRECTORS ||· VISIONARIES ||· LUMINARIES ||· STORYTELLERS ||· CREATORS',
-            'DIRECTORS ||· VISIONARIES ||· LUMINARIES ||· STORYTELLERS ||· CREATORS'
-          ]}
-        />
-
-        {/* Sole Lead Director Showcase: Pushpenddra Singh (All extra cards removed) */}
-        <div style={{ padding: '0 var(--container-pad)' }}>
-          <DirectorSpotlight onOpenVideo={onOpenVideo} />
-        </div>
-      </section>
+    
 
       {/* 4. Section: Featured Works with Magnetic Cursor Interaction */}
-      <section style={{ padding: '0 var(--container-pad) 136px' }}>
+      <section style={{ padding: '0 var(--container-pad) 72px' }}>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '16px', marginBottom: '48px' }}>
           <div>
             <span style={{ fontSize: '12px', letterSpacing: '0.25em', textTransform: 'uppercase', color: 'var(--gold-primary)', fontWeight: 600, display: 'block', marginBottom: '8px' }}>
@@ -511,11 +470,7 @@ export default function Home({ onOpenVideo }) {
           </Link>
         </div>
 
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 460px), 1fr))',
-          gap: '64px 40px'
-        }}>
+        <div className="selected-projects-grid">
           {featuredWorks.map((work) => (
             <div
               key={work.id}
@@ -585,7 +540,7 @@ export default function Home({ onOpenVideo }) {
               </div>
 
               <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '8px 24px', marginTop: '16px' }}>
-                <span className="tt" style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', lineHeight: 1.15 }}>
+                <span className="tt" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(20px, 1.8vw, 26px)', lineHeight: 1.2 }}>
                   {work.title}
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
@@ -598,7 +553,7 @@ export default function Home({ onOpenVideo }) {
       </section>
 
       {/* 5. Behind The Scenes (BTS) Showcase Section */}
-      <BTSGallery onOpenImage={(imgUrl) => onOpenVideo('https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1')} />
+      <BTSGallery onOpenMedia={(mediaUrl, title) => onOpenVideo(mediaUrl, title)} />
 
       {/* 6. Golden Call To Action — Let’s Connect */}
       <section style={{

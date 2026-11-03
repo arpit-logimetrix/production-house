@@ -8,7 +8,7 @@ export default function Work({ onOpenVideo }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['All', 'Film', 'Ad Film', 'Series', 'Music'];
+  const categories = ['All', 'Film', 'Ad Film', 'Series'];
 
   const filteredWorks = activeFilter === 'All'
     ? allWorks
@@ -29,7 +29,7 @@ export default function Work({ onOpenVideo }) {
           Our <span style={{ fontStyle: 'italic', color: 'var(--gold-primary)' }}>projects.</span>
         </h1>
         <p style={{ margin: 0, maxWidth: '640px', fontSize: '19px', lineHeight: 1.65, color: 'var(--text-light-sub)' }}>
-          A curated archive of landmark feature films, television classics, commercial advertisements, and original musical compositions.
+          A curated archive of landmark feature films, television classics, and commercial advertisements.
         </p>
 
         <div role="group" aria-label="Filter projects by category" style={{
