@@ -1,0 +1,58 @@
+import React from 'react';
+import { siteData } from '../data/content';
+
+/**
+ * EastDelhiMap — Interactive Dark-Themed Map of East Delhi Studio
+ * Full-width, with floating studio address badge and exact coordinates for Pandav Nagar, East Delhi.
+ */
+export default function EastDelhiMap() {
+  const { brand } = siteData;
+  const fullAddress = '24/3, 24/4 & 24/5, 3rd Floor, Block E, Pandav Nagar, East Delhi – 110092';
+  const mapQuery = encodeURIComponent('24/3, 24/4 & 24/5, Block E, Pandav Nagar, East Delhi, Delhi 110092');
+
+  return (
+    <section className="eastdelhi-map-section lucknow-map-section" aria-label="Chitralok Studios East Delhi Location Map">
+      {/* Top Gradient Transition Overlay */}
+      <div className="map-gradient-top" />
+
+      {/* Floating Studio Info Badge */}
+      <div className="map-floating-badge">
+        <div className="map-badge-header">
+          <div className="map-pulse-dot" />
+          <span className="map-badge-tag">STUDIO LOCATION</span>
+        </div>
+        <h3 className="map-badge-title">Chitralok Studios</h3>
+        <p className="map-badge-desc">
+          24/3, 24/4 &amp; 24/5, 3rd Floor,<br />
+          Block E, Pandav Nagar,<br />
+          East Delhi – 110092
+        </p>
+        <a
+          href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="map-open-link"
+          aria-label="Open Chitralok Studios address in Google Maps"
+        >
+          Open in Google Maps ↗
+        </a>
+      </div>
+
+      {/* Interactive Google Map Embed */}
+      <div className="map-iframe-container">
+        <iframe
+          title={`Chitralok Studios — ${fullAddress}`}
+          className="eastdelhi-map-iframe lucknow-map-iframe"
+          src={`https://maps.google.com/maps?q=${mapQuery}&t=&z=16&ie=UTF8&iwloc=&output=embed`}
+          loading="lazy"
+          allowFullScreen
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
+
+      {/* Bottom Gradient Transition to Footer */}
+      <div className="map-gradient-bottom" />
+    </section>
+  );
+}
+

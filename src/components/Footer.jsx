@@ -115,13 +115,13 @@ export default function Footer() {
                 S &amp; P Chitralok Studios
               </div>
               <div className="footer-address-line" style={{ display: 'block', width: '100%', fontSize: '15px', color: 'var(--text-light-sub)', lineHeight: 1.5 }}>
-                2/248, Vikash Khand Rd,
+               24/3, 24/4 & 24/5, 3rd Floor,     
               </div>
               <div className="footer-address-line" style={{ display: 'block', width: '100%', fontSize: '15px', color: 'var(--text-light-sub)', lineHeight: 1.5 }}>
-                Gomti Nagar, Lucknow,
+                Block E, Pandav Nagar,
               </div>
               <div className="footer-address-line" style={{ display: 'block', width: '100%', fontSize: '15px', color: 'var(--text-light-sub)', lineHeight: 1.5 }}>
-                Uttar Pradesh -226010
+                East Delhi – 110092
               </div>
               <div style={{ marginTop: '10px', display: 'flex', flexDirection: 'column', gap: '4px', alignItems: 'center' }}>
                 <a

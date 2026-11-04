@@ -11,12 +11,12 @@ export const siteData = {
     logo: '/assets/images/logo.webp',
     tagline: 'We ideate, produce, collaborate, engage and deliver best-in-class audiovisuals.',
     subTagline: 'We make films people remember.',
-    address: '2/248, Vikash Khand Rd, Gomti Nagar, Lucknow, Uttar Pradesh -226010',
+    address: '24/3, 24/4 & 24/5, 3rd Floor, Block E, Pandav Nagar, East Delhi – 110092',
     addressLines: [
       'S & P Chitralok Studios',
-      '2/248, Vikash Khand Rd,',
-      'Gomti Nagar, Lucknow,',
-      'Uttar Pradesh -226010'
+      '24/3, 24/4 & 24/5, 3rd Floor,',
+      'Block E, Pandav Nagar,',
+      'East Delhi – 110092'
     ],
     phone: '+91 6394-177916',
     email: 'acc.spchitralok@gmail.com',
@@ -34,7 +34,7 @@ export const siteData = {
   },
 
   hero: {
-    tag: 'PRODUCTION HOUSE · LUCKNOW',
+    tag: 'PRODUCTION HOUSE · EAST DELHI',
     headlinePrefix: 'We make films',
     headlineMain: 'people',
     headlineAccent: 'remember.',
@@ -572,116 +572,126 @@ export const siteData = {
       videoSrc: '/assets/videos/bts/bts_clip_01_set_action.mp4',
       poster: '/assets/images/bts/bts_clip_01_set_action_poster.webp',
       title: 'Camera Crane & Dolly Track Setup',
-      meta: 'Live Action Take · Precision track motion on soundstage'
+      meta: 'Live Action Take · Precision track motion on soundstage',
+      tag: 'CINEMA CLIP #1'
     },
     {
       type: 'image',
       img: '/assets/images/bts/bts_director_monitor_portrait.webp',
       title: 'Pushpendra Singh at Director Monitor',
-      meta: 'Evaluating dynamic exposure & color tone on calibrated field monitor'
+      meta: 'Evaluating dynamic exposure & color tone on calibrated field monitor',
+      tag: 'STILL FRAME #2'
     },
     {
-      type: 'video',
-      videoSrc: '/assets/videos/bts/bts_clip_02_cinematography_roll.mp4',
-      poster: '/assets/images/bts/bts_clip_02_cinematography_roll_poster.webp',
-      title: '35mm Anamorphic Camera Roll',
-      meta: 'Live Cinema Take · High-contrast framing & actor blocking'
-    },
-    {
-      type: 'image',
+      type: 'gallery',
+      subImages: [
+        {
+          img: '/assets/images/bts/bts_cinematography_anamorphic_rig.webp',
+          title: 'Cinematography Unit & Anamorphic Rig',
+          meta: 'Custom cinema cage with matte box & wireless follow focus',
+          tag: 'STILL FRAME #3'
+        },
+        {
+          img: '/assets/images/bts/bts_camera_crew_tracking.webp',
+          title: 'Camera Crew Tracking Shot',
+          meta: 'Dual-operator tracking rig capturing continuous dialogue sequence',
+          tag: 'STILL FRAME #4'
+        }
+      ],
       img: '/assets/images/bts/bts_cinematography_anamorphic_rig.webp',
-      title: 'Cinematography Unit & Anamorphic Rig',
-      meta: 'Custom cinema cage with matte box & wireless follow focus'
+      title: 'Cinematography Unit & Tracking Rig',
+      meta: 'Custom cinema cage & dual-operator tracking rig sequence',
+      tag: 'STILL FRAME #3'
     },
     {
       type: 'video',
       videoSrc: '/assets/videos/bts/bts_clip_03_camera_jib_movement.mp4',
       poster: '/assets/images/bts/bts_clip_03_camera_jib_movement_poster.webp',
       title: 'Camera Jib & Fluid Head Sweep',
-      meta: 'Sweeping crane pass across dramatic location set'
-    },
-    {
-      type: 'image',
-      img: '/assets/images/bts/bts_camera_crew_tracking.webp',
-      title: 'Camera Crew Tracking Shot',
-      meta: 'Dual-operator tracking rig capturing continuous dialogue sequence'
+      meta: 'Sweeping crane pass across dramatic location set',
+      tag: 'CINEMA CLIP #5'
     },
     {
       type: 'video',
       videoSrc: '/assets/videos/bts/bts_clip_04_director_on_rig.mp4',
       poster: '/assets/images/bts/bts_clip_04_director_on_rig_poster.webp',
       title: 'Pushpendra Singh Directing on Rig',
-      meta: 'Directorial Guidance · Pacing emotional beats in high-stakes scene'
+      meta: 'Directorial Guidance · Pacing emotional beats in high-stakes scene',
+      tag: 'CINEMA CLIP #6'
     },
     {
-      type: 'image',
+      type: 'gallery',
+      subImages: [
+        {
+          img: '/assets/images/bts/bts_outdoor_dramatic_filming.webp',
+          title: 'Outdoor Dramatic Location Filming',
+          meta: 'Large-scale location unit shooting with natural bounce reflectors',
+          tag: 'STILL FRAME #7'
+        },
+        {
+          img: '/assets/images/bts/bts_location_unit_action.webp',
+          title: 'Location Unit & Set Staging',
+          meta: 'Production team orchestrating background action & daylight control',
+          tag: 'STILL FRAME #8'
+        }
+      ],
       img: '/assets/images/bts/bts_outdoor_dramatic_filming.webp',
-      title: 'Outdoor Dramatic Location Filming',
-      meta: 'Large-scale location unit shooting with natural bounce reflectors'
+      title: 'Outdoor Location Filming & Set Staging',
+      meta: 'Location unit shooting with natural bounce reflectors & daylight control',
+      tag: 'STILL FRAME #7'
     },
     {
       type: 'video',
       videoSrc: '/assets/videos/bts/bts_clip_05_actors_scene_take.mp4',
       poster: '/assets/images/bts/bts_clip_05_actors_scene_take_poster.webp',
       title: 'Principal Ensemble Scene Take',
-      meta: 'Live Performance · Fine-tuning dialogue timing and eye lines'
-    },
-    {
-      type: 'image',
-      img: '/assets/images/bts/bts_location_unit_action.webp',
-      title: 'Location Unit & Set Staging',
-      meta: 'Production team orchestrating background action & daylight control'
+      meta: 'Live Performance · Fine-tuning dialogue timing and eye lines',
+      tag: 'CINEMA CLIP #9'
     },
     {
       type: 'video',
       videoSrc: '/assets/videos/bts/bts_clip_06_quick_slate_action.mp4',
       poster: '/assets/images/bts/bts_clip_06_quick_slate_action_poster.webp',
       title: 'Production Slate & Scene Clap',
-      meta: 'Audio-visual timecode sync prior to director roll call'
+      meta: 'Audio-visual timecode sync prior to director roll call',
+      tag: 'CINEMA CLIP #10'
     },
     {
       type: 'image',
       img: '/assets/images/bts/bts_scene_dialogue_rehearsal.webp',
       title: 'Dialogue Scene Rehearsal',
-      meta: 'Pushpendra Singh breaking down screenplay nuances on location'
+      meta: 'Pushpendra Singh breaking down screenplay nuances on location',
+      tag: 'STILL FRAME #11'
     },
     {
       type: 'video',
       videoSrc: '/assets/videos/bts/bts_clip_07_lighting_pacing.mp4',
       poster: '/assets/images/bts/bts_clip_07_lighting_pacing_poster.webp',
       title: 'Atmospheric Lighting & Mood Setup',
-      meta: 'Balancing volumetric haze with cinematic warm key accents'
+      meta: 'Balancing volumetric haze with cinematic warm key accents',
+      tag: 'CINEMA CLIP #12'
     },
     {
       type: 'image',
       img: '/assets/images/bts/bts_director_actor_blocking.webp',
       title: 'Director & Lead Talent Blocking',
-      meta: 'Aligning character positioning with prime anamorphic focal plane'
+      meta: 'Aligning character positioning with prime anamorphic focal plane',
+      tag: 'STILL FRAME #13'
     },
     {
       type: 'video',
       videoSrc: '/assets/videos/bts/bts_clip_08_soundstage_take.mp4',
       poster: '/assets/images/bts/bts_clip_08_soundstage_take_poster.webp',
       title: 'Soundstage Master Take',
-      meta: 'Overhead studio grid illumination for master sequence'
+      meta: 'Overhead studio grid illumination for master sequence',
+      tag: 'CINEMA CLIP #14'
     },
     {
       type: 'image',
       img: '/assets/images/bts/bts_lighting_diffuser_soundstage.webp',
       title: 'Overhead Soundstage Diffusers',
-      meta: 'Soft-box grid illumination setup for interior studio sequence'
-    },
-    {
-      type: 'image',
-      img: '/assets/images/bts/bts_evening_golden_hour_setup.webp',
-      title: 'Golden Hour Master Composition',
-      meta: 'Harnessing sunset natural horizon light on cinema sensor'
-    },
-    {
-      type: 'image',
-      img: '/assets/images/bts/bts_night_exterior_production.webp',
-      title: 'Night Exterior High-Output Rig',
-      meta: 'HMI daylight-balanced luminaires simulating moonlight ambiance'
+      meta: 'Soft-box grid illumination setup for interior studio sequence',
+      tag: 'STILL FRAME #15'
     }
   ],
 
@@ -705,12 +715,12 @@ export const siteData = {
     headingAccent: 'cinema',
     headingPart2: 'as craft first: every frame planned, every story earned.',
     bannerImg: '/assets/images/about_studio_soundstage.webp',
-    p1: 'Chitralok Studios began with one camera, a tight-knit unit, and an uncompromising belief: stories from India deserve the discipline and artistic depth of world cinema. Today, we stand as a premier creative production hub headquartered in Lucknow.',
+    p1: 'Chitralok Studios began with one camera, a tight-knit unit, and an uncompromising belief: stories from India deserve the discipline and artistic depth of world cinema. Today, we stand as a premier creative production hub headquartered in East Delhi.',
     p2: 'We are celebrated for commercial advertising that carries the soul and patience of auteur cinema, and independent productions executed with international commercial rigor. Our core directors, DoPs, sound engineers, and post-production artists collaborate like a synchronized orchestra.',
     steps: [
       { n: '01', title: 'Develop', text: 'Script treatments, storyboards, creative briefs and tone boards fine-tuned until the cinematic vision is razor sharp.' },
       { n: '02', title: 'Produce', text: 'World-class camera gear, precision lighting, casting, location scouting, and a seasoned unit executing under tight timelines.' },
-      { n: '03', title: 'Finish', text: 'High-end DI color grading, Dolby Atmos sound design, editorial rhythm and VFX delivered to master standards.' }
+      { n: '03', title: 'Deliver', text: 'Final edit, color grading, sound design, VFX, and master files—delivered polished, on-brand, and ready for every platform.' }
     ],
     leadership: [
       {

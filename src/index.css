@@ -704,8 +704,6 @@ button {
   display: flex;
   gap: 32px;
   overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   padding-bottom: 24px;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
@@ -836,6 +834,133 @@ button {
   line-height: 1.5;
   letter-spacing: 0.03em;
   color: var(--text-secondary);
+}
+
+@keyframes btsFadeSwap {
+  from {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* BTS Video Center Play/Pause & Utility Controls */
+.bts-video-center-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: clamp(54px, 5.2vw, 68px);
+  height: clamp(54px, 5.2vw, 68px);
+  border-radius: 50%;
+  background: rgba(10, 10, 9, 0.78);
+  border: 1.5px solid rgba(212, 166, 42, 0.75);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 166, 42, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.bts-video-center-btn:hover {
+  background: var(--gold-primary);
+  color: #070707;
+  border-color: var(--gold-primary);
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 8px 30px rgba(212, 166, 42, 0.5), 0 0 35px rgba(212, 166, 42, 0.4);
+}
+
+.bts-video-center-btn.is-paused {
+  opacity: 1;
+  pointer-events: auto;
+  animation: btsPlayPulse 2.4s infinite;
+}
+
+.bts-video-center-btn.is-playing {
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+/* Show pause button when hovering or active */
+.bts-carousel-card:hover .bts-video-center-btn.is-playing,
+.bts-img-wrapper:hover .bts-video-center-btn.is-playing,
+.bts-video-center-btn.is-playing.show-controls {
+  opacity: 0.95;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes btsPlayPulse {
+  0% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 0 0 rgba(212, 166, 42, 0.5);
+  }
+  70% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 0 14px rgba(212, 166, 42, 0);
+  }
+  100% {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.65), 0 0 0 0 rgba(212, 166, 42, 0);
+  }
+}
+
+.bts-video-quick-controls {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 11;
+}
+
+.bts-video-icon-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(10, 10, 9, 0.82);
+  border: 1px solid rgba(212, 166, 42, 0.45);
+  color: var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+}
+
+.bts-video-icon-btn:hover {
+  background: var(--gold-primary);
+  color: #070707;
+  border-color: var(--gold-primary);
+  transform: scale(1.1);
+}
+
+/* BTS Video Playback Progress Bar */
+.bts-video-progress-track {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: 12;
+  pointer-events: none;
+}
+
+.bts-video-progress-fill {
+  height: 100%;
+  background: var(--gold-primary);
+  box-shadow: 0 0 8px rgba(212, 166, 42, 0.7);
+  transition: width 0.12s linear;
 }
 
 /* ==========================================================================
@@ -1969,6 +2094,7 @@ button {
    Lucknow Interactive Map Section
    Full width, height matches CTA section, smooth ambient transition
    ========================================================================== */
+.eastdelhi-map-section,
 .lucknow-map-section {
   position: relative;
   width: 100%;
@@ -1985,6 +2111,7 @@ button {
   height: 100%;
 }
 
+.eastdelhi-map-iframe,
 .lucknow-map-iframe {
   width: 100%;
   height: 100%;
@@ -2107,7 +2234,8 @@ button {
 }
 
 @media (max-width: 768px) {
-  .lucknow-map-section {
+  .eastdelhi-map-section,
+.lucknow-map-section {
     height: 420px;
   }
   .map-floating-badge {
@@ -2314,7 +2442,8 @@ button {
   }
 
   /* Lucknow Map Section */
-  .lucknow-map-section {
+  .eastdelhi-map-section,
+.lucknow-map-section {
     height: 360px;
   }
 
@@ -2474,7 +2603,8 @@ button {
     gap: 4px;
   }
 
-  .lucknow-map-section {
+  .eastdelhi-map-section,
+.lucknow-map-section {
     height: 320px;
   }
 }

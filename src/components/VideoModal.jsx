@@ -23,6 +23,7 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title }) {
   if (!isOpen) return null;
 
   const isEmbed = videoSrc && (videoSrc.includes('youtube') || videoSrc.includes('youtu.be') || videoSrc.includes('vimeo'));
+  const isImage = videoSrc && (videoSrc.endsWith('.webp') || videoSrc.endsWith('.jpg') || videoSrc.endsWith('.jpeg') || videoSrc.endsWith('.png') || videoSrc.includes('/images/'));
 
   return (
     <div
@@ -178,6 +179,18 @@ export default function VideoModal({ isOpen, onClose, videoSrc, title }) {
                 height: '100%',
                 border: 'none',
                 display: 'block'
+              }}
+            />
+          ) : isImage ? (
+            <img
+              src={videoSrc}
+              alt={title || "Still Frame View"}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                display: 'block',
+                background: '#070707'
               }}
             />
           ) : (

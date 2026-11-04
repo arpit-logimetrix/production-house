@@ -5,7 +5,7 @@ import Marquee from '../components/Marquee';
 import BTSGallery from '../components/BTSGallery';
 import KineticTicker from '../components/KineticTicker';
 import DirectorSpotlight from '../components/DirectorSpotlight';
-import LucknowMap from '../components/LucknowMap';
+import EastDelhiMap from '../components/EastDelhiMap';
 
 export default function Home({ onOpenVideo }) {
   const { hero, story, featuredWorks, brand } = siteData;
@@ -608,14 +608,14 @@ export default function Home({ onOpenVideo }) {
           <div style={{ flex: '1 1 240px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <span style={{ fontSize: '11px', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 700 }}>Studio Location</span>
             <Link to="/contact" className="ul" style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(18px, 3.2vw, 28px)', lineHeight: 1.2, textDecoration: 'underline', textUnderlineOffset: '6px', wordBreak: 'break-all', color: 'inherit' }}>
-              Gomti Nagar, Lucknow
+              24/3, 24/4 & 24/5, 3rd Floor, Block E, Pandav Nagar, East Delhi – 110092
             </Link>
           </div>
         </div>
       </section>
 
       {/* 7. Interactive Studio Location Map (Placed Below Let’s Connect Section) */}
-      <LucknowMap />
+      <EastDelhiMap />
     </div>
   );
 }

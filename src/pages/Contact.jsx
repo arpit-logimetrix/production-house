@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { siteData } from '../data/content';
-import LucknowMap from '../components/LucknowMap';
+import EastDelhiMap from '../components/EastDelhiMap';
 
 export default function Contact() {
   const { brand } = siteData;
@@ -96,9 +96,9 @@ export default function Contact() {
               <div style={{ display: 'block', fontFamily: 'var(--font-serif)', fontSize: '20px', fontWeight: 600, color: 'var(--gold-primary)', marginBottom: '2px' }}>
                 S &amp; P Chitralok Studios
               </div>
-              <div style={{ display: 'block', color: 'var(--text-light-sub)' }}>2/248, Vikash Khand Rd,</div>
-              <div style={{ display: 'block', color: 'var(--text-light-sub)' }}>Gomti Nagar, Lucknow,</div>
-              <div style={{ display: 'block', color: 'var(--text-light-sub)' }}>Uttar Pradesh -226010</div>
+              <div style={{ display: 'block', color: 'var(--text-light-sub)' }}>24/3, 24/4 &amp; 24/5, 3rd Floor,</div>
+              <div style={{ display: 'block', color: 'var(--text-light-sub)' }}>Block E, Pandav Nagar,</div>
+              <div style={{ display: 'block', color: 'var(--text-light-sub)' }}>East Delhi – 110092</div>
             </div>
           </div>
 
@@ -217,7 +217,7 @@ export default function Contact() {
       </div>
 
       {/* Studio Location Map */}
-      <LucknowMap />
+      <EastDelhiMap />
     </div>
   );
 }
