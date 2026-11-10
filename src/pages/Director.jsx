@@ -169,16 +169,42 @@ export default function Director({ onOpenVideo }) {
             {director.quote}
           </p>
 
-          <p style={{ margin: 0, fontSize: '17px', lineHeight: 1.7, color: 'var(--text-primary)', maxWidth: '640px' }}>
-            {director.bio1}
+          <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.7, color: 'var(--text-light-sub)', maxWidth: '640px' }}>
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Pushpendra Singh</strong>{' '}
+            (born <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>15 September 1981</span>) is a prominent Indian Television and Film Director. He started his career in the Indian entertainment industry as an associate director on{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Kyaa Hoga Nimmo Kaa</strong>{' '}
+            and served as second director on the classic Bollywood political drama{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Sarkar</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2005)</span>{' '}
+            starring{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Amitabh Bachchan</strong>.
           </p>
 
           <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.7, color: 'var(--text-light-sub)', maxWidth: '640px' }}>
-            {director.bio2}
+            Following this breakthrough, Pushpendra took the directorial helm for several of the highest-rated daily series and mythological epics in Indian television history, including{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Kahaani Ghar Ghar Kii</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2008)</span>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Kyunki Saas Bhi Kabhi Bahu Thi</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2006)</span>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Kis Desh Mein Hai Meraa Dil</strong>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Kuchh Is Tara</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2011)</span>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Jai Shri Krishna</strong>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Meera</strong>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Shakuntala</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2008–2009)</span>,{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Zindagi Ki Mehek</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2017)</span>, and{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Sarkar</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(TV Series)</span>.
           </p>
 
           <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.7, color: 'var(--text-light-sub)', maxWidth: '640px' }}>
-            {director.bio3}
+            Expanding his cinematic horizon, Pushpendra has written and directed the landmark social feature film{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Paid Palki</strong>, presented by{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>S&amp;P Chitralok Studios</strong>, alongside helming the upcoming theatrical feature film{' '}
+            <strong style={{ color: 'var(--text-primary)', fontWeight: 600 }}>Aaoge Jab Tum</strong>{' '}
+            <span style={{ color: 'var(--gold-primary)', fontFamily: 'var(--font-mono)', fontSize: '13px' }}>(2026)</span>.
           </p>
         </div>
       </section>
@@ -186,50 +212,6 @@ export default function Director({ onOpenVideo }) {
       {/* Kinetic Typography Marquee */}
       <section style={{ margin: '0 0 80px' }}>
         <KineticTicker />
-      </section>
-
-      {/* Director Reel Visual Banner */}
-      <section style={{ padding: '0 var(--container-pad) 112px' }}>
-        <div
-          style={{
-            position: 'relative',
-            aspectRatio: '16/9',
-            maxHeight: '680px',
-            background: 'var(--bg-card)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            overflow: 'hidden',
-            border: '1px solid var(--border-subtle)'
-          }}
-        >
-          <img
-            src={director.reelImg}
-            alt="Director Showreel Still"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-          />
-          <div style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'radial-gradient(circle at center, rgba(0,0,0,0.15) 0%, rgba(7,7,7,0.7) 100%)'
-          }} />
-          <span style={{
-            position: 'absolute',
-            left: '24px',
-            bottom: '22px',
-            padding: '6px 14px',
-            fontSize: '11px',
-            fontFamily: 'var(--font-mono)',
-            letterSpacing: '0.2em',
-            textTransform: 'uppercase',
-            color: 'var(--text-primary)',
-            background: 'rgba(10,10,9,0.85)',
-            border: '1px solid var(--border-subtle)',
-            backdropFilter: 'blur(4px)'
-          }}>
-            Director Reel · Paid Palki &amp; Works
-          </span>
-        </div>
       </section>
 
       {/* Complete Directorial Filmography & Television Showcase with Real Posters */}
@@ -285,8 +267,7 @@ export default function Director({ onOpenVideo }) {
         <div style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
-          gap: '32px 24px',
-          marginBottom: '64px'
+          gap: '32px 24px'
         }}>
           {filteredFilms.map((item, idx) => (
             <div
@@ -383,34 +364,6 @@ export default function Director({ onOpenVideo }) {
                   {item.kind}
                 </span>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Detailed Timeline Table */}
-        <div style={{ borderTop: '1px solid var(--border-subtle)' }}>
-          {director.films.map((f, idx) => (
-            <div
-              key={idx}
-              style={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                alignItems: 'baseline',
-                justifyContent: 'space-between',
-                gap: '8px 32px',
-                padding: '22px 0',
-                borderBottom: '1px solid var(--border-subtle)'
-              }}
-            >
-              <span style={{ flex: 'none', width: '100px', fontSize: '13px', fontFamily: 'var(--font-mono)', letterSpacing: '0.1em', color: 'var(--gold-primary)' }}>
-                {f.year}
-              </span>
-              <span style={{ flex: '1 1 260px', minWidth: 0, fontFamily: 'var(--font-serif)', fontSize: 'clamp(20px, 2.4vw, 32px)', lineHeight: 1.2 }}>
-                {f.title}
-              </span>
-              <span style={{ fontSize: '12px', fontFamily: 'var(--font-mono)', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-                {f.role} · {f.network}
-              </span>
             </div>
           ))}
         </div>

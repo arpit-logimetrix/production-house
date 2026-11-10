@@ -103,7 +103,8 @@ export const siteData = {
   featuredWorks: [
     {
       id: 1,
-      title: 'Paid Palki — Feature Film',
+      title: 'Paid Palki',
+      posterImg: '/assets/images/paid_palki_poster.webp',
       client: 'S&P Chitralok Studios',
       credit: 'Writer & Dir. Pushpenddra Singh',
       cat: 'Film',
@@ -167,6 +168,35 @@ export const siteData = {
 
   allWorks: [
     {
+      id: 2,
+      cat: 'Film',
+      title: 'Aaoge Jab Tum',
+      posterImg: '/assets/images/aaoge_jab_tum_poster.webp',
+      client: 'Pushpendra Singh Productions',
+      credit: 'Dir. Pushpendra Singh',
+      year: 'Post Production',
+      status: 'Post Production',
+      milestone: 'Post Production',
+      genre: 'Romantic Drama / Musical Odyssey',
+      director: 'Pushpendra Singh',
+      studio: 'Pushpendra Singh Productions',
+      img: '/assets/images/HeroImage2.webp',
+      bannerImg: '/assets/images/HeroImage2.webp',
+      synopsis: 'An evocative upcoming directorial feature by Pushpendra Singh exploring themes of profound longing, destiny, and timeless romance across evocative cultural landscapes, set against an unforgettable classical music score.',
+      stills: [
+        { img: '/assets/images/HeroImage2.webp', title: 'Theatrical Landscape Visual Experience', tag: 'Master Key Art' },
+        { img: '/assets/images/aaoge_jab_tum_poster.webp', title: 'Official Theatrical Teaser Poster', tag: 'Poster' },
+        { img: '/assets/images/bts_sound_mixing.webp', title: 'Dolby Atmos Master Scoring Stage', tag: 'Soundstage' },
+        { img: '/assets/images/about_studio_soundstage.webp', title: 'Chitralok Studio Production Floor', tag: 'Studio Set' }
+      ],
+      cast: [
+        { actor: 'Ensemble Cast', character: 'Narrative Ensemble', role: 'Principal Cast' },
+        { actor: 'Pushpendra Singh', character: 'Direction & Screenplay', role: 'Director' }
+      ],
+      videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
+    },
+
+    {
       id: 1,
       cat: 'Film',
       title: 'Paid Palki — Feature Film',
@@ -194,7 +224,7 @@ export const siteData = {
       ],
       cast: [
         { actor: 'Chandan Roy', character: 'Santh Kumar (Santu)', role: 'Lead Protagonist', img: '/assets/images/cast/chandan_roy.webp' },
-        { actor: 'Prragati Chauhaan', character: 'Kemli', role: 'Lead Protagonist', img: '/assets/images/cast/prragati_chauhaan.webp' },
+        { actor: 'Prragati Chauhaan', character: 'Kemli', role: 'Lead Protagonist', img: '/assets/images/cast/prragati_chauhaan_avatar.webp' },
         { actor: 'Durgesh Kumar', character: 'Chaturbhuj (Phupha Ji)', role: 'Key Supporting', img: '/assets/images/cast/durgesh_kumar.webp' },
         { actor: 'Sunita Rajwar', character: "Santu's Mother", role: 'Key Supporting', img: '/assets/images/cast/sunita_rajwar.webp' },
         { actor: 'Omkar Das Manikpuri', character: "Kodulal (Kemli's Father)", role: 'Supporting Cast', img: '/assets/images/cast/omkar_das_manikpuri.webp' },
@@ -204,37 +234,12 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
-    {
-      id: 2,
-      cat: 'Film',
-      title: 'Aaoge Jab Tum — Theatrical Feature',
-      client: 'Pushpendra Singh Productions',
-      credit: 'Dir. Pushpendra Singh',
-      year: 'Post Production',
-      status: 'Post Production',
-      milestone: 'Post Production',
-      genre: 'Romantic Drama / Musical Odyssey',
-      director: 'Pushpendra Singh',
-      studio: 'Pushpendra Singh Productions',
-      img: '/assets/images/HeroImage2.webp',
-      bannerImg: '/assets/images/HeroImage2.webp',
-      synopsis: 'An evocative upcoming directorial feature by Pushpendra Singh exploring themes of profound longing, destiny, and timeless romance across evocative cultural landscapes, set against an unforgettable classical music score.',
-      stills: [
-        { img: '/assets/images/HeroImage2.webp', title: 'Theatrical Landscape Visual Experience', tag: 'Master Key Art' },
-        { img: '/assets/images/aaoge_jab_tum_poster.webp', title: 'Official Theatrical Teaser Poster', tag: 'Poster' },
-        { img: '/assets/images/bts_sound_mixing.webp', title: 'Dolby Atmos Master Scoring Stage', tag: 'Soundstage' },
-        { img: '/assets/images/about_studio_soundstage.webp', title: 'Chitralok Studio Production Floor', tag: 'Studio Set' }
-      ],
-      cast: [
-        { actor: 'Ensemble Cast', character: 'Narrative Ensemble', role: 'Principal Cast' },
-        { actor: 'Pushpendra Singh', character: 'Direction & Screenplay', role: 'Director' }
-      ],
-      videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
-    },
+
     {
       id: 3,
       cat: 'Film',
-      title: 'Sarkar (2005) — Feature Film',
+      title: 'Sarkar (Movie)',
+      posterImg: '/assets/images/sarkar_movie_poster.webp',
       client: 'K Sera Sera / RGV Film Company',
       credit: 'Second Director: Pushpendra Singh',
       year: '2005',
@@ -263,32 +268,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
-    {
-      id: 4,
-      cat: 'Ad Film',
-      title: 'Aurum Jewels — The Golden Hour',
-      client: 'Aurum Jewels',
-      credit: 'Dir. Pushpendra Singh',
-      year: '2025',
-      genre: 'Luxury Commercial / Brand Film',
-      director: 'Pushpendra Singh',
-      studio: 'Aurum Brand Studios & Chitralok Films',
-      milestone: 'High-Fashion Royal Brand Campaign',
-      img: '/assets/images/aurum_jewels_hd.webp',
-      bannerImg: '/assets/images/aurum_jewels_hd.webp',
-      synopsis: 'A high-concept commercial campaign capturing timeless royal heritage and immaculate gold craftsmanship. Directed by Pushpendra Singh, utilizing anamorphic lenses and soft golden-hour natural illumination.',
-      stills: [
-        { img: '/assets/images/aurum_jewels_hd.webp', title: 'The Golden Hour 16:9 Widescreen Frame', tag: 'Commercial Master' },
-        { img: '/assets/images/aurum_jewels.webp', title: 'Royal Heritage Jewelry Editorial Frame', tag: 'Print Campaign' },
-        { img: '/assets/images/bts_camera_rig.webp', title: 'Lighting Masterclass & Anamorphic Camera Rig', tag: 'Behind the Scenes' }
-      ],
-      cast: [
-        { actor: 'Maya Sen', character: 'Royal Protagonist', role: 'Brand Ambassador / Model' },
-        { actor: 'Pushpendra Singh', character: 'Director & Vision', role: 'Commercial Director' },
-        { actor: 'Chitralok Unit', character: 'Cinematography Crew', role: 'Camera & Lighting Team' }
-      ],
-      videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
-    },
+
     {
       id: 5,
       cat: 'Series',
@@ -317,6 +297,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 6,
       cat: 'Series',
@@ -346,6 +327,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 7,
       cat: 'Series',
@@ -375,6 +357,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 8,
       cat: 'Series',
@@ -404,6 +387,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 9,
       cat: 'Series',
@@ -431,6 +415,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 10,
       cat: 'Series',
@@ -458,6 +443,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 11,
       cat: 'Series',
@@ -485,6 +471,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 12,
       cat: 'Series',
@@ -511,6 +498,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 13,
       cat: 'Series',
@@ -538,6 +526,7 @@ export const siteData = {
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
     },
+
     {
       id: 14,
       cat: 'Series',
@@ -563,6 +552,34 @@ export const siteData = {
         { actor: 'Navneet Nishan', character: 'Parminder', role: 'Mother' }
       ],
       videoUrl: 'https://www.youtube-nocookie.com/embed/ScMzIvxBSi4?autoplay=1'
+    },
+
+    {
+      id: 4,
+      cat: 'Ad Film',
+      title: 'Aurum Jewels — The Golden Hour',
+      posterImg: '/assets/images/aurum_jewels.webp',
+      client: 'Aurum Jewels',
+      credit: 'Dir. Pushpendra Singh',
+      year: '2025',
+      genre: 'Luxury Commercial / Brand Film',
+      director: 'Pushpendra Singh',
+      studio: 'Aurum Brand Studios & Chitralok Films',
+      milestone: 'High-Fashion Royal Brand Campaign',
+      img: '/assets/images/aurum_jewels_hd.webp',
+      bannerImg: '/assets/images/aurum_jewels_hd.webp',
+      synopsis: 'A high-concept commercial campaign capturing timeless royal heritage and immaculate gold craftsmanship. Directed by Pushpendra Singh, utilizing anamorphic lenses and soft golden-hour natural illumination.',
+      stills: [
+        { img: '/assets/images/aurum_jewels_hd.webp', title: 'The Golden Hour 16:9 Widescreen Frame', tag: 'Commercial Master' },
+        { img: '/assets/images/aurum_jewels.webp', title: 'Royal Heritage Jewelry Editorial Frame', tag: 'Print Campaign' },
+        { img: '/assets/images/bts_camera_rig.webp', title: 'Lighting Masterclass & Anamorphic Camera Rig', tag: 'Behind the Scenes' }
+      ],
+      cast: [
+        { actor: 'Maya Sen', character: 'Royal Protagonist', role: 'Brand Ambassador / Model' },
+        { actor: 'Pushpendra Singh', character: 'Director & Vision', role: 'Commercial Director' },
+        { actor: 'Chitralok Unit', character: 'Cinematography Crew', role: 'Camera & Lighting Team' }
+      ],
+      videoUrl: 'https://www.youtube-nocookie.com/embed/3fulFQKpFEo?autoplay=1'
     }
   ],
 
@@ -740,7 +757,7 @@ export const siteData = {
     ],
     producers: [
       {
-        name: 'Alok Ji',
+        name: 'Alok Pandey',
         role: 'Producer',
         monogram: 'AS',
         img: '/assets/images/producers/producer_alok.webp',
@@ -749,7 +766,7 @@ export const siteData = {
         vision: 'Championing high-impact narratives and world-class production execution that resonate across global audiences.'
       },
       {
-        name: 'Pawan Ji',
+        name: 'Pawan Kumar',
         role: 'Producer',
         monogram: 'PS',
         img: '/assets/images/producers/producer_pawan.webp',
@@ -758,7 +775,7 @@ export const siteData = {
         vision: 'Fostering cultural authenticity and cinematic scale that leaves an enduring legacy in Indian cinema.'
       },
       {
-        name: 'Amod Ji',
+        name: 'Amod Kumar Singh',
         role: 'Producer',
         monogram: 'AS',
         img: '/assets/images/producers/producer_amod.webp',
@@ -767,7 +784,7 @@ export const siteData = {
         vision: 'Pioneering cutting-edge cinematic storytelling with unwavering dedication to craft and creative integrity.'
       },
       {
-        name: 'Krishna Kant Ji',
+        name: 'Krishna Kant Rai',
         role: 'Producer',
         monogram: 'KS',
         img: '/assets/images/producers/producer_krishnakant.webp',
@@ -776,7 +793,7 @@ export const siteData = {
         vision: 'Driving visionary collaborations and technical excellence from script development to theatrical release.'
       },
       {
-        name: 'Santanu Ji',
+        name: 'Santanu Kumar',
         role: 'Producer',
         monogram: 'SS',
         img: '/assets/images/producers/producer_shantanu.webp',
@@ -785,7 +802,7 @@ export const siteData = {
         vision: 'Empowering fearless storytelling and groundbreaking audiovisual experiences for modern cinema lovers.'
       },
       {
-        name: 'Vipul Ji',
+        name: 'Vipul Rai',
         role: 'Producer',
         monogram: 'VS',
         img: '/assets/images/producers/producer_vipul.webp',
@@ -813,101 +830,41 @@ export const siteData = {
         subtitle: 'Writer & Director · Story & Screenplay',
         tag: 'Narrative Architect',
         img: '/assets/images/pushpenddra_singh.webp',
-        credit: 'Paid Palki · Aaoge Jab Tum',
+        credit: 'Aaoge Jab Tum (2026) · Sarkar · Television Epics',
         vision: 'Architect of high-stakes social realism and emotional narratives that bridge classic Indian literature with commercial cinema.',
+        detailsPath: '/director',
         path: '/director'
       },
       {
-        name: 'Pragati Chauhan',
+        name: 'Prragati Chauhaan',
         role: 'Writer',
         subtitle: 'Screenplay & Narrative Lead',
         tag: 'Character & Emotional Arcs',
         img: '/assets/images/cast/prragati_chauhaan.webp',
-        credit: 'Paid Palki (Screenplay)',
-        vision: 'Cinema is the ultimate conduit of empathy. Breathing life into complex characters and shaping narratives from page to screen is our true calling.'
+        credit: 'Original Screenplays, Character Arcs & Dialogues',
+        vision: 'Cinema is the ultimate conduit of empathy. Breathing life into complex characters and shaping narratives from page to screen is our true calling.',
+        detailsPath: '/actor/prragati-chauhaan',
+        path: '/actor/prragati-chauhaan'
       },
-      {
-        name: 'Shashank Singh',
-        role: 'Writer',
-        subtitle: 'Dialogue Writer',
-        tag: 'Vernacular Dialogue',
-        img: '/assets/images/producers/writer_shashank.webp',
-        credit: 'Paid Palki (Feature Film Dialogues)',
-        vision: 'Crafting culturally rooted, sharp, and evocative Hindi and regional dialogues that breathe life into on-screen characters.'
-      }
     ],
     actors: [
       {
-        name: 'Chandan Roy',
-        character: 'Santh Kumar (Santu)',
-        role: 'Lead Actor',
-        subtitle: 'Lead Protagonist',
-        img: '/assets/images/cast/chandan_roy.webp',
-        credit: 'Paid Palki · Panchayat · Gulmohar',
-        notes: 'Sensitive villager caught between social expectations and moral courage in Paid Palki.'
-      },
-      {
         name: 'Prragati Chauhaan',
-        character: 'Kemli',
-        role: 'Lead Actor',
-        subtitle: 'Lead Protagonist',
+        role: 'Actor',
+        subtitle: 'Model / Actress',
+        tag: 'Lead Protagonist',
+        // character: 'Kemli',
         img: '/assets/images/cast/prragati_chauhaan.webp',
-        credit: 'Paid Palki (Feature Film Lead)',
-        notes: 'A sheltered tribal girl who transforms into a determined woman fighting for her dignity.'
-      },
-      {
-        name: 'Durgesh Kumar',
-        character: 'Chaturbhuj (Phupha Ji)',
-        role: 'Actor',
-        subtitle: 'Key Supporting Lead',
-        img: '/assets/images/cast/durgesh_kumar.webp',
-        credit: 'Paid Palki · Panchayat · Highway',
-        notes: 'Santu’s uncle by marriage, boasting about small contacts and family influence.'
-      },
-      {
-        name: 'Sunita Rajwar',
-        character: "Santu's Mother",
-        role: 'Actor',
-        subtitle: 'Key Supporting Lead',
-        img: '/assets/images/cast/sunita_rajwar.webp',
-        credit: 'Paid Palki · Panchayat · Gullak',
-        notes: 'A strong, resilient matriarch who single-handedly manages her household with pride.'
-      },
-      {
-        name: 'Omkar Das Manikpuri',
-        character: 'Kodulal (Kemli’s Father)',
-        role: 'Actor',
-        subtitle: 'Supporting Cast',
-        img: '/assets/images/cast/omkar_das_manikpuri.webp',
-        credit: 'Paid Palki · Peepli Live',
-        notes: 'Driven by greed and hardened by addiction, willing to trade relationships for profit.'
-      },
-      {
-        name: 'Kumar Saurav',
-        character: 'Jamai',
-        role: 'Actor',
-        subtitle: 'Middleman',
-        img: '/assets/images/cast/kumar_saurav.webp',
-        credit: 'Paid Palki (Feature Film)',
-        notes: 'Cunning middleman facilitating transactions between remote tribal hamlets.'
-      },
-      {
-        name: 'Bhaskar Jha',
-        character: 'Naresh',
-        role: 'Actor',
-        subtitle: 'Antagonist',
-        img: '/assets/images/cast/bhaskar_jha.webp',
-        credit: 'Paid Palki (Feature Film)',
-        notes: 'Local strongman with patriarchal entitlement whose bruised ego turns into obsession.'
-      },
-      {
-        name: 'Sapna Sand',
-        character: 'Sukhiya (Kemli’s Mother)',
-        role: 'Actor',
-        subtitle: 'Supporting Cast',
-        img: '/assets/images/cast/sapna_sand.webp',
-        credit: 'Paid Palki (Feature Film)',
-        notes: 'A fiercely loving mother embodying resilience and maternal protection.'
+        credit: 'Commercial Ads, Print Campaigns & Fashion Modeling',
+        vision: 'Acting is not merely performing; it is a sacred act of stepping into the soul of another human being and defending their truth without judgment.',
+        notes: 'A sheltered tribal girl who transforms into a determined woman fighting for her dignity.',
+        detailsPath: '/actor/prragati-chauhaan',
+        socialLinks: [
+          { name: 'Instagram', url: 'https://www.instagram.com/reel/ChRUuG2p5Mv/?igshid=YmMyMTA2M2Y=' },
+          { name: 'YouTube', url: 'https://youtu.be/w55jPICtzK0' },
+          { name: 'Facebook', url: 'https://fb.watch/ndh-AZ6rR4/?mibextid=v7YzmG' },
+          { name: 'IMDb', url: 'https://www.imdb.com' }
+        ],
       }
     ]
   },
@@ -1049,5 +1006,85 @@ export const siteData = {
         meta: 'Jai Shri Krishna · Shakuntala · Meera'
       }
     ]
+  }
+,
+
+  prragatiProfile: {
+    nameFirst: 'Prragati',
+    nameLast: 'Chauhaan',
+    role: 'Model / Actress',
+    photoSubtitle: 'Model / Actress',
+    tag: 'Professional Model & Actress',
+    character: 'Kemli',
+    film: 'Paid Palki',
+    portraitImg: '/assets/images/cast/prragati_chauhaan.webp',
+    bannerImg: '/assets/images/paid_palki_banner.webp',
+    stillImg: '/assets/images/bts/bts_clip_01_set_action_poster.webp',
+    imdbUrl: 'https://www.imdb.com',
+    socialLinks: [
+      { name: 'Instagram', url: 'https://www.instagram.com/reel/ChRUuG2p5Mv/?igshid=YmMyMTA2M2Y=' },
+      { name: 'YouTube', url: 'https://youtu.be/w55jPICtzK0' },
+      { name: 'Facebook', url: 'https://fb.watch/ndh-AZ6rR4/?mibextid=v7YzmG' },
+      { name: 'IMDb', url: 'https://www.imdb.com' }
+    ],
+    quote: '“Acting is not merely performing; it is a sacred act of stepping into the soul of another human being and defending their truth without judgment.”',
+    bio1: 'Prragati Chauhaan is an Indian actress, model, and screen narrative architect recognized for her nuanced character immersion, raw emotional gravity, and dedication to socially grounded Indian cinema. Emerging with a compelling artistic voice, she seamlessly bridges performance with narrative depth.',
+    bio2: 'In the landmark social feature film "Paid Palki", presented by S&P Chitralok Studios, Prragati headlines as the central protagonist "Kemli" — a sheltered tribal girl whose transformation from vulnerability to fierce dignity forms the emotional core of the film. Beyond commanding the screen in front of the lens, Prragati co-penned the screenplay alongside director Pushpendra Singh, crafting authentic regional dialogues and profound female character arcs.',
+    bio3: 'As a creative pillar and narrative lead at Chitralok Studios, Prragati champions fearless storytelling that reflects the complexities of contemporary and rural India, striving to create cinematic art that lingers in the hearts of audiences worldwide.',
+    filmography: [
+      {
+        year: 'In Filming / 2026',
+        title: 'Paid Palki',
+        kind: 'Feature Film (Lead Actor & Screenplay)',
+        character: 'Kemli (Lead Protagonist)',
+        studio: 'S&P Chitralok Studios',
+        role: 'Lead Actress & Screenplay Co-Writer',
+        img: '/assets/images/paid_palki_poster.webp',
+        desc: 'A poignant and gripping rural social drama capturing the clash between social vulnerability, love, and personal liberation.'
+      },
+      {
+        year: 'Screenplay & Narrative Lead',
+        title: 'Narrative Architecture & Screenplay Development',
+        kind: 'Screenplay & Character Lead',
+        character: 'Screenplay Co-Writer',
+        studio: 'Chitralok Studios Roster',
+        role: 'Screenwriter & Narrative Designer',
+        img: '/assets/images/bts/bts_director_actor_blocking.webp',
+        desc: 'Developing culturally rooted scripts, multi-dimensional female arcs, and impactful dialogue rhythm across studio productions.'
+      }
+    ],
+    stills: [
+      {
+        img: '/assets/images/cast/prragati_chauhaan.webp',
+        title: 'Prragati Chauhaan — Studio Portrait',
+        tag: 'Lead Protagonist'
+      },
+      {
+        img: '/assets/images/bts/bts_clip_01_set_action_poster.webp',
+        title: 'On-Set Character Preparation & Styling',
+        tag: 'Paid Palki BTS'
+      },
+      {
+        img: '/assets/images/paid_palki_still.webp',
+        title: 'Rural Location Production Frame',
+        tag: 'Cinematic Still'
+      },
+      {
+        img: '/assets/images/bts/bts_director_actor_blocking.webp',
+        title: 'Director Pushpendra Singh & Lead Talent Blocking',
+        tag: 'Set Staging'
+      }
+    ],
+    attributes: [
+      { label: 'Professional', value: 'Model / Actress' },
+      { label: 'Hobbies', value: 'Music and movies' },
+      { label: 'Current Location', value: 'Mumbai / Delhi' }
+    ],
+    characterDetails: {
+      film: 'Paid Palki',
+      character: 'Kemli',
+      tagline: 'From Vulnerability to Unyielding Dignity',
+      summary: 'Kemli is an innocent, spirited young woman from a remote tribal settlement in Madhya Pradesh. Sold under societal and economic duress, her story transforms from one of displacement into a fierce testament of love, identity, and personal liberation against the social realities of human trafficking.'
+    }
   }
 };

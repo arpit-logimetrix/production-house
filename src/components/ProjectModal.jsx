@@ -412,9 +412,7 @@ export default function ProjectModal({ project, onClose, onOpenVideo }) {
                 }}>
                   Cast & Characters
                 </span>
-                <span style={{ fontSize: '11px', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--text-muted)' }}>
-                  {project.cast.length} Verified Credits
-                </span>
+
               </div>
 
               <div style={{
@@ -458,7 +456,12 @@ export default function ProjectModal({ project, onClose, onOpenVideo }) {
                           <img
                             src={member.img}
                             alt={member.actor}
-                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                            style={{
+                              width: '100%',
+                              height: '100%',
+                              objectFit: 'cover',
+                              objectPosition: member.objectPosition || 'center'
+                            }}
                           />
                         </div>
                       ) : (

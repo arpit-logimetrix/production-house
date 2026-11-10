@@ -8,7 +8,7 @@ export default function Work({ onOpenVideo }) {
   const [activeFilter, setActiveFilter] = useState('All');
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const categories = ['All', 'Film', 'Ad Film', 'Series'];
+  const categories = ['All', 'Film', 'Series', 'Ad Film'];
 
   const filteredWorks = activeFilter === 'All'
     ? allWorks
@@ -70,138 +70,169 @@ export default function Work({ onOpenVideo }) {
         </div>
       </section>
 
-      {/* Projects Grid */}
+      {/* Projects Grid — 4 Columns in one row */}
       <section style={{ padding: '0 var(--container-pad) 128px' }}>
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
-          gap: '56px 32px'
-        }}>
-          {filteredWorks.map((work) => (
-            <div
-              key={work.id}
-              className="th project-card-interactive"
-              role="button"
-              tabIndex={0}
-              onClick={() => setSelectedProject(work)}
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' || e.key === ' ') {
-                  e.preventDefault();
-                  setSelectedProject(work);
-                }
-              }}
-              aria-label={`View details for ${work.title}`}
-              style={{ cursor: 'pointer' }}
-            >
-              <div style={{
-                position: 'relative',
-                aspectRatio: '16/9',
-                background: 'var(--bg-card)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                overflow: 'hidden',
-                border: '1px solid var(--border-subtle)',
-                borderRadius: '2px'
-              }}>
-                <img
-                  src={work.img}
-                  alt={work.title}
-                  className="project-card-img"
-                  style={{
+        <div className="work-projects-grid">
+          {filteredWorks.map((work) => {
+            const cardImg = work.posterImg || work.img;
+            return (
+              <div
+                key={work.id}
+                className="th project-card-interactive"
+                role="button"
+                tabIndex={0}
+                onClick={() => setSelectedProject(work)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setSelectedProject(work);
+                  }
+                }}
+                aria-label={`View details for ${work.title}`}
+                style={{
+                  cursor: 'pointer',
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '4px',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease'
+                }}
+              >
+                {/* Poster Frame (3:4 portrait ratio matching Director showcase) */}
+                <div style={{
+                  position: 'relative',
+                  aspectRatio: '3/4',
+                  width: '100%',
+                  background: '#0d0d0d',
+                  overflow: 'hidden'
+                }}>
+                  <img
+                    src={cardImg}
+                    alt={work.title}
+                    className="project-card-img"
+                    style={{
+                      position: 'absolute',
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)'
+                    }}
+                    loading="lazy"
+                  />
+
+                  {/* Year / Status Badge (Top-Right) */}
+                  <div style={{
                     position: 'absolute',
-                    inset: 0,
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    transition: 'transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)'
-                  }}
-                />
-                
-                {/* Status Pill Tag (e.g. In Filming / Post Production) */}
-                {work.status && (
+                    top: '12px',
+                    right: '12px',
+                    background: 'rgba(7, 7, 7, 0.85)',
+                    border: '1px solid var(--border-subtle)',
+                    padding: '3px 8px',
+                    fontSize: '10px',
+                    fontFamily: 'var(--font-mono)',
+                    color: 'var(--gold-primary)',
+                    letterSpacing: '0.1em',
+                    zIndex: 2,
+                    borderRadius: '2px'
+                  }}>
+                    {work.status || work.year}
+                  </div>
+
+                  {/* Category Pill Tag (Top-Left) */}
                   <span style={{
                     position: 'absolute',
-                    left: '16px',
-                    top: '14px',
-                    padding: '5px 12px',
-                    fontSize: '11px',
-                    letterSpacing: '0.16em',
+                    left: '12px',
+                    top: '12px',
+                    padding: '3px 8px',
+                    fontSize: '10px',
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    fontWeight: 600,
                     color: 'var(--gold-primary)',
-                    background: 'rgba(10, 10, 9, 0.88)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(212, 166, 42, 0.45)',
+                    background: 'rgba(7, 7, 7, 0.88)',
+                    border: '1px solid var(--border-gold)',
                     borderRadius: '2px',
-                    zIndex: 2,
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '6px'
+                    zIndex: 2
                   }}>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--gold-primary)' }} />
-                    {work.status}
+                    {work.cat}
                   </span>
-                )}
 
-                {/* Category Pill Tag */}
-                <span style={{
-                  position: 'absolute',
-                  right: '16px',
-                  top: '14px',
-                  padding: '5px 10px',
-                  fontSize: '11px',
-                  letterSpacing: '0.2em',
-                  textTransform: 'uppercase',
-                  color: 'var(--text-primary)',
-                  background: 'rgba(10,10,9,0.78)',
-                  backdropFilter: 'blur(6px)',
-                  border: '1px solid rgba(255,255,255,0.08)',
-                  zIndex: 2
+                  {/* Subtle Hover "View Details" Pill */}
+                  <div
+                    className="project-card-view-badge"
+                    style={{
+                      position: 'absolute',
+                      bottom: '12px',
+                      left: '12px',
+                      padding: '5px 12px',
+                      fontSize: '10px',
+                      fontFamily: 'var(--font-mono)',
+                      letterSpacing: '0.14em',
+                      textTransform: 'uppercase',
+                      fontWeight: 600,
+                      color: 'var(--gold-primary)',
+                      background: 'rgba(8, 8, 8, 0.92)',
+                      backdropFilter: 'blur(8px)',
+                      border: '1px solid rgba(212, 166, 42, 0.45)',
+                      borderRadius: '2px',
+                      opacity: 0,
+                      transform: 'translateY(6px)',
+                      transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                      zIndex: 2,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '4px'
+                    }}
+                  >
+                    <span>View Details</span>
+                    <span style={{ fontSize: '11px' }}>→</span>
+                  </div>
+                </div>
+
+                {/* Card Information Body */}
+                <div style={{
+                  padding: '18px 16px 20px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px',
+                  flex: 1
                 }}>
-                  {work.cat}
-                </span>
-
-                {/* Subtle Hover "View Details" Pill */}
-                <div
-                  className="project-card-view-badge"
-                  style={{
-                    position: 'absolute',
-                    bottom: '16px',
-                    left: '16px',
-                    padding: '7px 16px',
-                    fontSize: '11px',
-                    letterSpacing: '0.18em',
+                  <span style={{
+                    fontSize: '10px',
+                    fontFamily: 'var(--font-mono)',
+                    letterSpacing: '0.14em',
                     textTransform: 'uppercase',
+                    color: 'var(--gold-primary)'
+                  }}>
+                    {work.credit}
+                  </span>
+
+                  <h3 className="tt" style={{
+                    margin: 0,
+                    fontFamily: 'var(--font-serif)',
+                    fontSize: '20px',
                     fontWeight: 600,
-                    color: 'var(--gold-primary)',
-                    background: 'rgba(8, 8, 8, 0.92)',
-                    backdropFilter: 'blur(8px)',
-                    border: '1px solid rgba(212, 166, 42, 0.45)',
-                    borderRadius: '2px',
-                    opacity: 0,
-                    transform: 'translateY(6px)',
-                    transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
-                    zIndex: 2,
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '6px'
-                  }}
-                >
-                  <span>View Details</span>
-                  <span style={{ fontSize: '12px' }}>→</span>
+                    lineHeight: 1.25,
+                    color: 'var(--text-primary)',
+                    transition: 'color var(--transition-fast)'
+                  }}>
+                    {work.title}
+                  </h3>
+
+                  <span style={{
+                    fontSize: '12px',
+                    color: 'var(--text-secondary)',
+                    marginTop: 'auto'
+                  }}>
+                    {work.genre || work.cat}
+                  </span>
                 </div>
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', justifyContent: 'space-between', gap: '6px 20px', marginTop: '16px' }}>
-                <span className="tt" style={{ fontFamily: 'var(--font-serif)', fontSize: '28px', lineHeight: 1.15, transition: 'color var(--transition-fast)' }}>
-                  {work.title}
-                </span>
-                <span style={{ fontSize: '12px', letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--text-secondary)' }}>
-                  {work.credit}
-                </span>
-              </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {filteredWorks.length === 0 && (

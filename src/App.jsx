@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Work from './pages/Work';
 import Director from './pages/Director';
+import ActorProfile from './pages/ActorProfile';
 import Contact from './pages/Contact';
 
 export default function App() {
@@ -37,6 +38,34 @@ export default function App() {
     });
   };
 
+  // Detect whether running in an embedded iframe context
+  const isEmbed = typeof window !== 'undefined' && (
+    new URLSearchParams(window.location.search).get('embed') === 'true' ||
+    (window.self !== window.top)
+  );
+
+  // If running inside an iframe, render directly without site-wide navbar and footer
+  if (isEmbed) {
+    return (
+      <Router>
+        <ScrollToTop />
+        <div style={{ minHeight: '100vh', background: 'var(--bg-primary)' }}>
+          <Routes>
+            <Route path="/actor/prragati-chauhaan" element={<ActorProfile onOpenVideo={handleOpenVideo} isEmbed={true} />} />
+            <Route path="/prragati-chauhaan" element={<ActorProfile onOpenVideo={handleOpenVideo} isEmbed={true} />} />
+            <Route path="*" element={<ActorProfile onOpenVideo={handleOpenVideo} isEmbed={true} />} />
+          </Routes>
+          <VideoModal
+            isOpen={videoModal.isOpen}
+            onClose={handleCloseVideo}
+            videoSrc={videoModal.src}
+            title={videoModal.title}
+          />
+        </div>
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <Preloader />
@@ -52,6 +81,8 @@ export default function App() {
             <Route path="/about" element={<About />} />
             <Route path="/work" element={<Work onOpenVideo={handleOpenVideo} />} />
             <Route path="/director" element={<Director onOpenVideo={handleOpenVideo} />} />
+            <Route path="/actor/prragati-chauhaan" element={<ActorProfile onOpenVideo={handleOpenVideo} isEmbed={false} />} />
+            <Route path="/prragati-chauhaan" element={<ActorProfile onOpenVideo={handleOpenVideo} isEmbed={false} />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<Home onOpenVideo={handleOpenVideo} />} />
           </Routes>

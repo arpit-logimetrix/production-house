@@ -42,7 +42,8 @@ export default function Navbar() {
           />
           <span className="brand-divider" aria-hidden="true" />
           <span className="brand-title">
-            Chitralok <span style={{ color: 'var(--gold-primary)' }}>Studios</span>
+            <span>Chitralok</span>
+            <span style={{ color: 'var(--gold-primary)' }}>Studios</span>
           </span>
         </Link>
 

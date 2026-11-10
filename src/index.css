@@ -241,6 +241,7 @@ button {
   line-height: 1;
   display: flex;
   align-items: center;
+  gap: 0.45em;
   margin-top: 1px;
   transition: color 0.3s ease;
   white-space: nowrap;
@@ -1447,6 +1448,34 @@ button {
 
 .project-card-interactive:hover .tt {
   color: var(--gold-primary) !important;
+}
+
+/* Work Projects Grid — 4 Columns on Desktop matching Director Showcase */
+.work-projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px 24px;
+}
+
+@media (max-width: 1200px) {
+  .work-projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .work-projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px 16px;
+  }
+}
+
+@media (max-width: 520px) {
+  .work-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
 }
 
 /* ==========================================================================

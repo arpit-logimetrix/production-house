@@ -1,10 +1,71 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { X, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { siteData } from '../data/content';
 import GoldenCTA from '../components/GoldenCTA';
 
+const renderSocialIcon = (name, size = 16) => {
+  switch (name.toLowerCase()) {
+    case 'instagram':
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      );
+    case 'youtube':
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"></polygon>
+        </svg>
+      );
+    case 'facebook':
+      return (
+        <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+      );
+    case 'imdb':
+      return (
+        <span style={{
+          fontSize: size <= 16 ? '9px' : '10px',
+          fontFamily: 'impact, "Arial Black", sans-serif',
+          fontWeight: 900,
+          letterSpacing: '-0.02em',
+          lineHeight: 1
+        }}>
+          IMDb
+        </span>
+      );
+    default:
+      return null;
+  }
+};
+
 export default function About() {
   const { about } = siteData;
+  const [iframeModal, setIframeModal] = useState({ isOpen: false, url: '', title: '' });
+
+  // Close modal on Escape key and lock body scroll when modal is open
+  useEffect(() => {
+    if (!iframeModal.isOpen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIframeModal({ isOpen: false, url: '', title: '' });
+      }
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [iframeModal.isOpen]);
+
 
   return (
     <div style={{ width: '100%' }}>
@@ -51,11 +112,11 @@ export default function About() {
             Who We Are
           </span>
         </div>
-        <div style={{ flex: '4 1 560px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '28px', maxWidth: '860px' }}>
-          <p style={{ margin: 0, fontSize: '20px', lineHeight: 1.7, color: 'var(--text-primary)' }}>
+        <div style={{ flex: '4 1 560px', minWidth: 0, display: 'flex', flexDirection: 'column', gap: '20px', maxWidth: '860px' }}>
+          <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.7, color: 'var(--text-light-sub)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>
             {about.p1}
           </p>
-          <p style={{ margin: 0, fontSize: '20px', lineHeight: 1.7, color: 'var(--text-light-sub)' }}>
+          <p style={{ margin: 0, fontSize: '16px', lineHeight: 1.7, color: 'var(--text-light-sub)', fontWeight: 400, fontFamily: 'var(--font-sans)' }}>
             {about.p2}
           </p>
         </div>
@@ -325,6 +386,11 @@ export default function About() {
                   <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em', marginTop: '2px' }}>
                     {director.credit}
                   </span>
+                  {director.vision && (
+                    <p style={{ margin: '4px 0 0', fontSize: '12px', lineHeight: 1.6, color: 'var(--text-light-sub)', fontStyle: 'italic' }}>
+                      {director.vision}
+                    </p>
+                  )}
                   {director.path && (
                     <Link
                       to={director.path}
@@ -448,6 +514,45 @@ export default function About() {
                   <p style={{ margin: '4px 0 0', fontSize: '12px', lineHeight: 1.6, color: 'var(--text-light-sub)', fontStyle: 'italic' }}>
                     {writer.vision}
                   </p>
+                  <Link
+                    to={writer.detailsPath || writer.path || (writer.name.toLowerCase().includes('pushpendra') ? '/director' : '/actor/prragati-chauhaan')}
+                    className="actor-view-details-btn"
+                    aria-label={`View full details about ${writer.name}`}
+                    style={{
+                      marginTop: 'auto',
+                      padding: '10px 18px',
+                      background: 'rgba(212, 166, 42, 0.08)',
+                      border: '1px solid rgba(212, 166, 42, 0.45)',
+                      borderRadius: '2px',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: 'var(--gold-primary)',
+                      fontWeight: 600,
+                      transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                      width: '100%',
+                      boxSizing: 'border-box'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--gold-primary)';
+                      e.currentTarget.style.color = '#070707';
+                      e.currentTarget.style.borderColor = 'var(--gold-primary)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(212, 166, 42, 0.08)';
+                      e.currentTarget.style.color = 'var(--gold-primary)';
+                      e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.45)';
+                    }}
+                  >
+                    <span>View Details</span>
+                    <span style={{ fontSize: '13px' }}>→</span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -568,9 +673,108 @@ export default function About() {
                   <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--gold-primary)' }}>
                     {actor.subtitle || actor.role}
                   </span>
-                  <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em' }}>
-                    {actor.credit}
-                  </span>
+                  {actor.credit && (
+                    <span style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: 1.5, letterSpacing: '0.02em' }}>
+                      {actor.credit}
+                    </span>
+                  )}
+                  {(actor.vision || actor.notes) && (
+                    <p style={{ margin: '4px 0 0', fontSize: '12px', lineHeight: 1.6, color: 'var(--text-light-sub)', fontStyle: 'italic' }}>
+                      {actor.vision || actor.notes}
+                    </p>
+                  )}
+                                    {/* Actor Social Profiles */}
+                  {actor.socialLinks && actor.socialLinks.length > 0 && (
+                    <div style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '8px',
+                      marginTop: '10px',
+                      marginBottom: '6px'
+                    }}>
+                      {actor.socialLinks.map((s, sIdx) => (
+                        <a
+                          key={sIdx}
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${actor.name} on ${s.name}`}
+                          title={`${s.name} (Opens in a new tab)`}
+                          style={{
+                            width: '36px',
+                            height: '36px',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderRadius: '2px',
+                            border: '1px solid rgba(212, 166, 42, 0.35)',
+                            background: 'rgba(255, 255, 255, 0.03)',
+                            color: 'var(--gold-primary)',
+                            textDecoration: 'none',
+                            transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
+                            cursor: 'pointer'
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.background = 'var(--gold-primary)';
+                            e.currentTarget.style.color = '#070707';
+                            e.currentTarget.style.borderColor = 'var(--gold-primary)';
+                            e.currentTarget.style.transform = 'translateY(-2px)';
+                            e.currentTarget.style.boxShadow = '0 4px 12px rgba(212, 166, 42, 0.3)';
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.background = 'rgba(255, 255, 255, 0.03)';
+                            e.currentTarget.style.color = 'var(--gold-primary)';
+                            e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.35)';
+                            e.currentTarget.style.transform = 'translateY(0)';
+                            e.currentTarget.style.boxShadow = 'none';
+                          }}
+                        >
+                          {renderSocialIcon(s.name, 16)}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+                  <Link
+                    to={actor.detailsPath || '/actor/prragati-chauhaan'}
+                    className="actor-view-details-btn"
+                    aria-label={`View full details about ${actor.name}`}
+                    style={{
+                      marginTop: 'auto',
+                      padding: '10px 18px',
+                      background: 'rgba(212, 166, 42, 0.08)',
+                      border: '1px solid rgba(212, 166, 42, 0.45)',
+                      borderRadius: '2px',
+                      textDecoration: 'none',
+                      cursor: 'pointer',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '11px',
+                      letterSpacing: '0.16em',
+                      textTransform: 'uppercase',
+                      color: 'var(--gold-primary)',
+                      fontWeight: 600,
+                      transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+                      width: '100%',
+                      boxSizing: 'border-box'
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--gold-primary)';
+                      e.currentTarget.style.color = '#070707';
+                      e.currentTarget.style.borderColor = 'var(--gold-primary)';
+                      e.currentTarget.style.boxShadow = '0 4px 18px rgba(212, 166, 42, 0.35)';
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = 'rgba(212, 166, 42, 0.08)';
+                      e.currentTarget.style.color = 'var(--gold-primary)';
+                      e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.45)';
+                      e.currentTarget.style.boxShadow = 'none';
+                    }}
+                  >
+                    <span>View Details</span>
+                    <span style={{ fontSize: '14px', marginLeft: '6px' }}>&rarr;</span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -580,7 +784,149 @@ export default function About() {
 
       {/* Golden CTA */}
       <GoldenCTA text="Start a project" link="/contact" />
+    
+      {/* Iframe Modal for View Details */}
+      {iframeModal.isOpen && (
+        <div
+          className="iframe-modal-backdrop"
+          onClick={() => setIframeModal({ isOpen: false, url: '', title: '' })}
+          role="dialog"
+          aria-modal="true"
+          aria-label={`${iframeModal.title} Details`}
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 999999,
+            background: 'rgba(4, 4, 4, 0.94)',
+            backdropFilter: 'blur(20px)',
+            WebkitBackdropFilter: 'blur(20px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            padding: 'clamp(10px, 2.5vw, 24px)',
+            animation: 'projectModalFadeIn 0.2s ease forwards'
+          }}
+        >
+          <div
+            className="iframe-modal-dialog"
+            onClick={(e) => e.stopPropagation()}
+            style={{
+              position: 'relative',
+              width: '100%',
+              maxWidth: '1160px',
+              height: '92vh',
+              maxHeight: '940px',
+              background: '#090908',
+              border: '1px solid rgba(212, 166, 42, 0.45)',
+              borderRadius: '6px',
+              boxShadow: '0 30px 100px rgba(0, 0, 0, 0.98), 0 0 50px rgba(212, 166, 42, 0.15)',
+              display: 'flex',
+              flexDirection: 'column',
+              overflow: 'hidden',
+              animation: 'projectModalScaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards'
+            }}
+          >
+            {/* Modal Top Bar */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: '12px 20px',
+              background: 'rgba(14, 13, 11, 0.98)',
+              borderBottom: '1px solid rgba(212, 166, 42, 0.3)',
+              zIndex: 2
+            }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                <span style={{
+                  width: '8px',
+                  height: '8px',
+                  borderRadius: '50%',
+                  background: 'var(--gold-primary)',
+                  boxShadow: '0 0 10px var(--gold-primary)'
+                }} />
+                <span style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px',
+                  letterSpacing: '0.2em',
+                  textTransform: 'uppercase',
+                  color: 'var(--gold-primary)',
+                  fontWeight: 600
+                }}>
+                  {iframeModal.title} · Artist Profile
+                </span>
+              </div>
+
+              <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+                <a
+                  href={iframeModal.url.replace('?embed=true', '').replace('&embed=true', '')}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '11px',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: 'var(--text-secondary)',
+                    textDecoration: 'none',
+                    transition: 'color 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.color = 'var(--gold-primary)'}
+                  onMouseLeave={(e) => e.currentTarget.style.color = 'var(--text-secondary)'}
+                >
+                  <span>Open in Full Page</span>
+                  <ExternalLink size={12} />
+                </a>
+
+                <button
+                  type="button"
+                  onClick={() => setIframeModal({ isOpen: false, url: '', title: '' })}
+                  aria-label="Close Profile Dialog"
+                  style={{
+                    width: '36px',
+                    height: '36px',
+                    borderRadius: '50%',
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(212, 166, 42, 0.4)',
+                    color: '#FFFFFF',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = 'var(--gold-primary)';
+                    e.currentTarget.style.color = '#070707';
+                    e.currentTarget.style.borderColor = 'var(--gold-primary)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = 'rgba(255, 255, 255, 0.08)';
+                    e.currentTarget.style.color = '#FFFFFF';
+                    e.currentTarget.style.borderColor = 'rgba(212, 166, 42, 0.4)';
+                  }}
+                >
+                  <X size={18} />
+                </button>
+              </div>
+            </div>
+
+            {/* Embedded Iframe Viewport */}
+            <iframe
+              src={iframeModal.url}
+              title={`${iframeModal.title} Profile Details`}
+              style={{
+                width: '100%',
+                flex: 1,
+                border: 'none',
+                background: 'var(--bg-primary)'
+              }}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
-
